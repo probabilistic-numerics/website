@@ -7,7 +7,7 @@ email:
 logo: assets/img/logos/pn-logo-dark-txtright.svg # path to website logo (e.g. for the navigation bar)
 watermark: assets/img/logos/pn-watermark.svg
 url:  # the base hostname & protocol for your site
-baseurl: /pn-website # the subpath of your site, e.g. /my-github-repo
+baseurl: /website # the subpath of your site, e.g. /my-github-repo
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Learn to approximate. Approximate to learn.
 footer_text: >
