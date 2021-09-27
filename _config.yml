@@ -9,7 +9,7 @@ watermark: assets/img/logos/pn-watermark.svg
 url:  # the base hostname & protocol for your site
 baseurl: /website # the subpath of your site, e.g. /my-github-repo
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Learn to approximate. Approximate to learn.
+  Quantifying Uncertainty in Computation.
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
 last_updated: false # set to true if you want to display last updated in the footer
