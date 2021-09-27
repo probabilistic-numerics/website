@@ -27,12 +27,11 @@ Typical numerical tasks to which PN may be applied include optimization, integra
             </div>
         </a>
     </div>
-
     <div class="card hoverable">
         <a href="./research/quadrature" target="_blank">
             <img class="card-img-top" src="assets/img/integration.png">
             <div class="card-body text-center">
-                <p class="card-text">Integration</p>
+                <p class="card-text">Quadrature</p>
             </div>
         </a>
     </div>
@@ -46,9 +45,17 @@ Typical numerical tasks to which PN may be applied include optimization, integra
     </div>
     <div class="card hoverable">
         <a href="./research/ode" target="_blank">
-            <img class="card-img-top" src="assets/img/differential_equations.png">
+            <img class="card-img-top" src="assets/img/ode.png">
             <div class="card-body text-center">
-                <p class="card-text">Differential Equations</p>
+                <p class="card-text">ODEs</p>
+            </div>
+        </a>
+    </div>
+    <div class="card hoverable">
+        <a href="./research/pde" target="_blank">
+            <img class="card-img-top" src="assets/img/pde.png">
+            <div class="card-body text-center">
+                <p class="card-text">PDEs</p>
             </div>
         </a>
     </div>
