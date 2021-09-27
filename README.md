@@ -1,4 +1,4 @@
-# Website `probabilistic-numerics.org` [WORK IN PROGRESS]
+# Website of the Probabilistic Numerics Community [WIP]
 
 This repository contains the source files for [probabilistic-numerics.org](probabilistic-numerics.org), the website of the **Probabilistic Numerics** research field.
 
