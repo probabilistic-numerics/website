@@ -1,0 +1,33 @@
+"Cockayne":
+  - firstname: ["Jon", "J."]
+    url: http://www.joncockayne.com/
+"Cunningham":
+  - firstname: ["John", "John P.", "JP"]
+    url: https://stat.columbia.edu/~cunningham/
+"Girolami":
+  - firstname: ["Mark", "M."]
+    url: http://www.eng.cam.ac.uk/profiles/mag92
+"Hennig":
+  - firstname: ["Philipp", "P."]
+    url: https://uni-tuebingen.de/de/134782
+"Ipsen":
+  - firstname: ["Ilse", "I."]
+    url: https://ipsen.math.ncsu.edu/
+"Mahsereci":
+  - firstname: ["Maren", "M."]
+    url:
+"Oates":
+  - firstname: ["C.", "Chris", "Chris J", "Chris J.", "C. J."]
+    url: http://oates.work/
+"Osborne":
+  - firstname: ["Michael A.", "MA", "Mike", "Michael"]
+    url: https://www.robots.ox.ac.uk/~mosb/
+"Owhadi":
+  - firstname: ["Houman", "H"]
+    url: http://users.cms.caltech.edu/~owhadi/index.htm
+"Sullivan":
+  - firstname: ["T.", "Tim", "TJ", "Tim J", "T. J.", "Tim J."]
+    url: http://www.tjsullivan.org.uk/
+"Wenger":
+  - firstname: ["J.", "Jonathan"]
+    url: https://jonathanwenger.netlify.app
