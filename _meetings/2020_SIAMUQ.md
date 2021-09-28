@@ -12,7 +12,7 @@ date_end: 2020-03-27
 summary: 
 
 link: https://siam-uq20.ma.tum.de/
-img:
+img: /assets/img/meetings/2020_SIAMUQ.jpg
 img_caption: 
 
 url_code:
