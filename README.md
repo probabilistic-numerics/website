@@ -4,7 +4,7 @@ This repository contains the source files for [probabilistic-numerics.org](proba
 
 ## Requesting Changes
 
-You can request features or report bugs by creating an [issue](https://github.com/probabilistic-numerics/probabilistic-numerics.org/issues). Be aware that your requested change has much higher probability of being considered if you suggest it directly via a pull request (see contribution guide below).
+You can request features or report bugs by creating an [issue](https://github.com/probabilistic-numerics/website/issues). Be aware that your requested change has much higher probability of being considered if you suggest it directly via a pull request (see contribution guide below).
 
 ## Contributing
 
@@ -42,7 +42,7 @@ Make any changes you desire and commit the changes to the branch. More detail [h
 
 #### Creating a Pull Request
 
-Finally, create a pull request to the main repository `probabilistic-numerics/probabilistic-numerics.org` by clicking on "Contribute > Open a Pull Request" and writing a verbose description of your change.
+Finally, create a pull request to the main repository `probabilistic-numerics/website` by clicking on "Contribute > Open a Pull Request" and writing a verbose description of your change.
 
 <div align="center">
     <img src="assets/img/contributing/creating_a_pr.png" width=600>
@@ -53,7 +53,7 @@ Your suggested change is now subject to feedback and moderation by the maintaine
 ### Advanced
 
 #### Forking and Cloning the Repository
-Fork the repository and GitHub and clone it to your local machine using `git`. It is recommended to set up `probabilistic-numerics/probabilistic-numerics.org` as a second `upstream` remote so you can easily keep up-to-date with the main repository. More detail [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
+Fork the repository and GitHub and clone it to your local machine using `git`. It is recommended to set up `probabilistic-numerics/website` as a second `upstream` remote so you can easily keep up-to-date with the main repository. More detail [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
 #### Installing Ruby and Bundler
 
