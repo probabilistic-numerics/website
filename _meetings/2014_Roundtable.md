@@ -15,7 +15,7 @@ summary: >
 
 link:
 img: /assets/img/meetings/2014_Roundtable.jpg
-img_copyright:
+img_caption:
 
 url_code:
 url_pdf:

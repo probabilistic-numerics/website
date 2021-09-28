@@ -14,8 +14,11 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
 
     {% if page.img %}
-    <div class="banner">
+    <div class="article-banner">
       <img src="{{ page.img | relative_url }}" alt="meeting thumbnail"/>
+      {% if page.img_caption %}
+      <span class="img-caption">{{ page.img_caption }}</span>
+      {% endif %}
     </div>
     {% endif %}
 

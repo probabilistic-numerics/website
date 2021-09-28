@@ -557,6 +557,35 @@ footer.sticky-bottom {
   }
 }
 
+// Images
+.article-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  position:relative;
+}
+
+.article-banner img {
+  max-width: 100%;
+}
+
+.img-caption {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0 auto;
+	padding: 2px 5px;
+	color: #fff;
+	font-size: .7em;
+	background: #000;
+	text-align: right;
+	z-index: 5;
+	opacity: .65;
+	border-radius: 5px 0 0 0;
+}
+
 
 // Rouge Color Customization
 figure.highlight {
