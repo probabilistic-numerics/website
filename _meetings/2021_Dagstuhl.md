@@ -33,4 +33,4 @@ The goals of this Dagstuhl Seminar are thus two-fold. First, we want to rekindle
 
 ## Schedule
 
-TBA
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FBerlin&mode=WEEK&dates=20211024/20211030&showNav=1&showCalendars=0&src=cHJvYm51bS5kYWdzdHVobEBnbWFpbC5jb20&color=%23F6BF26" style="border-width:0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
