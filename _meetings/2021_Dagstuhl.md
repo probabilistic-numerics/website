@@ -12,8 +12,8 @@ date_end: 2021-10-29
 summary: Dagstuhl seminar on probabilistic numerical methods and their implementation.
 
 link: https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21432
-img:
-img_copyright:
+img: /assets/img/meetings/2021_Dagstuhl.jpg
+img_caption: Schloss Dagstuhl by Jonathan Wenger
 
 url_code:
 url_pdf:

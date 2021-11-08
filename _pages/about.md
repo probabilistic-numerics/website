@@ -14,7 +14,7 @@ Mathematical models used to explain and predict the behaviour of complex systems
 
 ### Probabilistic Numerics
 
-Probabilistic numerics (PN) aims to quantify uncertainty arising from intractable or incomplete numerical computation and from stochastic input. *This new paradigm treats a numerical problem as one of statistical inference instead.* The probabilistic viewpoint provides a principled way to encode structural knowledge about a problem. By giving an explicit role to uncertainty from all sources, in particular from the computation itself, PN gives rise to new applications beyond the scope of classical methods.
+[Probabilistic numerics (PN)](https://en.wikipedia.org/wiki/Probabilistic_numerics) aims to quantify uncertainty arising from intractable or incomplete numerical computation and from stochastic input. *This new paradigm treats a numerical problem as one of statistical inference instead.* The probabilistic viewpoint provides a principled way to encode structural knowledge about a problem. By giving an explicit role to uncertainty from all sources, in particular from the computation itself, PN gives rise to new applications beyond the scope of classical methods.
 
 Typical numerical tasks to which PN may be applied include optimization, integration, the solution of ordinary and partial differential equations, and the basic tasks of linear algebra, e.g. solution of linear systems and eigenvalue problems.
 
