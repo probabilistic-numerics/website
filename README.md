@@ -55,22 +55,26 @@ Your suggested change is now subject to feedback and moderation by the maintaine
 #### Forking and Cloning the Repository
 Fork the repository and GitHub and clone it to your local machine using `git`. It is recommended to set up `probabilistic-numerics/website` as a second `upstream` remote so you can easily keep up-to-date with the main repository. More detail [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
-#### Installing Ruby and Bundler
+#### Installing Dependencies
 
-If you have a Mac or Linux machine try the following command:
+If you have a Mac or Linux machine try the following command to install Ruby and Bundler:
 
 ```bash
 sudo apt-get install ruby-dev
+sudo gem install bundler
 ```
 
+Then install the required dependencies and plugins for the site via:
+
 ```bash
-gem install bundler
+bundle install
 ```
 
 #### Making and Viewing Changes
 
+You can edit the website and view the changes in real time via:
+
 ```bash
-bundle install
 bundle exec jekyll serve --livereload --open-url
 ```
 
