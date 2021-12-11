@@ -6,12 +6,12 @@
     <div class="container">
       {% if site.logo != nil %}
       <div class="navbar-logo">
-        <a href="{{ site.baseurl | prepend: site.url }}/">
+        <a href="{{ site.baseurl }}/">
           <img src="{{ site.baseurl }}/{{ site.logo }}">
         </a>
       </div>
       {% else %}
-      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
+      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
         {{ site.title }}
       </a>
       {% endif %}
