@@ -4,7 +4,12 @@ title: Probabilistic Numerics
 subtitle: Computation as Machine Learning
 authors: Philipp Hennig, Michael A. Osborne, Hans Kersting
 description: >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim, risus ut pulvinar porttitor, erat nisl varius sem, ac malesuada mi odio ut ante. Maecenas feugiat porta ipsum in eleifend. Vestibulum elit leo, fringilla sit amet posuere sed, sodales ut nisi. Donec vel nunc quis lectus lacinia mattis ut quis nulla. Suspendisse nec eros lacus. Vestibulum sagittis tortor sed massa sollicitudin, eget aliquam nunc blandit. Nullam ultrices dictum iaculis. Donec auctor placerat congue. Nullam ut molestie sem, eget blandit odio. Vestibulum eu lacus ultricies lorem iaculis faucibus vel in purus.
-img: /assets/img/textbooks/probabilistic_numerics_hennigosborne2022_cover.png
+   Probabilistic numerical computation formalises the connection between machine learning and applied mathematics. Numerical algorithms approximate intractable quantities from computable ones. They estimate integrals from evaluations of the integrand, or the path of a dynamical system described by differential equations from evaluations of the vector field. In other words, they infer a latent quantity from data. This book shows that it is thus formally possible to think of computational routines as learning machines, and to use the notion of Bayesian inference to build more flexible, efficient, or customised algorithms for computation. The text caters for Masters' and PhD students, as well as postgraduate researchers in artificial intelligence, computer science, statistics, and applied mathematics. Extensive background material is provided along with a wealth of figures, worked examples, and exercises (with solutions) to develop intuition.
+   
+   Now available for pre-order at your local bookseller, [online](https://www.amazon.com/Probabilistic-Numerics-Computation-Machine-Learning/dp/1107163447), or at [CUP](https://www.cambridge.org/core/books/probabilistic-numerics/0EBFF0B15E2481099F6EED1F62EE1ABE)
+   
+   An free electronic version for personal use only will be published here alongside the mainline publication of the book.
+   
+img: /assets/img/textbooks/ProbabilisticNumercs_cover_small.png
 redirect: 404
 ---
