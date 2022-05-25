@@ -11,4 +11,5 @@ description: >
    An free electronic version for personal use only will be published here alongside the mainline publication of the book.
    
 img: /assets/img/textbooks/ProbabilisticNumercs_cover_small.png
+redirect: 404
 ---
