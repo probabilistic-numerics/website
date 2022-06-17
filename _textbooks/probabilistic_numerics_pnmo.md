@@ -8,7 +8,7 @@ description: >
    
    Now available for pre-order at your local bookseller, <a href="https://www.amazon.com/Probabilistic-Numerics-Computation-Machine-Learning/dp/1107163447">at Amazon</a>, or at <a href="https://www.cambridge.org/core/books/probabilistic-numerics/0EBFF0B15E2481099F6EED1F62EE1ABE">CUP</a>
    
-   A free electronic version for *personal use only* is available <a href="../assets/ProbabilisticNumerics.pdf">here</a>.
+   A free electronic version for <i>personal use only</i> is available <a href="../assets/ProbabilisticNumerics.pdf">here</a>.
    
 img: /assets/img/textbooks/ProbabilisticNumercs_cover_small.png
 ---
