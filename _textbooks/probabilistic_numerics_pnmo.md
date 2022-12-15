@@ -11,4 +11,5 @@ description: >
    A free electronic version for <i>personal use only</i> is available <a href="../assets/ProbabilisticNumerics.pdf">here</a>.
    
 img: /assets/img/textbooks/ProbabilisticNumercs_cover_small.png
+img-link: ../assets/ProbabilisticNumerics.pdf
 ---

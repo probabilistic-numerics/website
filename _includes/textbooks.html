@@ -19,7 +19,13 @@
         </div>
         {% if project.img %}
         <div class="card-img col-md-6">
+          {% if project.img-link %}
+          <a href="{{ project.img-link }}">
+          {% endif %}
           <img src="{{ project.img | relative_url }}" alt="project thumbnail" style="padding:1em">
+          {% if project.img-link %}
+          </a>
+          {% endif %}
         </div>
         {% endif %}
       </div>
