@@ -29,6 +29,30 @@
   }
 }
 
+// Code
+.codeblock {
+  display: block;
+  width: 90%;
+  min-height: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: monospace;
+  border: 1px solid #bbb;
+  padding: 1em;
+  white-space: pre-wrap;
+}
+
+// Videos
+div, iframe {
+  margin: 0 auto;
+}
+
+iframe {
+  display: block;
+  border-style:none;
+}
+
+
 // TODO: redefine content layout.
 
 
@@ -44,3 +68,5 @@
 *****************************************************************************/
 
 // TODO: redefine projects layout.
+
+

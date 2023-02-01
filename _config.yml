@@ -98,6 +98,9 @@ collections:
   meetings:
     output: true
     permalink: /meetings/:path/
+  teaching:
+    output: true
+    permalink: /teaching/:path/
   textbooks:
     output: true
     permalink: /textbooks/:path/

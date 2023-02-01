@@ -1,3 +1,6 @@
+"Bosch":
+  - firstname: ["Nathanael", "N."]
+    url: https://nathanaelbosch.github.io/
 "Cockayne":
   - firstname: ["Jon", "J."]
     url: http://www.joncockayne.com/
@@ -25,6 +28,12 @@
 "Owhadi":
   - firstname: ["Houman", "H"]
     url: http://users.cms.caltech.edu/~owhadi/index.htm
+"Pförtner":
+  - firstname: ["M.", "Marvin"]
+    url: https://marvinpfoertner.github.io/
+"Schneider":
+  - firstname: ["Frank", "F."]
+    url: https://fsschneider.netlify.app/
 "Sullivan":
   - firstname: ["T.", "Tim", "TJ", "Tim J", "T. J.", "Tim J."]
     url: http://www.tjsullivan.org.uk/

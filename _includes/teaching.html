@@ -1,0 +1,66 @@
+<div class="news">
+  {% if site.teaching %}
+  <div class="table-responsive">
+    <table class="table table-sm">
+      {% assign lectures = site.teaching | reverse %}
+      <tr>
+        <th class="date" style="width: 15%">Date</th>
+        <th class="lecture" style="width: 50%">Title</th>
+        <th class="organizers" style="width: 20%">Lecturer(s)</th>
+        <th class="location">Institution</th>
+      </tr>
+      {% for item in lectures %}
+      <tr>
+        <td scope="row">
+          {{ item.date | date: "%b %-d, %Y" }}
+          {% if item.date_end %}
+          - <br> {{item.date_end | date: "%b %-d, %Y" }}
+          {% endif %}
+        </td>
+        <td>
+          {% if item.inline %}
+          {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+          {% else %}
+          <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          {% endif %}
+        </td>
+        <td>
+          {% for author in item.lecturers %}
+          {% assign coauthor_url = nil %}
+          {% if site.data.coauthors[author.last] %}
+          {% for coauthor in site.data.coauthors[author.last] %}
+          {% if coauthor.firstname contains author.first %}
+          {% assign coauthor_url = coauthor.url %}
+          {% break %}
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+
+          {% if forloop.length == 1 %}
+          {{author.first}} {{author.last}}
+          {% else %}
+          {% unless forloop.last %}
+          {% if coauthor_url %}
+          <a href="{{coauthor_url}}" target="_blank">{{author.first}} {{author.last}}</a>,
+          {% else %}
+          {{author.first}} {{author.last}},
+          {% endif %}
+          {% else %}
+          {% if coauthor_url %}
+          <a href="{{coauthor_url}}" target="_blank">{{author.first}} {{author.last}}</a>
+          {% else %}
+          {{author.first}} {{author.last}}
+          {% endif %}
+          {% endunless %}
+          {% endif %}
+          {% endfor %}
+        </td>
+        <td>{{ item.institution }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% else %}
+  <p>No lectures to show.</p>
+  {% endif %}
+</div>
