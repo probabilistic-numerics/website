@@ -17,7 +17,7 @@ img_caption:
 url_video: https://youtube.com/playlist?list=PL05umP7R6ij2lwDdj7IkuHoP9vHlEcH0s
 url_slides: https://github.com/philipphennig/NumericsOfML
 url_pdf:
-url_code: https://github.com/philipphennig/NumericsOfML
+url_code: 
 ---
 
 ## Summary
