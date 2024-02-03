@@ -18,10 +18,6 @@ You can make simple changes (text changes, new meetings, literature additions) d
 
 In the top-right corner of the page, click **Fork**. More detail [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository).
 
-<div align="center">
-    <img src="https://docs.github.com/assets/cb-28613/images/help/repository/fork_button.png" width=400>
-</div>
-
 #### Creating a new Branch
 
 Create a new branch from the `main` branch named after your desired change.
