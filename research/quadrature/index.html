@@ -1,0 +1,3428 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Probabilistic Numerics
+
+
+  | Quadrature
+
+</title>
+<meta name="description" content="Quantifying Uncertainty in Computation.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#28bab4">
+<meta name="msapplication-TileColor" content="#28bab4">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/research/quadrature/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+
+
+
+
+
+<!-- Github -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+  <!-- Nav Bar -->
+  <nav id="navbar"
+    class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <div class="navbar-logo">
+        <a href="/">
+          <img src="/assets/img/logos/pn-logo-dark-txtright.svg">
+        </a>
+      </div>
+      
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li> -->
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Research
+              
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              
+              
+              <a class="dropdown-item" href="/research/general/">General</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/linear_algebra/">Linear Algebra</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/quadrature/">Quadrature</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/optimization/">Optimization</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/ode/">Ordinary Differential Equations</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/pde/">Partial Differential Equations</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/other/">Other</a>
+              
+              
+            </div>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/code/">
+              Code
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/meetings/">
+              Meetings
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/teaching/">
+              Teaching
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/textbooks/">
+              Textbooks
+              
+            </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Quadrature</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <div class="publications">
+<h2 class="bibliography">2020</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="fisher2020locally" class="col-sm-8">
+    
+      <div class="title">A locally adaptive Bayesian cubature method</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Fisher, Matthew,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Powell, Catherine,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Teckentrup, Aretha
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In International Conference on Artificial Intelligence and Statistics</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2018</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2018arXiv180104153X" class="col-sm-8">
+    
+      <div class="title">Bayesian Quadrature for Multiple Related Integrals</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Xi, X.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Briol, F.-X.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, M.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv e-prints</em>
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://arxiv.org/abs/1801.04153" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Bayesian probabilistic numerical methods are a set of tools providing posterior distributions on the output of numerical methods. The use of these methods is usually motivated by the fact that they can represent our uncertainty due to incomplete/finite information about the continuous mathematical problem being approximated. In this paper, we demonstrate that this paradigm can provide additional advantages, such as the possibility of transferring information between several numerical methods. This allows users to represent uncertainty in a more faithfully manner and, as a by-product, provide increased numerical efficiency. We propose the first such numerical method by extending the well-known Bayesian quadrature algorithm to the case where we are interested in computing the integral of several related functions. We then demonstrate its efficiency in the context of multi-fidelity models for complex engineering systems, as well as a problem of global illumination in computer graphics.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2017</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="kanagawa_convergence_2017" class="col-sm-8">
+    
+      <div class="title">Convergence Analysis of Deterministic Kernel-Based Quadrature Rules in Misspecified Settings</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kanagawa, Motonobu,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Sriperumbudur, Bharath K.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Fukumizu, Kenji
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv:1709.00147 [cs, math, stat]</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper presents convergence analysis of kernel-based quadrature rules in misspecified settings, focusing on deterministic quadrature in Sobolev spaces. In particular, we deal with misspecified settings where a test integrand is less smooth than a Sobolev RKHS based on which a quadrature rule is constructed. We provide convergence guarantees based on two different assumptions on a quadrature rule: one on quadrature weights, and the other on design points. More precisely, we show that convergence rates can be derived (i) if the sum of absolute weights remains constant (or does not increase quickly), or (ii) if the minimum distance between distance design points does not decrease very quickly. As a consequence of the latter result, we derive a rate of convergence for Bayesian quadrature in misspecified settings. We reveal a condition on design points to make Bayesian quadrature robust to misspecification, and show that, under this condition, it may adaptively achieve the optimal rate of convergence in the Sobolev space of a lesser order (i.e., of the unknown smoothness of a test integrand), under a slightly stronger regularity condition on the integrand.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2017arXiv170704723E" class="col-sm-8">
+    
+      <div class="title">Optimal Monte Carlo integration on closed manifolds</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Ehler, M.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Graef, M.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  and Oates, C. J.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv e-prints</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://arxiv.org/abs/1707.04723" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The worst case integration error in reproducing kernel Hilbert spaces of standard Monte Carlo methods with n random points decays as 1/sqrt(n). However, re-weighting of random points can sometimes be used to improve the convergence order. This paper contributes general theoretical results for Sobolev spaces on closed Riemannian manifolds, where we verify that such re-weighting yields optimal approximation rates up to a logarithmic factor. We also provide numerical experiments matching the theoretical results for some Sobolev spaces on the unit sphere and on the Grassmannian manifold. Our theoretical findings also cover function spaces on more general sets such as the unit ball, the cube, and the simplex.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="briol_sampling_2017" class="col-sm-8">
+    
+      <div class="title">On the Sampling Problem for Kernel Quadrature</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Briol, François-Xavier,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.joncockayne.com/" target="_blank">Cockayne, Jon</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Chen, Wilson Ye,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Thirty-fourth International Conference on Machine Learning (ICML 2017)</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The standard Kernel Quadrature method for numerical integration with random point sets (also called Bayesian Monte Carlo) is known to converge in root mean square error at a rate determined by the ratio \s/d where \s and \d encode the smoothness and dimension of the integrand. However, an empirical investigation reveals that the rate constant \C is highly sensitive to the distribution of the random points. In contrast to standard Monte Carlo integration, for which optimal importance sampling is well-understood, the sampling distribution that minimises \C for Kernel Quadrature does not admit a closed form. This paper argues that the practical choice of sampling distribution is an important open problem. One solution is considered; a novel automatic approach based on adaptive tempering and sequential Monte Carlo. Empirical results demonstrate a dramatic reduction in integration error of up to 4 orders of magnitude can be achieved with the proposed method.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="karvonen_fully_2017" class="col-sm-8">
+    
+      <div class="title">Fully symmetric kernel quadrature</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Karvonen, Toni,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Särkkä, Simo
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv:1703.06359 [cs, math, stat]</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Kernel quadratures and other kernel-based approximation methods typically suffer from prohibitive cubic time and quadratic space complexity in the number of function evaluations. The problem arises because a system of linear equations needs to be solved. In this article we show that the weights of a kernel quadrature rule can be computed efficiently and exactly for up to tens of millions of nodes if the kernel, integration domain, and measure are fully symmetric and the node set is a union of fully symmetric sets. This is based on the observations that in such a setting there are only as many distinct weights as there are fully symmetric sets and that these weights can be solved from a linear system of equations constructed out of row sums of certain submatrices of the full kernel matrix. We present several numerical examples that show feasibility, both for a large number of nodes and in high dimensions, of the developed fully symmetric kernel quadrature rules. Most prominent of the fully symmetric kernel quadrature rules we propose are those that use sparse grids.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="karvonen_classical_2017" class="col-sm-8">
+    
+      <div class="title">Classical quadrature rules via Gaussian processes</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Karvonen, Toni,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Särkkä, Simo
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In 2017 IEEE 27th International Workshop on Machine Learning for Signal Processing (MLSP)</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2016</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="oates_probabilistic_2016" class="col-sm-8">
+    
+      <div class="title">Probabilistic Models for Integration Error in the Assessment of Functional Cardiac Models</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Niederer, Steven,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Lee, Angela,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Briol, François-Xavier,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv:1606.06841 [stat]</em>
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper studies the numerical computation of integrals, representing estimates or predictions, over the output \f(x) of a computational model with respect to a distribution \p(}mathrm{d}x) over uncertain inputs \x to the model. For the functional cardiac models that motivate this work, neither \f nor \p possess a closed-form expression and evaluation of either requires {}approx 100 CPU hours, precluding standard numerical integration methods. Our proposal is to treat integration as an estimation problem, with a joint model for both the a priori unknown function \f and the a priori unknown distribution \p\. The result is a posterior distribution over the integral that explicitly accounts for dual sources of numerical approximation error due to a severely limited computational budget. This construction is applied to account, in a statistically principled manner, for the impact of numerical errors that (at present) are confounding factors in functional cardiac model assessment.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Pruher2016" class="col-sm-8">
+    
+      <div class="title">Bayesian Quadrature Variance in Sigma-Point Filtering</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Prüher, Jakub,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Šimandl, Miroslav
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://dx.doi.org/10.1007/978-3-319-31898-1_20" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+      <a href="https://github.com/jacobnzw/icinco-code" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Sigma-point filters are algorithms for recursive state estimation of the stochastic dynamic systems from noisy measurements, which rely on moment integral approximations by means of various numerical quadrature rules. In practice, however, it is hardly guaranteed that the system dynamics or measurement functions will meet the restrictive requirements of the classical quadratures, which inevitably results in approximation errors that are not accounted for in the current state-of-the-art sigma-point filters. We propose a method for incorporating information about the integral approximation error into the filtering algorithm by exploiting features of a Bayesian quadrature—an alternative to classical numerical integration. This is enabled by the fact that the Bayesian quadrature treats numerical integration as a statistical estimation problem, where the posterior distribution over the values of the integral serves as a model of numerical error. We demonstrate superior performance of the proposed filters on a simple univariate benchmarking example.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="NIPS2016-6174" class="col-sm-8">
+    
+      <div class="title">Convergence guarantees for kernel-based quadrature rules in misspecified settings</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kanagawa, Motonobu,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Sriperumbudur, Bharath K.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Fukumizu, Kenji
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://papers.nips.cc/paper/6174-convergence-guarantees-for-kernel-based-quadrature-rules-in-misspecified-settings" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Kernel-based quadrature rules are becoming important in machine learning and statistics, as they achieve super-\sqrtn convergence rates in numerical integration, and thus provide alternatives to Monte Carlo integration in challenging settings where integrands are expensive to evaluate or where integrands are high dimensional. These rules are based on the assumption that the integrand has a certain degree of smoothness, which is expressed as that the integrand belongs to a certain reproducing kernel Hilbert space (RKHS). However, this assumption can be violated in practice (e.g., when the integrand is a black box function), and no general theory has been established for the convergence of kernel quadratures in such misspecified settings. Our contribution is in proving that kernel quadratures can be consistent even when the integrand does not belong to the assumed RKHS, i.e., when the integrand is less smooth than assumed. Specifically, we derive convergence rates that depend on the (unknown) lesser smoothness of the integrand, where the degree of smoothness is expressed via powers of RKHSs or via Sobolev spaces.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2015</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2015arXiv150405994S" class="col-sm-8">
+    
+      <div class="title">On the relation between Gaussian process quadratures and sigma-point methods</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Särkkä, S.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Hartikainen, J.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Svensson, L.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Sandblom, F.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv preprint stat.ME 1504.05994</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This article is concerned with Gaussian process quadratures, which are numerical integration methods based on Gaussian process regression methods, and sigma-point methods, which are used in advanced non-linear Kalman filtering and smoothing algorithms. We show that many sigma-point methods can be interpreted as Gaussian quadrature based methods with suitably selected covariance functions. We show that this interpretation also extends to more general multivariate Gauss–Hermite integration methods and related spherical cubature rules. Additionally, we discuss different criteria for selecting the sigma-point locations: exactness for multivariate polynomials up to a given order, minimum average error, and quasi-random point sets. The performance of the different methods is tested in numerical experiments.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Jitkrittum1503" class="col-sm-8">
+    
+      <div class="title">Kernel-Based Just-In-Time Learning for Passing Expectation Propagation Messages</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Jitkrittum, W.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Gretton, A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Heess, N.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Eslami, S. M. A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Lakshminarayanan, B.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Sejdinovic, D.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Szabó, Z.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Uncertainty in Artificial Intelligence (UAI) 31</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We propose an efficient nonparametric strategy for learning a message operator in expectation propagation (EP), which takes as input the set of incoming messages to a factor node, and produces an outgoing message as output. This learned operator replaces the multivariate integral required in classical EP, which may not have an analytic expression. We use kernel-based regression, which is trained on a set of probability distributions representing the incoming messages, and the associated outgoing messages. The kernel approach has two main advantages: first, it is fast, as it is implemented using a novel two-layer random feature representation of the input message distributions; second, it has principled uncertainty estimates, and can be cheaply updated online, meaning it can request and incorporate new training data when it encounters inputs on which it is uncertain. In experiments, our approach is able to solve learning problems where a single message operator is required for multiple, substantially different data sets (logistic regression for a variety of classification problems), where it is essential to accurately assess uncertainty and to efficiently and robustly update the message operator.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="briol_frank-wolfe_2015" class="col-sm-8">
+    
+      <div class="title">Frank-Wolfe Bayesian Quadrature: Probabilistic Integration with Theoretical Guarantees</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Briol, François-Xavier,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Osborne, Michael A.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NIPS)</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>There is renewed interest in formulating integration as an inference problem, motivated by obtaining a full distribution over numerical error that can be propagated through subsequent computation. Current methods, such as Bayesian Quadrature, demonstrate impressive empirical performance but lack theoretical analysis. An important challenge is to reconcile these probabilistic integrators with rigorous convergence guarantees. In this paper, we present the first probabilistic integrator that admits such theoretical treatment, called Frank-Wolfe Bayesian Quadrature (FWBQ). Under FWBQ, convergence to the true value of the integral is shown to be exponential and posterior contraction rates are proven to be superexponential. In simulations, FWBQ is competitive with state-of-the-art methods and out-performs alternatives based on Frank-Wolfe optimisation. Our approach is applied to successfully quantify numerical error in the solution to a challenging model choice problem in cellular biology.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="bach2015equivalence" class="col-sm-8">
+    
+      <div class="title">On the Equivalence between Quadrature Rules and Random Features</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Bach, Francis
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv preprint arXiv:1502.06800</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>
+    We show that kernel-based quadrature rules for computing in tegrals can be seen as a special case of random feature expansions for positive definite kernels, for a particular decomposition that always exists for such kernels. We provide a theoretical analysis of the number of required samples for a given approximation error, leading to both upper and lower bounds that are based solely on the eigenvalues of the associated integral operator and match up to logarithmic terms. In particular, we show that the upper bound may be obtained from independent an d identically distributed samples from a specific non-uniform distribution, while the lower bo und if valid for any set of points. Applying our results to kernel-based quadrature, while our results are fairly general, we recover known upper and lower bounds for the special cases of Sobolev spaces. Moreover, our results extend to the more general problem of full function approxim ations (beyond simply computing an integral), with results in L2- and L∞-norm that match known results for special cases.  Applying our results to random features, we show an improvement of the number of random features needed to preserve the generalization guarantees for learning with Lipshitz-continuous losses.
+  </p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="briol_probabilistic_2015" class="col-sm-8">
+    
+      <div class="title">Probabilistic Integration: A Role for Statisticians in Numerical Analysis?</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Briol, François-Xavier,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Osborne, Michael A.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Sejdinovic, Dino
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv:1512.00933 [cs, math, stat]</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>A research frontier has emerged in scientific computation, founded on the principle that numerical error entails epistemic uncertainty that ought to be subjected to statistical analysis. This viewpoint raises several interesting challenges, including the design of statistical methods that enable the coherent propagation of probabilities through a (possibly deterministic) computational pipeline. This paper examines thoroughly the case for probabilistic numerical methods in statistical computation and a specific case study is presented for Markov chain and Quasi Monte Carlo methods. A probabilistic integrator is equipped with a full distribution over its output, providing a measure of epistemic uncertainty that is shown to be statistically valid at finite computational levels, as well as in asymptotic regimes. The approach is motivated by expensive integration problems, where, as in krigging, one is willing to expend, at worst, cubic computational effort in order to gain uncertainty quantification. There, probabilistic integrators enjoy the "best of both worlds", leveraging the sampling efficiency of Monte Carlo methods whilst providing a principled route to assessment of the impact of numerical error on scientific conclusions. Several substantial applications are provided for illustration and critical evaluation, including examples from statistical modelling, computer graphics and uncertainty quantification in oil reservoir modelling.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2014</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="sarkkagaussian" class="col-sm-8">
+    
+      <div class="title">Gaussian Process Quadratures in Nonlinear Sigma-Point
+                  Filtering and Smoothing</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Särkkä, Simo,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Hartikainen, Jouni,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Svensson, Lennart,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Sandblom, Fredrik
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In FUSION</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper is concerned with the use of Gaussian process
+                  regression based quadrature rules in the context of sigma-
+                  point-based nonlinear Kalman filtering and smoothing. We show
+                  how Gaussian process (i.e., Bayesian or Bayes–Hermite)
+                  quadratures can be used for numerical solving of the
+                  Gaussian integrals arising in the filters and smoothers. An
+                  interesting additional result is that with suitable
+                  selections of Hermite polynomial covariance functions the
+                  Gaussian process quadratures can be reduced to unscented
+                  transforms, spherical cubature rules, and to Gauss- Hermite
+                  rules previously proposed for approximate nonlinear Kalman
+                  filter and smoothing. Finally, the performance of the
+                  Gaussian process quadratures in this context is evaluated
+                  with numerical simulations. </p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="gunter14-fast-bayesian-quadrature" class="col-sm-8">
+    
+      <div class="title">Sampling for Inference in Probabilistic Models with Fast
+                  Bayesian Quadrature</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Gunter, Tom,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Osborne, Michael A.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Garnett, Roman,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Roberts, Stephen
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NIPS)</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+      <a href="https://github.com/OxfordML/wsabi" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We propose a novel sampling framework for inference in
+                  probabilistic models: an active learning approach that
+                  converges more quickly (in wall-clock time) than Markov chain
+                  Monte Carlo (MCMC) benchmarks. The central challenge in
+                  probabilistic inference is numerical integration, to average
+                  over ensembles of models or unknown (hyper-)parameters (for
+                  example to compute marginal likelihood or a partition
+                  function). MCMC has provided approaches to numerical
+                  integration that deliver state-of-the-art inference, but can
+                  suffer from sample inefficiency and poor convergence
+                  diagnostics. Bayesian quadrature techniques offer a
+                  model-based solution to such problems, but their uptake has
+                  been hindered by prohibitive computation costs. We introduce
+                  a warped model for probabilistic integrands (likelihoods)
+                  that are known to be non-negative, permitting a cheap active
+                  learning scheme to optimally select sample locations. Our
+                  algorithm is demonstrated to offer faster convergence (in
+                  seconds) relative to simple Monte Carlo and annealed
+                  importance sampling on both synthetic and real-world
+                  examples.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="NIPS2014_5595" class="col-sm-8">
+    
+      <div class="title">Just-In-Time Learning for Fast and Flexible Inference</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Eslami, S. M. Ali,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Tarlow, Daniel,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kohli, Pushmeet,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Winn, John
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NIPS) 27</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Much of research in machine learning has centered around the search for inference algorithms that are both general-purpose and efficient. The problem is extremely challenging and general inference remains computationally expensive. We seek to address this problem by observing that in most specific applications of a model, we typically only need to perform a small subset of all possible inference computations. Motivated by this, we introduce just-in-time learning, a framework for fast and flexible inference that learns to speed up inference at run-time. Through a series of experiments, we show how this framework can allow us to combine the flexibility of sampling with the efficiency of deterministic message-passing.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2012</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="osborne2012bayesian" class="col-sm-8">
+    
+      <div class="title">Bayesian quadrature for ratios</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Osborne, M.A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Garnett, R.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Roberts, S.J.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Hart, C.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Aigrain, S.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Gibson, N.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In International Conference on Artificial Intelligence and
+                  Statistics</em>
+      
+      
+        2012
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We describe a novel approach to quadrature for ratios of
+                  probabilistic integrals, such as are used to compute
+                  posterior probabilities. This approach offers performance
+                  superior to Monte Carlo methods by exploiting a Bayesian
+                  quadrature framework. We improve upon previous Bayesian
+                  quadrature techniques by explicitly modelling the
+                  non-negativity of our integrands, and the correlations that
+                  exist between them. It offers most where the integrand is
+                  multi-modal and expensive to evaluate. We demonstrate the
+                  efficacy of our method on data from the Kepler space
+                  telescope.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="osborne2012active" class="col-sm-8">
+    
+      <div class="title">Active Learning of Model Evidence Using Bayesian
+                  Quadrature.</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Osborne, M.A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Duvenaud, D.K.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Garnett, R.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Rasmussen, C.E.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Roberts, S.J.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Ghahramani, Z.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NIPS)</em>
+      
+      
+        2012
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p> Numerical integration is a key component of many problems in
+                  scientific computing, statistical modelling, and machine
+                  learning. Bayesian Quadrature is a model-based method for
+                  numerical integration which, relative to standard Monte Carlo
+                  methods, offers increased sample efficiency and a more robust
+                  estimate of the uncertainty in the estimated integral. We
+                  propose a novel Bayesian Quadrature approach for numerical
+                  integration when the integrand is non-negative, such as the
+                  case of computing the marginal likelihood, predictive
+                  distribution, or normalising constant of a probabilistic
+                  model. Our approach approximately marginalises the quadrature
+                  model’s hyperparameters in closed form, and introduces an ac-
+                  tive learning scheme to optimally select function
+                  evaluations, as opposed to using Monte Carlo samples. We
+                  demonstrate our method on both a number of synthetic
+                  benchmarks and a real scientific problem from astronomy.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2007</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Kong2007" class="col-sm-8">
+    
+      <div class="title">Further Explorations of Likelihood Theory for Monte Carlo Integration</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kong, Augustine,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  McCullagh, Peter,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Meng, Xiao-Li,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Nicolae, Dan L.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Advances in Statistical Modelling and Inference</em>
+      
+      
+        2007
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://www.worldscientific.com/doi/abs/10.1142/9789812708298_0028" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Monte-Carlo estimation of an integral is usually based on the method of moments or an estimating equation. Recently, Kong, McCullagh, Meng, Nicolae and Tan (2003) proposed a likelihood based theory, which puts Monte-Carlo estimation of integrals on a firmer, less ad hoc, basis by formulating the problem as a likelihood inference problems for the baseline measure with simulated observations as data. In this paper, we provide further exploration and development of this theory. After an overview of the likelihood formulation, we first demonstrate the power of the likelihood-based method by presenting a universally improved importance sampling estimator. We then prove that the formal, infinite-dimensional Fisher-information based variance calculation given in Kong et al. (2003) is asymptotically the same as the sampling based "sandwich" variance estimator. Next, we explore the gain in Monte Carlo efficiency when the baseline measure can be parameterized. Furthermore, we show how the Monte Carlo integration problem can also be dealt with by the method of empirical likelihood, and how the baseline measure parameter can be properly profiled out to form a profile likelihood for the integrals only. As a byproduct, we obtain four equivalent conditions for the existence of unique maximum likelihood estimate for mixture models with known components. We also discuss an apparent paradox for Bayesian inference with Monte Carlo integration.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2004</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Tan2004" class="col-sm-8">
+    
+      <div class="title">On a Likelihood Approach for Monte Carlo Integration</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Tan, Zhiqiang
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of the American Statistical Association</em>
+      
+      
+        2004
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://www.jstor.org/stable/27590482?seq=1#page_scan_tab_contents" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The use of estimating equations has been a common approach for constructing Monte Carlo estimators. Recently, Kong et al. proposed a formulation of Monte Carlo integration as a statistical model, making explicit what information is ignored and what is retained about the baseline measure. From simulated data, the baseline measure is estimated by maximum likelihood, and then integrals of interest are estimated by substituting the estimated measure. For two different situations in which independent observations are simulated from multiple distributions, we show that this likelihood approach achieves the lowest asymptotic variance possible by using estimating equations. In the first situation, the normalizing constants of the design distributions are estimated, and Meng andWong’s bridge sampling estimating equation is considered. In the second situation, the values of the normalizing constants are known, thereby imposing linear constraints on the baseline measure. Estimating equations including Hesterberg’s stratified importance sampling estimator, Veach and Guibas’s multiple importance sampling estimator, and Owen and Zhou’s method of control variates are considered.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2003</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Kong2003" class="col-sm-8">
+    
+      <div class="title">A theory of statistical models for Monte Carlo integration</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kong, Augustine,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  McCullagh, Peter,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Meng, Xiao-Li,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Nicolae, Dan L.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Tan, Zhiquiang
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of the Royal Statistical Society, Series B (Statistical Methodology)</em>
+      
+      
+        2003
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://onlinelibrary.wiley.com/doi/10.1111/1467-9868.00404/abstract" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The task of estimating an integral by Monte Carlo methods is formulated as a statistical model using simulated observations as data. The difficulty in this exercise is that we ordinarily have at our disposal all of the information required to compute integrals exactly by calculus or numerical integration, but we choose to ignore some of the information for simplicity or computational feasibility. Our proposal is to use a semiparametric statistical model that makes explicit what information is ignored and what information is retained. The parameter space in this model is a set of measures on the sample space, which is ordinarily an infinite dimensional object. None-the-less, from simulated data the base-line measure can be estimated by maximum likelihood, and the required integrals computed by a simple formula previously derived by Vardi and by Lindsay in a closely related model for biased sampling. The same formula was also suggested by Geyer and by Meng and Wong using entirely different arguments. By contrast with Geyer’s retrospective likelihood, a correct estimate of simulation error is available directly from the Fisher information. The principal advantage of the semiparametric model is that variance reduction techniques are associated with submodels in which the maximum likelihood estima-tor in the submodel may have substantially smaller variance than the traditional estimator. The method is applicable to Markov chain and more general Monte Carlo sampling schemes with multiple samplers.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2002</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="ghahramani2002bayesian" class="col-sm-8">
+    
+      <div class="title">Bayesian Monte Carlo</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Ghahramani, Zoubin,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Rasmussen, Carl E
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in neural information processing systems</em>
+      
+      
+        2002
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p> We investigate Bayesian alternatives to classical Monte Carlo
+    methods for evaluating integrals. Bayesian Monte Carlo (BMC) allows the in-
+    corporation of prior knowledge, such as smoothness of the integrand, into
+    the estimation. In a simple problem we show that this outperforms any
+    classical importance sampling method. We also attempt more chal- lenging
+    multidimensional integrals involved in computing marginal like- lihoods of
+    statistical models (a.k.a. partition functions and model evi- dences). We
+    find that Bayesian Monte Carlo outperformed Annealed Importance Sampling,
+    although for very high dimensional problems or problems with massive
+    multimodality BMC may be less adequate. One advantage of the Bayesian
+    approach to Monte Carlo is that samples can be drawn from any distribution.
+    This allows for the possibility of active design of sample points so as to
+    maximise information gain. </p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2000</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="minka2000deriving" class="col-sm-8">
+    
+      <div class="title">Deriving quadrature rules from Gaussian processes</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Minka, T.P.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2000
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://research.microsoft.com/en-us/um/people/minka/papers/quadrature.html" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Quadrature rules are often designed to achieve zero error on
+                  a small set of functions, e.g. polynomials of specified
+                  degree. A more robust method is to minimize average error
+                  over a large class or distribution of functions. If functions
+                  are distributed according to a Gaussian process, then
+                  designing an average-case quadrature rule reduces to solving
+                  a system of 2n equations, where n is the number of nodes in
+                  the rule (O’Hagan, 1991). It is shown how this very general
+                  technique can be used to design customized quadrature rules,
+                  in the style of Yarvin &amp; Rokhlin (1998), without the need for
+                  singular value decomposition and in any number of
+                  dimensions. It is also shown how classical Gaussian
+                  quadrature rules, trigonometric lattice rules, and spline
+                  rules can be extended to the average-case and to multiple
+                  dimensions by deriving them from Gaussian processes. In
+                  addition to being more robust, multidimensional quadrature
+                  rules designed for the average-case are found to be much less
+                  ambiguous than those designed for a given polynomial degree.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1998</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="kennedy1998bayesian" class="col-sm-8">
+    
+      <div class="title">Bayesian quadrature with non-normal approximating functions</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Kennedy, Marc
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Statistics and Computing</em>
+      
+      
+        1998
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+      <a href="http://dl.acm.org/citation.cfm?id=599295" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1996</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="kennedy1996iterative" class="col-sm-8">
+    
+      <div class="title">Iterative rescaling for Bayesian quadrature</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kennedy, MC,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and O’Hagan, A
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Bayesian Statistics</em>
+      
+      
+        1996
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1991</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="ohagan1991bayes" class="col-sm-8">
+    
+      <div class="title">Bayes–Hermite quadrature</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              O’Hagan, A.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of statistical planning and inference</em>
+      
+      
+        1991
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Bayesian quadrature treats the problem of numerical
+                  integration as one of statistical inference. A prior Gaussian
+                  process distribution is assumed for the integrand,
+                  observations arise from evaluating the integrand at selected
+                  points, and a posterior distribution is derived for the
+                  integrand and the integral. Methods are developed for
+                  quadrature in p. A particular application is integrating the
+                  posterior density arising from some other Bayesian analysis.
+                  Simulation results are presented, to show that the resulting
+                  Bayes–Hermite quadrature rules may perform better than the
+                  conventional Gauss–Hermite rules for this application. A key
+                  result is derived for product designs, which makes Bayesian
+                  quadrature practically useful for integrating in several
+                  dimensions. Although the method does not at present provide a
+                  solution to the more difficult problem of quadrature in high
+                  dimensions, it does seem to offer real improvements over
+                  existing methods in relatively low dimensions.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1987</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="OHagan1987" class="col-sm-8">
+    
+      <div class="title">Monte Carlo is Fundamentally Unsound</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              O’Hagan, A.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Journal of the Royal Statistical Society. Series D (The Statistician)</em>
+      
+      
+        1987
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://www.jstor.org/stable/2348519" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We present some fundamental objections to the Monte Carlo method of numerical integration.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+
+    <!-- 
+    <div class="watermark">
+      <img src="www.probabilistic-numerics.org/assets/img/logos/pn-watermark.svg">
+    </div>
+     -->
+
+    <div class="social">
+      <div class="contact-icons">
+        
+
+<a href="https://scholar.google.com/scholar?q=probabilistic+numerics" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+
+
+<a href="https://github.com/probabilistic-numerics" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    Open an <a href="https://github.com/probabilistic-numerics/website/issues">issue</a> or <a href="https://github.com/probabilistic-numerics/website/pulls">pull request</a> on GitHub to get in touch or suggest changes to this site.
+
+    <br><br>
+    &copy; Copyright 2024
+    <br>
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
