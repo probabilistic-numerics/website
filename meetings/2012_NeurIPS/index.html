@@ -11,7 +11,7 @@
   Probabilistic Numerics
 
 
-  | blog
+  | Workshop on Probabilistic Numerics
 
 </title>
 <meta name="description" content="Quantifying Uncertainty in Computation.
@@ -45,7 +45,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/meetings/2012_NeurIPS/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -114,18 +114,14 @@
           </li>
           
           <!-- Blog -->
-          <!-- <li class="nav-item active">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li> -->
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -265,58 +261,198 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>Probabilistic Numerics</h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Workshop on Probabilistic Numerics</h1>
 
-  <ul class="post-list">
     
-      <li>
-        <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">May 22, 2021</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2015/comments/">a post with comments</a></h3>
-        <p class="post-meta">October 20, 2015</p>
-        <p>an example of a blog post with comments</p>
-      </li>
-    
-  </ul>
+
+    <hr>
+    <table>
+      <tbody>
+        
+        <tr>
+          <td><b>When?</b></td>
+          <td>December 3, 2012
+             - December 8, 2012 
+
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Where?</b></td>
+          <td>Lake Tahoe, NV, United States</td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Organizers</b></td>
+          <td>
+            <!-- PhilippHennigJohn P.CunninghamMichaelOsborne -->
+            
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://uni-tuebingen.de/de/134782" target="_blank">Philipp Hennig</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://stat.columbia.edu/~cunningham/" target="_blank">John P. Cunningham</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Michael Osborne</a>
+                  
+              
+            
+          
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Official Site</b></td>
+          <td><a href="https://nips.cc/Conferences/2012">https://nips.cc/Conferences/2012</a></td>
+        </tr>
+        
+      </tbody>
+      </table>
+      <hr>
+  </header>
+
+  <article class="post-content">
+    <h2 id="overview">Overview</h2>
+
+<p>The traditional remit of machine learning is problems of inference on complex data. At the computational bottlenecks of our algorithms, we typically find a numerical problem: optimization, integration, sampling. These inner routines are often treated as a black box, but many of these tasks in numerics can be viewed as learning problems:</p>
+
+<ul>
+  <li>How can optimizers learn about the objective function, and how should they update their search direction? <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
+  <li>How should a quadrature method estimate an integral given observations of the integrand, and where should these methods put their evaluation nodes? <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></li>
+  <li>How should MCMC samplers adapt their proposal distributions given past evaluations of the unnormalised density? <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></li>
+  <li>Can approximate inference techniques be applied to numerical problems? <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>?</li>
+</ul>
+
+<p>Many of these problems can be seen as special cases of decision theory, active learning, or reinforcement learning. Work along these lines was pioneered twenty years ago by Diaconis <sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> and O’Hagan <sup id="fnref:2:1" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>. But modern desiderata for a numerical algorithm differ markedly from those common elsewhere in machine learning: Numerical methods are “inner-loop” algorithms, used as black boxes by large groups of users on wildly different problems. As such, robustness, computation and memory costs are more important here than raw prediction power or convergence speed. Availability of good implementations also matters. These kind of challenges can be well addressed by machine learning researchers, once the relevant community is brought together to discuss these topics.</p>
+
+<p>Some of the algorithms we use for numerical problems were developed generations ago. They have aged well, showing impressively good performance over a broad spectrum of problems. Of course, they also have a variety of shortcomings, which can be addressed by modern probabilistic models (see some of the work cited above). In the other direction, the numerical mathematics community, a much wider field than machine learning, is bringing experience, theoretical rigour and a focus on computational performance to the table. So there is great potential for cross-fertilization to both the machine learning and numerical mathematics community. The main goals of this workshop are</p>
+
+<ul>
+  <li>to bring numerical mathematicians and machine learning researchers into contact to discuss possible contributions of machine learning to numerical methods.</li>
+  <li>to present recent developments in probabilistic numerical methods.</li>
+  <li>to discuss future directions, performance measures, test problems, and code publishing standards for this young community.</li>
+</ul>
+
+<h2 id="schedule">Schedule</h2>
+
+<p>The workshop will consist of invited talks, a poster session and a panel discussion.</p>
+
+<hr />
+
+<table>
+	<tr><td width="50">07:30</td><td width="700">Introduction by
+	  the Organizers</td></tr>
+	<tr><td width="50">07:40</td><td width="700">Invited Talk:
+	<a href="http://lapmal.epfl.ch/"> Matthias
+       Seeger</a></td></tr>
+	<tr><td width="50">08:10</td><td width="700">Invited Talk:
+	  <a href="http://www.maths.ed.ac.uk/~gondzio/">Jacek Gondzio
+       </a></td></tr>
+	<tr><td width="50">08:50</td><td width="700">Coffee Break</td></tr>
+	<tr><td width="50">09:30</td><td width="700">Talk by <a href="http://mlg.eng.cam.ac.uk/duvenaud/">David
+	Duvenaud</a></td></tr>
+	<tr><td width="50">10:00</td><td width="700">Spotlights of
+	Poster Presentations</td></tr>
+	<tr><td width="50">10:10</td><td width="700">Poster Session and
+	Open Discussion</td></tr>
+	<tr><td width="50">10:30</td><td width="700">End of Morning
+	Session</td></tr>
+</table>
+<hr />
+
+<table>
+	<tr><td width="50">16:00</td><td width="700">Invited Talk:
+	<a href="http://www-stat.stanford.edu/~cgates/PERSI/">Persi
+       Diaconis</a></td></tr>
+	<tr><td width="50">16:45</td><td width="700">Invited Talk:
+	<a href="http://www.ucl.ac.uk/statistics/people/bencalderhead">Ben
+       Calderhead</a></td></tr>
+	<tr><td width="50">17:15</td><td width="700">Coffee Break
+	</td></tr>
+	<tr><td width="50">18:00</td><td width="700">Talk by <a href="http://www.is.tuebingen.mpg.de/nc/employee/details/phennig.html#=0">Philipp Hennig</a>
+	</td></tr>
+	<tr><td width="50">18:30</td><td width="700">Panel Discussion
+	and Concluding Remarks, hosted by <a href="http://cunningham.wustl.edu">John Cunningham</a>
+	</td></tr>
+	<tr><td width="50">19:00</td><td width="700">Workshop Ends
+	</td></tr>
+</table>
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>D.R. Jones, M. Schonlau, and W.J. Welch. Efficient global optimization of expensive black-box functions. Journal of Global Optimization, 13 (4): 455–492, 1998. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>Anthony O’Hagan. Some Bayesian Numerical Analysis. Bayesian Statistics, volume 4, pp. 345–363, 1992. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:2:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:3" role="doc-endnote">
+      <p>C.E. Rasmussen and Z. Ghahramani. Bayesian Monte Carlo. In Advances in Neural Information Processing Systems, volume 15, pp. 489–496, 2003. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:4" role="doc-endnote">
+      <p>T. P. Minka. Deriving quadrature rules from Gaussian processes. Technical report, Statistics Department, Carnegie Mellon University, 2000. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5" role="doc-endnote">
+      <p>H. Haario, E. Saksman, and J. Tamminen. An Adaptive Metropolis Algorithm. Bernoulli, volume 7, number 2, pp. 223–242, 2001. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:6" role="doc-endnote">
+      <p>J.P. Cunningham, P. Hennig, and S. Lacoste-Julien. Gaussian probabilities and expectation propagation. arXiv:1111.6832 [stat.ML], November 2011. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:7" role="doc-endnote">
+      <p>Bayesian numerical analysis. In S. Gupta J. Berger, editors, Statistical Decision Theory and Related Topics IV, volume 1, pages 163–175. Springer-Verlag, New York, 1988. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 

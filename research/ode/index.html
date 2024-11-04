@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Probabilistic Numerics
+
+
+  | Ordinary Differential Equations
+
+</title>
+<meta name="description" content="Quantifying Uncertainty in Computation.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#28bab4">
+<meta name="msapplication-TileColor" content="#28bab4">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/research/ode/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+
+
+
+
+
+<!-- Github -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+  <!-- Nav Bar -->
+  <nav id="navbar"
+    class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <div class="navbar-logo">
+        <a href="/">
+          <img src="/assets/img/logos/pn-logo-dark-txtright.svg">
+        </a>
+      </div>
+      
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li> -->
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Research
+              
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              
+              
+              <a class="dropdown-item" href="/research/general/">General</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/linear_algebra/">Linear Algebra</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/quadrature/">Quadrature</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/optimization/">Optimization</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/ode/">Ordinary Differential Equations</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/pde/">Partial Differential Equations</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/other/">Other</a>
+              
+              
+            </div>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/code/">
+              Code
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/meetings/">
+              Meetings
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/teaching/">
+              Teaching
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/textbooks/">
+              Textbooks
+              
+            </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ordinary Differential Equations</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <p>To avoid a frequent initial confusion for new readers, it may be helpful to
+point out that there are two common ways in which probabilistic methods are
+used in combination with ordinary differential equations: The “classic” problem
+of numerics is to infer the solution to an initial value problem given access
+to the differential equation. Below, we term this problem <a href="#solving-odes">“solving ODEs”</a>. The reverse problem, in some sense, has
+also found interest in machine learning: inferring a differential equation from
+(noisy) observations of trajectories that are assumed to be governed by this
+ODE. Below, this is listed under <a href="#inferring-odes">“inferring ODEs”</a>.</p>
+
+<h3 id="solving-odes">Solving ODEs</h3>
+
+<div class="publications">
+<h2 class="bibliography">2020</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="wang2020role" class="col-sm-8">
+    
+      <div class="title">A role for symmetry in the Bayesian solution of differential equations</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Wang, Junyang,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.joncockayne.com/" target="_blank">Cockayne, Jon</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://oates.work/" target="_blank">Oates, Chris J</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Bayesian Analysis</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2018</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2018arXiv180709737K" class="col-sm-8">
+    
+      <div class="title">Convergence Rates of Gaussian ODE Filters</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kersting, H.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Sullivan, T. J.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, P.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv e-prints</em>
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://arxiv.org/abs/1807.09737" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>A recently-introduced class of probabilistic (uncertainty-aware) solvers for ordinary differential equations (ODEs) applies Gaussian (Kalman) filtering to initial value problems. These methods model the true solution x and its first q derivatives a priori as a Gauss–Markov process X, which is then iteratively conditioned on information about x’. We prove worst-case local convergence rates of order h^q+1 for a wide range of versions of this Gaussian ODE filter, as well as global convergence rates of order h^q in the case of q=1 and an integrated Brownian motion prior, and analyze how inaccurate information on x’ coming from approximate evaluations of f affects these rates. Moreover, we present explicit formulas for the steady states and show that the posterior confidence intervals are well calibrated in all considered cases that exhibit global convergence—in the sense that they globally contract at the same rate as the truncation error.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2018arXiv180101340A" class="col-sm-8">
+    
+      <div class="title">Random time step probabilistic methods for uncertainty quantification in chaotic and geometric numerical integration</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Abdulle, A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Garegnani, G.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv e-prints</em>
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://arxiv.org/abs/1801.01340" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>A novel probabilistic numerical method for quantifying the uncertainty induced by the time integration of ordinary differential equations (ODEs) is introduced. Departing from the classical strategy to randomize ODE solvers by adding a random forcing term, we show that a probability measure over the numerical solution of ODEs can be obtained by introducing suitable random time-steps in a classical time integrator. This intrinsic randomization allows for the conservation of geometric properties of the underlying deterministic integrator such as mass conservation, symplecticity or conservation of first integrals. Weak and mean-square convergence analysis are derived. We also analyze the convergence of the Monte Carlo estimator for the proposed random time step method and show that the measure obtained with repeated sampling converges in mean-square sense independently of the number of samples. Numerical examples including chaotic Hamiltonian systems, chemical reactions and Bayesian inferential problems illustrate the accuracy, robustness and versatility of our probabilistic numerical method.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="teymur18" class="col-sm-8">
+    
+      <div class="title">Implicit Probabilistic Integrators for ODEs</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Teymur, Onur,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Lie, Han Cheng,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.tjsullivan.org.uk/" target="_blank">Sullivan, Tim</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Calderhead, Ben
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2018
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://nips.cc/Conferences/2018/Schedule?showEvent=11698" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We introduce a family of implicit probabilistic integrators for initial value problems (IVPs) taking as a starting point the multistep Adams–Moulton method. The implicit construction allows for dynamic feedback from the forthcoming time-step, by contrast with previous probabilistic integrators, all of which are based on explicit methods. We begin with a concise survey of the rapidly-expanding field of probabilistic ODE solvers. We then introduce our method, which builds on and adapts the work of Conrad et al. (2016) and Teymur et al. (2016), and provide a rigorous proof of its well-definedness and convergence. We discuss the problem of the calibration of such integrators and suggest one approach. We give an illustrative example highlighting the effect of the use of probabilistic integrators – including our new method – in the setting of parameter inference within an inverse problem.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2016</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2016arXiv161005261S" class="col-sm-8">
+    
+      <div class="title">A probabilistic model for the numerical solution of initial value problems</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Schober, M.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Särkkä, S.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, P.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv e-prints</em>
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://arxiv.org/abs/1610.05261" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Like many numerical methods, solvers for initial value problems (IVPs) on ordinary differential equations estimate an analytically intractable quantity, using the results of tractable computations as inputs. This structure is closely connected to the notion of inference on latent variables in statistics. We describe a class of algorithms that formulate the solution to an IVP as inference on a latent path that is a draw from a Gaussian process probability measure (or equivalently, the solution of a linear stochastic differential equation). We then show that certain members of this class are connected precisely to generalized linear methods for ODEs, a number of Runge–Kutta methods, and Nordsieck methods. This probabilistic formulation of classic methods is valuable in two ways: analytically, it highlights implicit prior assumptions favoring certain approximate solutions to the IVP over others, and gives a precise meaning to the old observation that these methods act like filters. Practically, it endows the classic solvers with ‘docking points’ for notions of uncertainty and prior information about the initial value, the value of the ODE itself, and the solution of the problem.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="KerstingHennigUAI2016" class="col-sm-8">
+    
+      <div class="title">Active Uncertainty Calibration in Bayesian ODE Solvers</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kersting, Hans P.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Uncertainty in Artificial Intelligence (UAI)</em>
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://arxiv.org/abs/1605.03364" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>There is resurging interest, in statistics and machine learning, in solvers for ordinary differential equations (ODEs) that return probability measures instead of point estimates. Recently, Conrad et al. introduced a sampling-based class of methods that are ’well-calibrated’ in a specific sense. But the computational cost of these methods is significantly above that of classic methods. On the other hand, Schober et al. pointed out a precise connection between classic Runge-Kutta ODE solvers and Gaussian filters, which gives only a rough probabilistic calibration, but at negligible cost overhead. By formulating the solution of ODEs as approximate inference in linear Gaussian SDEs, we investigate a range of probabilistic ODE solvers, that bridge the trade-off between computational cost and probabilistic calibration, and identify the inaccurate gradient measurement as the crucial source of uncertainty. We propose the novel filtering-based method Bayesian Quadrature filtering (BQF) which uses Bayesian quadrature to actively learn the imprecision in the gradient measurement by collecting multiple gradient evaluations.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="teymur16" class="col-sm-8">
+    
+      <div class="title">Probabilistic Linear Multistep Methods</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Teymur, Onur,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Zygalakis, Kostas,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Calderhead, Ben
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://papers.nips.cc/paper/6356-probabilistic-linear-multistep-methods" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We present a derivation and theoretical investigation of the Adams-Bashforth and Adams-Moulton family of linear multistep   methods for solving ordinary differential equations, starting from a Gaussian process (GP) framework. In the limit, this formulation coincides with the classical deterministic methods, which have been used as higher-order initial value problem solvers for over a century. Furthermore, the natural probabilistic framework provided by the GP formulation allows us to derive probabilistic versions of these methods, in the spirit of a number of other probabilistic ODE solvers presented in the recent literature. In contrast to higher-order Runge-Kutta methods, which require multiple intermediate function evaluations per step, Adams family methods make use of previous function evaluations, so that increased accuracy arising from a higher-order multistep approach comes at very little additional computational cost. We show that through a careful choice of covariance function for the GP, the posterior mean and standard deviation over the numerical solution can be made to exactly coincide with the value given by the deterministic method and its local truncation error respectively. We provide a rigorous proof of the convergence of these new methods, as well as an empirical investigation (up to fifth order) demonstrating their convergence rates in practice.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2015</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Hauberg_MICCAI_2015" class="col-sm-8">
+    
+      <div class="title">A Random Riemannian Metric for Probabilistic Shortest-Path Tractography</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Hauberg, Søren,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Schober, Michael,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Liptrot, Matthew,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Feragen, Aasa
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Medical Image Computing and Computer-Assisted Intervention (MICCAI)</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Shortest-path tractography (SPT) algorithms solve global optimization problems defined from local distance functions. As diffusion MRI data is inherently noisy, so are the voxelwise tensors from which local distances are derived. We extend Riemannian SPT by modeling the stochasticity of the diffusion tensor as a “random Riemannian metric”, where a geodesic is a distribution over tracts. We approximate this distribution with a Gaussian process and present a probabilistic numerics algorithm for computing the geodesic distribution. We demonstrate SPT improvements on data from the Human Connectome Project.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2014</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2014arXiv14083807B" class="col-sm-8">
+    
+      <div class="title">On solving Ordinary Differential Equations using Gaussian
+                  Processes</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Barber, D.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>ArXiv pre-print 1408.3807</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://arxiv.org/abs/1408.3807" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We describe a set of Gaussian Process based approaches that
+                  can be used to solve non-linear Ordinary Differential
+                  Equations. We suggest an explicit probabilistic solver and
+                  two implicit methods, one analogous to Picard iteration and
+                  the other to gradient matching. All methods have greater
+                  accuracy than previously suggested Gaussian Process
+                  approaches. We also suggest a general approach that can yield
+                  error estimates from any standard ODE solver.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="HennigAISTATS2014" class="col-sm-8">
+    
+      <div class="title">Probabilistic Solutions to Differential Equations and their
+                  Application to Riemannian Statistics</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Hauberg, Søren
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Proc. of the 17th int. Conf. on Artificial Intelligence and
+                  Statistics (AISTATS)</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+      <a href="http://www.probabilistic-numerics.org/GP_ODE_Solver.zip" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We study a probabilistic numerical method for the solution of
+                  both boundary and initial value problems that returns a joint
+                  Gaussian process posterior over the solution. Such methods
+                  have concrete value in the statistics on Riemannian
+                  manifolds, where non-analytic ordinary differential equations
+                  are involved in virtually all computations. The probabilistic
+                  formulation permits marginalising the uncertainty of the
+                  numerical solution such that statistics are less sensitive to
+                  inaccuracies. This leads to new Riemannian algorithms for
+                  mean value computations and principal geodesic
+                  analysis. Marginalisation also means results can be less
+                  precise than point estimates, enabling a noticeable speed-up
+                  over the state of the art. Our approach is an argument for a
+                  wider point that uncertainty caused by numerical calculations
+                  should be tracked throughout the pipeline of machine learning
+                  algorithms.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="LNCS86750265" class="col-sm-8">
+    
+      <div class="title">Probabilistic shortest path tractography in DTI using
+                  Gaussian Process ODE solvers</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Schober, Michael,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kasenburg, Niklas,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Feragen, Aasa,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Hauberg, Søren
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Medical Image Computing and Computer-Assisted Intervention –
+                  MICCAI 2014</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Tractography in diffusion tensor imaging estimates
+                  connectivity in the brain through observations of local
+                  diffusivity. These observations are noisy and of low
+                  resolution and, as a consequence, connections cannot be found
+                  with high precision. We use probabilistic numerics to
+                  estimate connectivity between regions of interest and
+                  contribute a Gaussian Process tractography algorithm which
+                  allows for both quantification and visualization of its
+                  posterior uncertainty. We use the uncertainty both in
+                  visualization of individual tracts as well as in heat maps of
+                  tract locations.  Finally, we provide a quantitative
+                  evaluation of different metrics and algorithms showing that
+                  the adjoint metric combined with our algorithm produces paths
+                  which agree most often with experts.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="schober2014nips" class="col-sm-8">
+    
+      <div class="title">Probabilistic ODE Solvers with Runge-Kutta Means</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Schober, Michael,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Duvenaud, David K,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Runge-Kutta methods are the classic family of solvers for
+                  ordinary differential equations (ODEs), and the basis for the
+                  state of the art. Like most numerical methods, they return
+                  point estimates. We construct a family of probabilistic
+                  numerical methods that instead return a Gauss-Markov process
+                  defining a probability distribution over the ODE solution. In
+                  contrast to prior work, we construct this family such that
+                  posterior means match the outputs of the Runge-Kutta family
+                  exactly, thus inheriting their proven good
+                  properties. Remaining degrees of freedom not identified by
+                  the match to Runge-Kutta are chosen such that the posterior
+                  probability measure fits the observed structure of the
+                  ODE. Our results shed light on the structure of Runge-Kutta
+                  solvers from a new direction, provide a richer, probabilistic
+                  output, have low computational cost, and raise new research
+                  questions.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2013</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="PhysRevE87022719" class="col-sm-8">
+    
+      <div class="title">Simulation of stochastic network dynamics via entropic matching</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Ramalho, Tiago,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Selig, Marco,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Gerland, Ulrich,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Enßlin, Torsten A.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Phys. Rev. E</em>
+      
+      
+        2013
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="https://link.aps.org/doi/10.1103/PhysRevE.87.022719" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The simulation of complex stochastic network dynamics arising, for instance, from models of coupled biomolecular processes remains computationally challenging. Often, the necessity to scan a model’s dynamics over a large parameter space renders full-fledged stochastic simulations impractical, motivating approximation schemes. Here we propose an approximation scheme which improves upon the standard linear noise approximation while retaining similar computational complexity. The underlying idea is to minimize, at each time step, the Kullback-Leibler divergence between the true time evolved probability distribution and a Gaussian approximation (entropic matching). This condition leads to ordinary differential equations for the mean and the covariance matrix of the Gaussian. For cases of weak nonlinearity, the method is more accurate than the linear method when both are compared to stochastic simulations.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="13_bayes_uncer_quant_differ_equat" class="col-sm-8">
+    
+      <div class="title">Bayesian Uncertainty Quantification for Differential
+                  Equations</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Chkrebtii, O.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Campbell, D.A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Girolami, M.A.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Calderhead, B.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Bayesin Analysis (discussion paper)</em>
+      
+      
+        2013
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://arxiv.org/abs/1306.2365" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper advocates expansion of the role of Bayesian
+                  statistical inference when formally quantifying uncertainty
+                  in computer models defined by systems of ordinary or partial
+                  differential equations. We adopt the perspective that
+                  implicitly defined infinite dimensional functions
+                  representing model states are objects to be inferred
+                  probabilistically. We develop a general methodology for the
+                  probabilistic integration of differential equations via model
+                  based updating of a joint prior measure on the space of
+                  functions and their temporal and spatial derivatives. This
+                  results in a posterior measure over functions reflecting how
+                  well they satisfy the system of differential equations and
+                  corresponding initial and boundary values. We show how this
+                  posterior measure can be naturally incorporated within the
+                  Kennedy and O’Hagan framework for uncertainty quantification
+                  and provides a fully Bayesian approach to model
+                  calibration. By taking this probabilistic viewpoint, the full
+                  force of Bayesian inference can be exploited when seeking to
+                  coherently quantify and propagate epistemic uncertainty in
+                  computer models of complex natural and physical systems. A
+                  broad variety of examples are provided to illustrate the
+                  potential of this framework for characterising discretization
+                  uncertainty, including initial value, delay, and boundary
+                  value differential equations, as well as partial differential
+                  equations. We also demonstrate our methodology on a large
+                  scale system, by modeling discretization uncertainty in the
+                  solution of the Navier-Stokes equations of fluid flow,
+                  reduced to over 16,000 coupled and stiff ordinary
+                  differential equations. Finally, we discuss the wide range of
+                  open research themes that follow from the work presented.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2009</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Mosbach2009" class="col-sm-8">
+    
+      <div class="title">A quantitative probabilistic investigation into the accumulation of rounding errors in numerical ODE solution</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Mosbach, Sebastian,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Turner, Amanda G.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Computers &amp; Mathematics with Applications</em>
+      
+      
+        2009
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://arxiv.org/abs/math/0512364" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>We examine numerical rounding errors of some deterministic solvers for systems of ordinary differential equations (ODEs). We show that the accumulation of rounding errors results in a solution that is inherently random and we obtain the theoretical distribution of the trajectory as a function of time, the step size and the numerical precision of the computer. We consider, in particular, systems which amplify the effect of the rounding errors so that over long time periods the solutions exhibit divergent behaviour. By performing multiple repetitions with different values of the time step size, we observe numerically the random distributions predicted theoretically. We mainly focus on the explicit Euler and RK4 methods but also briefly consider more complex algorithms such as the implicit solvers VODE and RADAU5.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2003</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="graepel2003solving" class="col-sm-8">
+    
+      <div class="title">Solving noisy linear operator equations by Gaussian
+                  processes: Application to ordinary and partial differential
+                  equations</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Graepel, Thore
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In ICML</em>
+      
+      
+        2003
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1991</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="skilling1991bayesian" class="col-sm-8">
+    
+      <div class="title">Bayesian solution of ordinary differential equations</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              Skilling, J.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Maximum Entropy and Bayesian Methods, Seattle</em>
+      
+      
+        1991
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>In the numerical solution of ordinary differential equations,
+                  a function y(x) is to be reconstructed from knowledge of the
+                  functional form of its derivative: dy/dx=f(x,y), together
+                  with an appropriate boundary condition. The derivative f is
+                  evaluated at a sequence of suitably chosen points (x_k,y_k),
+                  from which the form of y(.) is estimated. This is an
+                  inference problem, which can and perhaps should be treated by
+                  Bayesian techniques. As always, the inference appears as a
+                  probability distribution prob(y(.)), from which random
+                  samples show the probabilistic reliability of the
+                  results. Examples are given.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1973</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Kuki1973" class="col-sm-8">
+    
+      <div class="title">A Statistical Study Of The Accuracy Of Floating Point Number Systems</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Kuki, H.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Cody, W. J.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Communications of the ACM</em>
+      
+      
+        1973
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://doi.acm.org/10.1145/362003.362013" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper presents the statistical results of tests of the accuracy of certain arithmetic systems in evaluating sums, products and inner products, and analytic error estimates for some of the computations. The arithmetic systems studied are 6-digit hexadecimal and 22-digit binary floating point number representations combined with the usual chop and round modes of arithmetic with various numbers of guard digits, and with a modified round mode with guard digits. In a certain sense, arithmetic systems differing only in their use of binary or hexadecimal number representations are shown to be approximately statistically equivalent in accuracy. Further, the usual round mode with guard digits is shown to be statistically superior in accuracy to the usual chop mode in all cases save one. The modified round mode is found to be superior to the chop mode in all cases.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">1966</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="Hull1966" class="col-sm-8">
+    
+      <div class="title">Test of Probabilistic Models for the Propagation of Roundoff Errors</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Hull, T. E.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Swenson, J. R.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Communications of the ACM</em>
+      
+      
+        1966
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://dl.acm.org/citation.cfm?id=365696.365698" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>In any prolonged computation it is generally assumed that the accumulated effect of roundoff errors is in some sense statistical. The purpose of this paper is to give precise descriptions of certain probabilistic models for roundoff error, and then to described a series of experiments for testing the validity of these models. It is concluded that the models are in general very good. Discrepancies are both rare and mild. The test techniques can also be used to experiment with various types of special arithmetic.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+</div>
+
+<h3 id="inferring-odes">Inferring ODEs</h3>
+
+<div class="publications">
+<h2 class="bibliography">2017</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="NIPS2017_7066" class="col-sm-8">
+    
+      <div class="title">Scalable Variational Inference for Dynamical Systems</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Gorbach, Nico S,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Bauer, Stefan,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Buhmann, Joachim M
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://papers.nips.cc/paper/7066-scalable-variational-inference-for-dynamical-systems" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Gradient matching is a promising tool for learning parameters and state dynamics of ordinary differential equations. It is a grid free inference approach, which, for fully observable systems is at times competitive with numerical integration. However, for many real-world applications, only sparse observations are available or even unobserved variables are included in the model description. In these cases most gradient matching methods are difficult to apply or simply do not provide satisfactory results. That is why, despite the high computational cost, numerical integration is still the gold standard in many applications. Using an existing gradient matching approach, we propose a scalable variational inference framework which can infer states and parameters simultaneously, offers computational speedups, improved accuracy and works well even under model misspecifications in a partially observable system.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2014</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="wang-barber-ICML-14" class="col-sm-8">
+    
+      <div class="title">Gaussian Processes for Bayesian Estimation in Ordinary
+                  Differential Equations</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Wang, Yali,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Barber, David
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In International Conference on Machine Learning – ICML</em>
+      
+      
+        2014
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Bayesian parameter estimation in coupled ordinary
+                  differential equations (ODEs) is challenging due to the high
+                  computational cost of numerical integration. In gradient
+                  matching a separate data model is introduced with the
+                  property that its gradient may be calculated
+                  easily. Parameter estimation is then achieved by requiring
+                  consistency between the gradients computed from the data
+                  model and those specified by the ODE. We propose a Gaussian
+                  process model that directly links state derivative
+                  information with system observations, simplifying previous
+                  approaches and improving estimation accuracy.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2013</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="korostil2013adaptive" class="col-sm-8">
+    
+      <div class="title">Adaptive Markov chain Monte Carlo forward projection for
+                  statistical analysis in epidemic modelling of human
+                  papillomavirus</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Korostil, Igor A,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Peters, Gareth W,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Cornebise, Julien,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Regan, David G
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Statistics in medicine</em>
+      
+      
+        2013
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+    
+      <a href="http://arxiv.org/abs/1108.3137" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>A Bayesian statistical model and estimation methodology based on
+                  forward projection adaptive Markov chain Monte Carlo is
+                  developed in order to perform the calibration of a
+                  high-dimensional nonlinear system of ordinary differential
+                  equations representing an epidemic model for human
+                  papillomavirus types 6 and 11 (HPV-6, HPV-11). The model is
+                  compartmental and involves stratification by age, gender and
+                  sexual-activity group. Developing this model and a means to
+                  calibrate it efficiently is relevant because HPV is a very
+                  multi-typed and common sexually transmitted infection with
+                  more than 100 types currently known. The two types studied in
+                  this paper, types 6 and 11, are causing about 90% of
+                  anogenital warts. We extend the development of a sexual
+                  mixing matrix on the basis of a formulation first suggested
+                  by Garnett and Anderson, frequently used to model sexually
+                  transmitted infections. In particular, we consider a
+                  stochastic mixing matrix framework that allows us to jointly
+                  estimate unknown attributes and parameters of the mixing
+                  matrix along with the parameters involved in the calibration
+                  of the HPV epidemic model. This matrix describes the sexual
+                  interactions between members of the population under study
+                  and relies on several quantities that are a priori
+                  unknown. The Bayesian model developed allows one to estimate
+                  jointly the HPV-6 and HPV-11 epidemic model parameters as
+                  well as unknown sexual mixing matrix parameters related to
+                  assortativity. Finally, we explore the ability of an
+                  extension to the class of adaptive Markov chain Monte Carlo
+                  algorithms to incorporate a forward projection strategy for
+                  the ordinary differential equation state
+                  trajectories. Efficient exploration of the Bayesian posterior
+                  distribution developed for the ordinary differential equation
+                  parameters provides a challenge for any Markov chain sampling
+                  methodology, hence the interest in adaptive Markov chain
+                  methods. We conclude with simulation studies on synthetic and
+                  recent actual data.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2009</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="NIPS2008_3497" class="col-sm-8">
+    
+      <div class="title">Accelerating Bayesian Inference over Nonlinear Differential
+                  Equations with Gaussian Processes</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Calderhead, Ben,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Lawrence, Neil D.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2009
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+    
+      <a href="http://papers.nips.cc/paper/3497-accelerating-bayesian-inference-over-nonlinear-differential-equations-with-gaussian-processes" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+  </div>
+</div>
+</li></ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+
+    <!-- 
+    <div class="watermark">
+      <img src="www.probabilistic-numerics.org/assets/img/logos/pn-watermark.svg">
+    </div>
+     -->
+
+    <div class="social">
+      <div class="contact-icons">
+        
+
+<a href="https://scholar.google.com/scholar?q=probabilistic+numerics" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+
+
+<a href="https://github.com/probabilistic-numerics" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    Open an <a href="https://github.com/probabilistic-numerics/website/issues">issue</a> or <a href="https://github.com/probabilistic-numerics/website/pulls">pull request</a> on GitHub to get in touch or suggest changes to this site.
+
+    <br><br>
+    &copy; Copyright 2024
+    <br>
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
