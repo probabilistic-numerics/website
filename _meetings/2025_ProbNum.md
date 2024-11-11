@@ -6,8 +6,8 @@ event: Eurecom
 location: Sophia Antipolis, France
 organizers: [["Motonobu", "Kanagawa"], ["Alexandra", "Gessner"], ["Jon", "Cockayne"], ["Philipp", "Hennig"]]
 
-date: 2025-06-01
-date_end: 2025-06-03
+date: 2025-09-01
+date_end: 2025-09-03
 
 summary: The first annual International Conference on Probabilistic Numerics.
 
