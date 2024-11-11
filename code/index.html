@@ -11,7 +11,7 @@
   Probabilistic Numerics
 
 
-  | blog
+  | Code
 
 </title>
 <meta name="description" content="Quantifying Uncertainty in Computation.
@@ -45,7 +45,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/code/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -114,18 +114,14 @@
           </li>
           
           <!-- Blog -->
-          <!-- <li class="nav-item active">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li> -->
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -211,9 +207,11 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/code/">
               Code
+              
+              <span class="sr-only">(current)</span>
               
             </a>
           </li>
@@ -267,56 +265,104 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Probabilistic Numerics</h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Code</h1>
+    <p class="post-description">Software packages implementing probabilistic numerical methods.</p>
+  </header>
 
+  <article>
+    <div class="projects">
+  
+  <!-- Display categorized projects -->
+    
+      <h2 class="category">Python</h2>
+      
+      
+      <!-- Generate cards for each project -->
+        <div class="container">
+          <div class="row row-cols-1">
+          
+            <div class="card-item col">
+  
+  <a href="http://probnum.org" target="_blank">
+    
+      <div class="card hoverable">
+        <div class="row g-0">
+          
+          <div class="col-md-6">
+            
+              <div class="card-body">
+                <h2 class="card-title">ProbNum</h2>
+                <p>Learn to Approximate. Approximate to Learn.</p>
+                <p class="card-text">ProbNum is a Python toolkit for solving numerical problems in linear algebra, optimization, quadrature and differential equations. ProbNum solvers not only estimate the solution of the numerical problem, but also its uncertainty (numerical error) which arises from finite computational resources, discretization and stochastic input. This numerical uncertainty can be used in downstream decisions.<br /><br /></p>
+                <div class="row ml-1 mr-1 p-0">
+                  
+                  <a class="github-button" href="https://github.com/probabilistic-numerics/probnum" data-size="large" data-show-count="true" aria-label="GitHub">GitHub</a>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-img col-md-6">
+              <img src="/assets/img/code/probnum.png" alt="code thumbnail" style="padding:1.5em" />
+            </div>
+            
+          </div>
+        </div>
+    </a>
+</div>
 
-  <ul class="post-list">
+          
+          </div>
+        </div>
     
-      <li>
-        <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">May 22, 2021</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
+      <h2 class="category">Julia</h2>
+      
+      
+      <!-- Generate cards for each project -->
+        <div class="container">
+          <div class="row row-cols-1">
+          
+            <div class="card-item col">
+  
+  <a href="https://nathanaelbosch.github.io/ProbNumDiffEq.jl/stable/" target="_blank">
     
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
+      <div class="card hoverable">
+        <div class="row g-0">
+          
+          <div class="col-md-6">
+            
+              <div class="card-body">
+                <h2 class="card-title">ProbNumDiffEq.jl</h2>
+                <p>Probabilistic numerical ODE solvers in Julia.</p>
+                <p class="card-text">ProbNumDiffEq.jl provides probabilistic numerical ODE solvers to the DifferentialEquations.jl ecosystem. The implemented ODE filters solve differential equations via Bayesian filtering and smoothing and compute not just a single point estimate of the true solution, but a posterior distribution that contains an estimate of its numerical approximation error.<br /><br /></p>
+                <div class="row ml-1 mr-1 p-0">
+                  
+                  <a class="github-button" href="https://github.com/nathanaelbosch/ProbNumDiffEq.jl" data-size="large" data-show-count="true" aria-label="GitHub">GitHub</a>
+                  
+                </div>
+              </div>
+            </div>
+            
+            <div class="card-img col-md-6">
+              <img src="/assets/img/code/probnumdiffeqjl.png" alt="code thumbnail" style="padding:1.5em" />
+            </div>
+            
+          </div>
+        </div>
+    </a>
+</div>
+
+          
+          </div>
+        </div>
     
-      <li>
-        <h3><a class="post-title" href="/blog/2015/comments/">a post with comments</a></h3>
-        <p class="post-meta">October 20, 2015</p>
-        <p>an example of a blog post with comments</p>
-      </li>
-    
-  </ul>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
 
+</div>
 
+  </article>
 
 </div>
 

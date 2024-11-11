@@ -11,8 +11,6 @@
   Probabilistic Numerics
 
 
-  | blog
-
 </title>
 <meta name="description" content="Quantifying Uncertainty in Computation.
 ">
@@ -45,7 +43,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -84,8 +82,7 @@
     <header>
 
   <!-- Nav Bar -->
-  <nav id="navbar"
-    class="navbar navbar-light navbar-expand-sm fixed-top">
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
       
       <div class="navbar-logo">
@@ -96,8 +93,7 @@
       
       
       <!-- Navbar Toggle -->
-      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar top-bar"></span>
         <span class="icon-bar middle-bar"></span>
@@ -106,19 +102,19 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/">
               About
+              
+              <span class="sr-only">(current)</span>
               
             </a>
           </li>
           
           <!-- Blog -->
-          <!-- <li class="nav-item active">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li> -->
@@ -158,11 +154,8 @@
           
           
           
-          
-          
           <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Research
               
             </a>
@@ -267,56 +260,138 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>Probabilistic Numerics</h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+  <header class="post-header">
+    <div class="banner">
+      <img src="/assets/img/logos/pn-logo-dark-txtbelow.svg" alt="probabilistic numerics" title="Probabilistic Numerics in Python">
+    </div>
+    <br><br>
+  </header>
 
+  <article>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">May 22, 2021</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2015/comments/">a post with comments</a></h3>
-        <p class="post-meta">October 20, 2015</p>
-        <p>an example of a blog post with comments</p>
-      </li>
-    
-  </ul>
+    <div class="clearfix">
+      <h2 id="uncertainty-in-computation">Uncertainty in Computation</h2>
 
+<p>Mathematical models used to explain and predict the behaviour of complex systems such as immune cells or the climate rely heavily on numerical methods. The exponential growth in available data and computing power has revolutionized the scale of such models. In practice, however, <em>computational resources are limited</em>. This introduces uncertainty arising from not running numerical methods to convergence and from observations corrupted by noise.</p>
+
+<h3 id="probabilistic-numerics">Probabilistic Numerics</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Probabilistic_numerics">Probabilistic numerics (PN)</a> aims to quantify uncertainty arising from intractable or incomplete numerical computation and from stochastic input. <em>This new paradigm treats a numerical problem as one of statistical inference instead.</em> The probabilistic viewpoint provides a principled way to encode structural knowledge about a problem. By giving an explicit role to uncertainty from all sources, in particular from the computation itself, PN gives rise to new applications beyond the scope of classical methods.</p>
+
+<p>Typical numerical tasks to which PN may be applied include optimization, integration, the solution of ordinary and partial differential equations, and the basic tasks of linear algebra, e.g. solution of linear systems and eigenvalue problems.</p>
+
+<div class="card-deck">
+    <div class="card hoverable">
+        <a href="./research/linear_algebra" target="_blank">
+            <img class="card-img-top" src="assets/img/linear_algebra.png">
+            <div class="card-body text-center">
+                <p class="card-text">Linear Algebra</p>
+            </div>
+        </a>
+    </div>
+    <div class="card hoverable">
+        <a href="./research/quadrature" target="_blank">
+            <img class="card-img-top" src="assets/img/integration.png">
+            <div class="card-body text-center">
+                <p class="card-text">Quadrature</p>
+            </div>
+        </a>
+    </div>
+    <div class="card hoverable">
+        <a href="./research/optimization" target="_blank">
+            <img class="card-img-top" src="assets/img/optimization.png">
+            <div class="card-body text-center">
+                <p class="card-text">Optimization</p>
+            </div>
+        </a>
+    </div>
+    <div class="card hoverable">
+        <a href="./research/ode" target="_blank">
+            <img class="card-img-top" src="assets/img/ode.png">
+            <div class="card-body text-center">
+                <p class="card-text">ODEs</p>
+            </div>
+        </a>
+    </div>
+    <div class="card hoverable">
+        <a href="./research/pde" target="_blank">
+            <img class="card-img-top" src="assets/img/pde.png">
+            <div class="card-body text-center">
+                <p class="card-text">PDEs</p>
+            </div>
+        </a>
+    </div>
+</div>
+<p><br></p>
+
+<h3 id="value-of-a-probabilistic-approach">Value of a Probabilistic Approach</h3>
+
+<p>As well as offering an enriched reinterpretation of classical methods, the PN approach has several concrete practical points of value. The probabilistic interpretation of computation</p>
+
+<ul>
+  <li>allows to build customized methods for specific problems with bespoke priors</li>
+  <li>formalizes the design of adaptive methods using tools from decision theory</li>
+  <li>provides a way of setting parameters of numerical methods via the Bayesian formalism</li>
+  <li>expedites the solution of mutually related problems of similar type</li>
+  <li>naturally incorporates sources of stochasticity in the computation</li>
+  <li>can give structural uncertainty via a probability measure compared to an error estimate</li>
+</ul>
+
+<p>and finally it offers a principled approach of including numerical error in the propagation of uncertainty through chains of computations.</p>
+
+    </div>
+
+    <br>
+    <hr>
+
+    
+      <div class="news">
+  <h2>News</h2>
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
+    <div class="table-responsive">
+      <table class="table table-sm table-borderless">
       
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
       
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+        <tr>
+          <th scope="row" class="date">Nov 17, 2022</th>
+          <td>
+            
+              <img class="emoji" title=":memo:" alt=":memo:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4dd.png" height="20" width="20"> Sign up for the <a href="https://www.probnumschool.org/">Probabilistic Numerics Spring School</a> from Mar 27 - 29, 2023 in Tübingen!
 
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th scope="row" class="date">Sep 17, 2021</th>
+          <td>
+            
+              <img class="emoji" title=":calendar:" alt=":calendar:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c6.png" height="20" width="20"> Dagstuhl Seminar: <a href="./meetings/2021_Dagstuhl/">Probabilistic Numerical Methods - From Theory to Implementation</a> from Oct 24 - 29, 2021.
 
+            
+          </td>
+        </tr>
+      
+        <tr>
+          <th scope="row" class="date">Jul 19, 2021</th>
+          <td>
+            
+              <a href="https://youtu.be/p1zNGvkkDyk"><img class="emoji" title=":movie_camera:" alt=":movie_camera:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3a5.png" height="20" width="20"> Video series on PN for ODEs</a> by the <a href="https://uni-tuebingen.de/en/160189">Methods of Machine Learning group</a> at the University of Tübingen.
+
+            
+          </td>
+        </tr>
+      
+      </table>
+    </div>
+  
+</div>
+
+    
+
+    
+
+  </article>
 
 </div>
 
@@ -359,7 +434,7 @@
     Open an <a href="https://github.com/probabilistic-numerics/website/issues">issue</a> or <a href="https://github.com/probabilistic-numerics/website/pulls">pull request</a> on GitHub to get in touch or suggest changes to this site.
 
     <br><br>
-    &copy; Copyright 2024
+    © Copyright 2024
     <br>
     Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
 

@@ -11,7 +11,7 @@
   Probabilistic Numerics
 
 
-  | blog
+  | Probabilistic Integration
 
 </title>
 <meta name="description" content="Quantifying Uncertainty in Computation.
@@ -45,7 +45,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/meetings/2015_NeurIPS/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -114,18 +114,14 @@
           </li>
           
           <!-- Blog -->
-          <!-- <li class="nav-item active">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li> -->
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -265,58 +261,165 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>Probabilistic Numerics</h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Probabilistic Integration</h1>
 
-  <ul class="post-list">
     
-      <li>
-        <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">May 22, 2021</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
+    <div class="article-banner">
+      <img src="/assets/img/meetings/2015_NeurIPS.jpg" alt="meeting thumbnail"/>
+      
+      <span class="img-caption">Montréal by David Iliff (CC-BY-2.5)</span>
+      
+    </div>
     
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2015/comments/">a post with comments</a></h3>
-        <p class="post-meta">October 20, 2015</p>
-        <p>an example of a blog post with comments</p>
-      </li>
-    
-  </ul>
+
+    <hr>
+    <table>
+      <tbody>
+        
+        <tr>
+          <td><b>When?</b></td>
+          <td>December 7, 2015
+             - December 12, 2015 
+
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Where?</b></td>
+          <td>Montréal, Canada</td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Organizers</b></td>
+          <td>
+            <!-- PhilippHennigMichaelOsborne -->
+            
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://uni-tuebingen.de/de/134782" target="_blank">Philipp Hennig</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Michael Osborne</a>
+                  
+              
+            
+          
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Official Site</b></td>
+          <td><a href="https://nips.cc/Conferences/2015">https://nips.cc/Conferences/2015</a></td>
+        </tr>
+        
+      </tbody>
+      </table>
+      <hr>
+  </header>
+
+  <article class="post-content">
+    <p>This workshop will be hosted by <a href="https://nips.cc/Conferences/2015">NIPS</a>, a large annual machine learning and computational neuroscience conference.</p>
+
+<p>Integration is the central numerical operation required for Bayesian machine learning (in the form of marginalization and conditioning). Sampling algorithms still abound in this area, although it has long been known that Monte Carlo methods are fundamentally sub-optimal. The challenges for the development of better performing integration methods are mostly algorithmic. Moreover, recent algorithms have begun to outperform MCMC and its siblings, in wall-clock time, on realistic problems from machine learning.</p>
+
+<p>The workshop will review the existing, by now quite strong, theoretical case against the use of random numbers for integration, discuss recent algorithmic developments, relationships between conceptual approaches, and highlight central research challenges going forward.</p>
+
+<p>Among the questions to be addressed by the workshop are</p>
+
+<ul>
+  <li>How fast can a practical integral estimate on a deterministic function converge (polynomially, super-polynomially, not just “better than \(\sqrt{N}\)”)?</li>
+  <li>How are these rates related, precisely, to prior assumptions about the integrand, and to the design rules of the integrator?</li>
+  <li>To which degree can the source code of an integration problem be parsed to choose informative priors?</li>
+  <li>Are random numbers necessary and helpful for efficient multivariate integration, or are they a conceptual crutch that cause inefficiencies?</li>
+  <li>What are the practical challenges in the design of efficient multivariate integration methods that use such prior information?</li>
+</ul>
+
+<p>The workshop builds upon the growing field of probabilistic numerics,for which probabilistic integration is a core component.</p>
+
+<h3 id="schedule">Schedule</h3>
+
+<p>The workshop will be held on Friday, 11 December in room 512a.</p>
+
+<ul>
+  <li>09:00-09:10: <a href="http://imgc-cn.artprintimages.com/images/P-473-488-90/60/6056/IC9D100Z/posters/matthew-diffee-your-honor-if-it-please-the-court-i-d-like-to-deliver-my-opening-comment-new-yorker-cartoon.jpg">Opening Remarks</a></li>
+  <li>09:10-09:40: <a href="https://www.ceremade.dauphine.fr/~xian/">Christian Robert</a> <a href="/assets/pdf/2015_NeurIPS/CPRobert.pdf">(slides)</a></li>
+  <li>09:40-10:00: <a href="http://www2.warwick.ac.uk/fac/sci/statistics/staff/research_students/briol/">François-Xavier Briol</a> <a href="/assets/pdf/2015_NeurIPS/NIPSworkshop_fxbriol.pdf">(slides)</a></li>
+  <li>10.00-10.30: <em>Coffee break</em></li>
+  <li>10:30-11:00: <a href="http://www.gatsby.ucl.ac.uk/~gretton/">Arthur Gretton</a> <a href="/assets/pdf/2015_NeurIPS/nips15_regression.pdf">(slides)</a></li>
+  <li>11:00-11:30: <a href="http://cse.wustl.edu/people/Pages/faculty-bio.aspx?faculty=109">Roman Garnett</a> <a href="/assets/pdf/2015_NeurIPS/roman_talk.pdf">(slides)</a></li>
+  <li>11:30-11:45: <a href="http://homepages.inf.ed.ac.uk/s1459647/">George Papamakarios</a> &amp; <a href="http://homepages.inf.ed.ac.uk/imurray2/">Iain Murray,</a> <a href="/assets/pdf/distilling_intractable_generative_models_camera_ready.pdf">‘Distilling Intractable Generative Models’</a> <a href="/assets/pdf/2015_NeurIPS/distilling_intractable_models_slides.pdf">(slides)</a></li>
+  <li>11:45-12:00: <a href="http://www.robots.ox.ac.uk/~jan/">Jan-Peter Calliess,</a> <a href="/assets/pdf/jcalliess_NIPS15.pdf">‘Bayesian Lipschitz Constant Estimation and Quadrature’</a> <a href="/assets/pdf/2015_NeurIPS/talkjcNIPS15.pdf">(slides)</a></li>
+  <li>12:00-14:30: <em>Lunch break</em></li>
+  <li>14:30-15:00: <a href="http://www.di.ens.fr/~fbach/">Francis Bach</a> <a href="/assets/pdf/2015_NeurIPS/fbach_nips_2015_quadrature.pdf">(slides)</a></li>
+  <li>15:00-15:30: <a href="http://people.seas.harvard.edu/~dduvenaud/">David Duvenaud</a> <a href="/assets/pdf/2015_NeurIPS/prob-int-workshop.pdf">(slides)</a></li>
+  <li>15:30-16:00: <a href="https://www.ics.uci.edu/~welling/">Max Welling</a> <a href="/assets/pdf/2015_NeurIPS/OMC_NIPS2015_WellingMeeds.pdf">(slides)</a></li>
+  <li>16:00-16:30: <em>Coffee Break</em></li>
+  <li>16:30-17.30: Panel discussion</li>
+</ul>
+
+<h2 id="accepted-papers">Accepted Papers</h2>
+
+<ul>
+  <li>Jan-Peter Calliess, <a href="/assets/pdf/jcalliess_NIPS15.pdf">‘Bayesian Lipschitz Constant Estimation and Quadrature’</a></li>
+  <li>George Papamakarios &amp; Iain Murray, <a href="/assets/pdf/distilling_intractable_generative_models_camera_ready.pdf">‘Distilling Intractable Generative Models’</a></li>
+</ul>
+
+<!-- ## Call for Papers
+
+### Important dates
+
+* Submission deadline: 18:00 GMT, 16 October 2015 (**deadline extended**)
+* Notification of acceptance: 5 November 2015
+
+### Topics of interest
+
+* Bayesian quadrature
+* Quadrature rules
+* Kernel herding
+* Quasi Monte Carlo
+* Convergence diagnostics for MCMC
+
+We welcome contributions from theoretical treatments, empirical studies, and applications, of the above. The list is not exhaustive, and we also welcome submissions that draw upon highly related topics.
+
+### Submission instructions
+
+Submissions should be in the NIPS 2015 format, with a maximum of 4 pages (excluding references). Accepted papers will be made available online at the workshop website, and will be presented in a spotlight talk at the workshop itself, but the workshop proceedings can be considered non-archival. Explicitly: shorter versions of relevant papers submitted or published elsewhere are encouraged. Submissions need not be anonymous. 
+
+Please mail pdf submissions to <probnum@gmail.com>. -->
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 

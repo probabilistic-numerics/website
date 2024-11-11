@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Probabilistic Numerics
+
+
+  | Linear Algebra
+
+</title>
+<meta name="description" content="Quantifying Uncertainty in Computation.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#28bab4">
+<meta name="msapplication-TileColor" content="#28bab4">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/research/linear_algebra/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+
+
+
+
+
+<!-- Github -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+  <!-- Nav Bar -->
+  <nav id="navbar"
+    class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <div class="navbar-logo">
+        <a href="/">
+          <img src="/assets/img/logos/pn-logo-dark-txtright.svg">
+        </a>
+      </div>
+      
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li> -->
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Research
+              
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              
+              
+              <a class="dropdown-item" href="/research/general/">General</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/linear_algebra/">Linear Algebra</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/quadrature/">Quadrature</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/optimization/">Optimization</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/ode/">Ordinary Differential Equations</a>
+              
+              
+              
+              <a class="dropdown-item" href="/research/pde/">Partial Differential Equations</a>
+              
+              
+              
+              <div class="dropdown-divider"></div>
+              
+              
+              
+              <a class="dropdown-item" href="/research/other/">Other</a>
+              
+              
+            </div>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/code/">
+              Code
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/meetings/">
+              Meetings
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/teaching/">
+              Teaching
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/textbooks/">
+              Textbooks
+              
+            </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Linear Algebra</h1>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <div class="publications">
+<h2 class="bibliography">2022</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="wenger2022computational" class="col-sm-8">
+    
+      <div class="title">Posterior and Computational Uncertainty in Gaussian processes</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://jonathanwenger.netlify.app" target="_blank">Wenger, Jonathan</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Pleiss, Geoff,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://marvinpfoertner.github.io/" target="_blank">Pförtner, Marvin</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://stat.columbia.edu/~cunningham/" target="_blank">Cunningham, John P.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NeurIPS)</em>
+      
+      
+        2022
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="https://arxiv.org/abs/2205.15449" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+      
+      <a href="https://arxiv.org/pdf/2205.15449.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">wenger2022computational</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Wenger, Jonathan and Pleiss, Geoff and Pf{\"o}rtner, Marvin and Hennig, Philipp and Cunningham, John P.}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Advances in Neural Information Processing Systems (NeurIPS)}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Posterior and Computational Uncertainty in {G}aussian processes}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2205.15449}</span><span class="p">,</span>
+  <span class="na">pdf</span> <span class="p">=</span> <span class="s">{https://arxiv.org/pdf/2205.15449.pdf}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2020</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="cockayne2020probabilistic" class="col-sm-8">
+    
+      <div class="title">Probabilistic Iterative Methods for Linear Systems</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.joncockayne.com/" target="_blank">Cockayne, Jon</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Ipsen, Ilse CF,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Reid, Tim W
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv preprint arXiv:2012.12615</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">cockayne2020probabilistic</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Cockayne, Jon and Ipsen, Ilse CF and Oates, Chris J and Reid, Tim W}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{arXiv preprint arXiv:2012.12615}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Probabilistic Iterative Methods for Linear Systems}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="reid2020probabilistic" class="col-sm-8">
+    
+      <div class="title">A Probabilistic Numerical Extension of the Conjugate Gradient Method</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Reid, Tim W,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Ipsen, Ilse CF,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.joncockayne.com/" target="_blank">Cockayne, Jon</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://oates.work/" target="_blank">Oates, Chris J</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv preprint arXiv:2008.03225</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">reid2020probabilistic</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Reid, Tim W and Ipsen, Ilse CF and Cockayne, Jon and Oates, Chris J}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{arXiv preprint arXiv:2008.03225}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{A Probabilistic Numerical Extension of the Conjugate Gradient Method}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="wenger2020problinsolve" class="col-sm-8">
+    
+      <div class="title">Probabilistic Linear Solvers for Machine Learning</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://jonathanwenger.netlify.app" target="_blank">Wenger, Jonathan</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, Philipp</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Advances in Neural Information Processing Systems (NeurIPS)</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="https://arxiv.org/abs/2010.09691" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+      
+      <a href="https://arxiv.org/pdf/2010.09691.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>
+      
+    
+    
+    
+    
+      <a href="https://github.com/JonathanWenger/probabilistic-linear-solvers-for-ml" class="btn btn-sm z-depth-0" role="button" target="_blank">Code</a>
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">wenger2020problinsolve</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Wenger, Jonathan and Hennig, Philipp}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Advances in Neural Information Processing Systems (NeurIPS)}</span><span class="p">,</span>
+  <span class="na">code</span> <span class="p">=</span> <span class="s">{https://github.com/JonathanWenger/probabilistic-linear-solvers-for-ml}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/2010.09691}</span><span class="p">,</span>
+  <span class="na">pdf</span> <span class="p">=</span> <span class="s">{https://arxiv.org/pdf/2010.09691.pdf}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Probabilistic Linear Solvers for Machine Learning}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2019</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="cockayne2019bayesian" class="col-sm-8">
+    
+      <div class="title">A Bayesian conjugate gradient method (with discussion)</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.joncockayne.com/" target="_blank">Cockayne, Jon</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://oates.work/" target="_blank">Oates, Chris J</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+            
+          
+
+          
+            
+              
+                
+                  Ipsen, Ilse CF,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://www.eng.cam.ac.uk/profiles/mag92" target="_blank">Girolami, Mark</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Bayesian Analysis</em>
+      
+      
+        2019
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">cockayne2019bayesian</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Cockayne, Jon and Oates, Chris J and Ipsen, Ilse CF and Girolami, Mark}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Bayesian Analysis}</span><span class="p">,</span>
+  <span class="na">number</span> <span class="p">=</span> <span class="s">{3}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{937--1012}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{International Society for Bayesian Analysis}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{A Bayesian conjugate gradient method (with discussion)}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{14}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2019}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2017</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="schafer_compression_2017" class="col-sm-8">
+    
+      <div class="title">Compression, inversion, and approximate PCA of dense kernel matrices at near-linear computational complexity</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Schäfer, Florian,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="http://www.tjsullivan.org.uk/" target="_blank">Sullivan, T. J.</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="http://users.cms.caltech.edu/~owhadi/index.htm" target="_blank">Owhadi, Houman</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>arXiv:1706.02205 [cs, math]</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Dense kernel matrices {}Theta }in }mathbb{R}^{N }times N} obtained from point evaluations of a covariance function \G at locations {}{ x_{i} }}_{1 }leq i }leq N} arise in statistics, machine learning, and numerical analysis. For covariance functions that are Green’s functions elliptic boundary value problems and approximately equally spaced sampling points, we show how to identify a subset \S }subset }{ 1 , }dots , N }} }times }{ 1 , }dots , N }} with {}# S = O ( N }log (N) }log^{d} ( N / }epsilon ) ) such that the zero fill-in block-incomplete Cholesky decomposition of {}Theta_{i,j} 1_{( i,j ) }in S} is an {}epsilon\-approximation of {}Theta\. This block-factorisation can provably be obtained in Ø}left(N }log^{2} ( N ) }left( }log (1/}epsilon ) + }log^{2} ( N ) }right)^{4d+1} }right) complexity in time. Numerical evidence further suggests that element-wise Cholesky decomposition with the same ordering constitutes an Ø}left( N }log^{2} ( N ) }log^{2d} ( N/}epsilon ) }right) solver. The algorithm only needs to know the spatial configuration of the \x_{i} and does not require an analytic representation of \G\. Furthermore, an approximate PCA with optimal rate of convergence in the operator norm can be easily read off from this decomposition. Hence, by using only subsampling and the incomplete Cholesky decomposition, we obtain at nearly linear complexity the compression, inversion and approximate PCA of a large class of covariance matrices. By inverting the order of the Cholesky decomposition we also obtain a near-linear-time solver for elliptic PDEs.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">schafer_compression_2017</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Schäfer, Florian and Sullivan, T. J. and Owhadi, Houman}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">file</span> <span class="p">=</span> <span class="s">{https://arxiv.org/pdf/1706.02205.pdf}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{arXiv:1706.02205 [cs, math]}</span><span class="p">,</span>
+  <span class="na">keywords</span> <span class="p">=</span> <span class="s">{65F30, 42C40, 65F50, 65N55, 65N75, 60G42, 68Q25, 68W40, Computer Science - Computational Complexity, Computer Science - Data Structures and Algorithms, Mathematics - Numerical Analysis, Mathematics - Probability}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">jun</span><span class="p">,</span>
+  <span class="na">note</span> <span class="p">=</span> <span class="s">{arXiv: 1706.02205}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Compression, inversion, and approximate {PCA} of dense kernel matrices at near-linear computational complexity}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{http://arxiv.org/abs/1706.02205}</span><span class="p">,</span>
+  <span class="na">urldate</span> <span class="p">=</span> <span class="s">{2017-09-10}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2017}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="fitzsimons_bayesian_2017" class="col-sm-8">
+    
+      <div class="title">Bayesian Inference of Log Determinants</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Fitzsimons, Jack,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Cutajar, Kurt,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Osborne, Michael</a>,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Roberts, Stephen,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Filippone, Maurizio
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>In Uncertainty in Artificial Intelligence</em>
+      
+      
+        2017
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>The log-determinant of a kernel matrix appears in a variety of machine learning problems, ranging from determinantal point processes and generalized Markov random fields, through to the training of Gaussian processes. Exact calculation of this term is often intractable when the size of the kernel matrix exceeds a few thousand. In the spirit of probabilistic numerics, we reinterpret the problem of computing the log-determinant as a Bayesian inference problem. In particular, we combine prior knowledge in the form of bounds from matrix theory and evidence derived from stochastic trace estimation to obtain probabilistic estimates for the log-determinant and its associated uncertainty within a given computational budget. Beyond its novelty and theoretic appeal, the performance of our proposal is competitive with state-of-the-art approaches to approximating the log-determinant, while also quantifying the uncertainty due to budget-constrained evidence.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">fitzsimons_bayesian_2017</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Fitzsimons, Jack and Cutajar, Kurt and Osborne, Michael and Roberts, Stephen and Filippone, Maurizio}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Uncertainty in {Artificial} {Intelligence}}</span><span class="p">,</span>
+  <span class="na">file</span> <span class="p">=</span> <span class="s">{http://probabilistic-numerics.org/assets/pdf/Fitzsimons et al. - 2017 - Bayesian Inference of Log Determinants.pdf}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Bayesian {Inference} of {Log} {Determinants}}</span><span class="p">,</span>
+  <span class="na">url</span> <span class="p">=</span> <span class="s">{https://arxiv.org/abs/1704.01445}</span><span class="p">,</span>
+  <span class="na">urldate</span> <span class="p">=</span> <span class="s">{2017-06-21}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2017}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2016</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="BarHen16" class="col-sm-8">
+    
+      <div class="title">Probabilistic Approximate Least-Squares</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Bartels, S.,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              
+                
+                  and <a href="https://uni-tuebingen.de/de/134782" target="_blank">Hennig, P.</a>
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+      
+        2016
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="http://jmlr.org/proceedings/papers/v51/bartels16.html" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Least-squares and kernel-ridge / Gaussian process regression are among the foundational algorithms of statistics and machine learning. Famously, the worst-case cost of exact nonparametric regression grows cubically with the data-set size; but a growing number of approximations have been developed that estimate good solutions at lower cost. These algorithms typically return point estimators, without measures of uncertainty. Leveraging recent results casting elementary linear algebra operations as probabilistic inference, we propose a new approximate method for nonparametric least-squares that affords a probabilistic uncertainty estimate over the error between the approximate and exact least-squares solution (this is not the same as the posterior variance of the associated Gaussian process regressor). This allows estimating the error of the least-squares solution on a subset of the data relative to the full-data solution. The uncertainty can be used to control the computational effort invested in the approximation. Our algorithm has linear cost in the data-set size, and a simple formal form, so that it can be implemented with a few lines of code in programming languages with linear algebra functionality.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@proceedings</span><span class="p">{</span><span class="nl">BarHen16</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Bartels, S. and Hennig, P.}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{Proceedings of the 19th International Conference on Artificial Intelligence and Statistics (AISTATS 2016)}</span><span class="p">,</span>
+  <span class="na">editors</span> <span class="p">=</span> <span class="s">{Gretton, A. and Robert, C. C. }</span><span class="p">,</span>
+  <span class="na">file</span> <span class="p">=</span> <span class="s">{http://jmlr.org/proceedings/papers/v51/bartels16.pdf}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{http://jmlr.org/proceedings/papers/v51/bartels16.html}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{676--684}</span><span class="p">,</span>
+  <span class="na">series</span> <span class="p">=</span> <span class="s">{JMLR Workshop and Conference Proceedings}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Probabilistic Approximate Least-Squares}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{51}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2016}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2015</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="PhysRevE92013302" class="col-sm-8">
+    
+      <div class="title">Stochastic determination of matrix determinants</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Dorn, Sebastian,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Enßlin, Torsten A.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Phys. Rev. E</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="https://link.aps.org/doi/10.1103/PhysRevE.92.013302" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Matrix determinants play an important role in data analysis, in particular when Gaussian processes are involved. Due to currently exploding data volumes, linear operations—matrices—acting on the data are often not accessible directly but are only represented indirectly in form of a computer routine. Such a routine implements the transformation a data vector undergoes under matrix multiplication. While efficient probing routines to estimate a matrix’s diagonal or trace, based solely on such computationally affordable matrix-vector multiplications, are well known and frequently used in signal inference, there is no stochastic estimate for its determinant. We introduce a probing method for the logarithm of a determinant of a linear operator. Our method rests upon a reformulation of the log-determinant by an integral representation and the transformation of the involved terms into stochastic expressions. This stochastic determinant determination enables large-size applications in Bayesian inference, in particular evidence calculations, model comparison, and posterior determination.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">PhysRevE92013302</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Dorn, Sebastian and En\ss{}lin, Torsten A.}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">issue</span> <span class="p">=</span> <span class="s">{1}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Phys. Rev. E}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{https://link.aps.org/doi/10.1103/PhysRevE.92.013302}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">jul</span><span class="p">,</span>
+  <span class="na">numpages</span> <span class="p">=</span> <span class="s">{8}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{013302}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{American Physical Society}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Stochastic determination of matrix determinants}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{92}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li>
+<li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="2014arXiv14022058H" class="col-sm-8">
+    
+      <div class="title">Probabilistic Interpretation of Linear Solvers</div>
+      <div class="author">
+        
+          
+          
+          
+          
+            
+              
+                
+                
+          
+
+          
+            
+              Hennig, P.
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>SIAM J on Optimization</em>
+      
+      
+        2015
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="http://epubs.siam.org/doi/abs/10.1137/140955501?journalCode=sjope8" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>This paper proposes a probabilistic framework for algorithms
+                 that iteratively solve unconstrained linear problems Bx = b with positive
+                 definite B for x. The goal is to replace the point estimates returned by
+                 existing methods with a Gaussian posterior belief over the elements of the
+                 inverse of B, which can be used to estimate errors. Recent probabilistic
+                 interpretations of the secant family of quasi-Newton optimization algorithms
+                 are extended. Combined with properties of the conjugate gradient algorithm,
+                 this leads to uncertainty-calibrated methods with very limited cost overhead
+                 over conjugate gradients, a self-contained novel interpretation of the
+                 quasi-Newton and conjugate gradient algorithms, and a foundation for new
+                 nonlinear optimization methods.</p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">2014arXiv14022058H</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{{Hennig}, P.}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">file</span> <span class="p">=</span> <span class="s">{http://probabilistic-numerics.org/assets/pdf/HennigLinear2015.pdf}</span><span class="p">,</span>
+  <span class="na">issue</span> <span class="p">=</span> <span class="s">{1}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{SIAM J on Optimization}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{http://epubs.siam.org/doi/abs/10.1137/140955501?journalCode=sjope8}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">jan</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{{Probabilistic Interpretation of Linear Solvers}}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{25}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2015}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+<h2 class="bibliography">2012</h2>
+<ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
+  
+  </div>
+
+  <div id="PhysRevE85021134" class="col-sm-8">
+    
+      <div class="title">Improving stochastic estimates with inference methods: Calculating matrix diagonals</div>
+      <div class="author">
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Selig, Marco,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  Oppermann, Niels,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+
+          
+            
+              
+                
+                  and Enßlin, Torsten A.
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Phys. Rev. E</em>
+      
+      
+        2012
+      
+      </div>
+    
+
+    <div class="links">
+    
+      <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+    
+    
+    
+        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+    
+    
+      <a href="https://link.aps.org/doi/10.1103/PhysRevE.85.021134" class="btn btn-sm z-depth-0" role="button" target="_blank">link</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+    <div class="abstract hidden">
+      <p>Estimating the diagonal entries of a matrix, that is not directly accessible but only available as a linear operator in the form of a computer routine, is a common necessity in many computational applications, especially in image reconstruction and statistical inference. Here, methods of statistical inference are used to improve the accuracy or the computational costs of matrix probing methods to estimate matrix diagonals. In particular, the generalized Wiener filter methodology, as developed within information field theory, is shown to significantly improve estimates based on only a few sampling probes, in cases in which some form of continuity of the solution can be assumed. The strength, length scale, and precise functional form of the exploited autocorrelation function of the matrix diagonal is determined from the probes themselves. The developed algorithm is successfully applied to mock and real world problems. These performance tests show that, in situations where a matrix diagonal has to be calculated from only a small number of computationally expensive probes, a speedup by a factor of 2 to 10 is possible with the proposed method. </p>
+    </div>
+    
+
+    <!-- Hidden bibtex block -->
+    
+    <div class="bibtex hidden">
+      <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">PhysRevE85021134</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Selig, Marco and Oppermann, Niels and En\ss{}lin, Torsten A.}</span><span class="p">,</span>
+  <span class="na">bibtex_show</span> <span class="p">=</span> <span class="s">{true}</span><span class="p">,</span>
+  <span class="na">issue</span> <span class="p">=</span> <span class="s">{2}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Phys. Rev. E}</span><span class="p">,</span>
+  <span class="na">link</span> <span class="p">=</span> <span class="s">{https://link.aps.org/doi/10.1103/PhysRevE.85.021134}</span><span class="p">,</span>
+  <span class="na">month</span> <span class="p">=</span> <span class="nv">feb</span><span class="p">,</span>
+  <span class="na">numpages</span> <span class="p">=</span> <span class="s">{7}</span><span class="p">,</span>
+  <span class="na">pages</span> <span class="p">=</span> <span class="s">{021134}</span><span class="p">,</span>
+  <span class="na">publisher</span> <span class="p">=</span> <span class="s">{American Physical Society}</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Improving stochastic estimates with inference methods: Calculating matrix diagonals}</span><span class="p">,</span>
+  <span class="na">volume</span> <span class="p">=</span> <span class="s">{85}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2012}</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+    
+  </div>
+</div>
+</li></ol>
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+
+    <!-- 
+    <div class="watermark">
+      <img src="www.probabilistic-numerics.org/assets/img/logos/pn-watermark.svg">
+    </div>
+     -->
+
+    <div class="social">
+      <div class="contact-icons">
+        
+
+<a href="https://scholar.google.com/scholar?q=probabilistic+numerics" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+
+
+<a href="https://github.com/probabilistic-numerics" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    Open an <a href="https://github.com/probabilistic-numerics/website/issues">issue</a> or <a href="https://github.com/probabilistic-numerics/website/pulls">pull request</a> on GitHub to get in touch or suggest changes to this site.
+
+    <br><br>
+    &copy; Copyright 2024
+    <br>
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
