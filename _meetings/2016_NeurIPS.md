@@ -12,8 +12,8 @@ date_end:
 summary: 
 
 link: https://nips.cc/Conferences/2016
-img: /assets/img/meetings/2016_NeurIPS.jpg
-img_caption: Barcelona by David Iliff (CC-BY-SA-3.5)
+img: 
+img_caption: 
 
 url_code:
 url_pdf:
