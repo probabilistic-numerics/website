@@ -12,8 +12,8 @@ date_end: 2016-01-07
 summary: 
 
 link: http://www.pages.drexel.edu/~mwl25/mcmskiV/index.html
-img: /assets/img/meetings/2016_MCMSki.jpg
-img_caption: Lenzerheide by Adrian Michael (CC-BY-3.0)
+img: 
+img_caption:
 
 url_code:
 url_pdf:
