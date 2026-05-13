@@ -12,8 +12,8 @@ date_end:
 summary: 
 
 link: https://mcqmc2016.stanford.edu/
-img: /assets/img/meetings/2016_MCQMC.jpg
-img_caption: Stanford University by King of Hearts (CC-BY-SA-3.0)
+img: 
+img_caption:
 
 url_code:
 url_pdf:
