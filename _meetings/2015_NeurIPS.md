@@ -12,8 +12,8 @@ date_end: 2015-12-12
 summary: 
 
 link: https://nips.cc/Conferences/2015
-img: /assets/img/meetings/2015_NeurIPS.jpg
-img_caption: "Montréal by David Iliff (CC-BY-2.5)"
+img: 
+img_caption: 
 
 url_code:
 url_pdf:
