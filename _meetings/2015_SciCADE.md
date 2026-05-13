@@ -12,8 +12,8 @@ date_end: 2015-09-18
 summary:   
 
 link: http://scicade2015.math.uni-potsdam.de/scicade2015/index.html
-img: assets/img/meetings/2015_SciCADE.jpeg
-img_caption: (CC-BY-2.5)
+img: 
+img_caption:
 
 url_code:
 url_pdf:
