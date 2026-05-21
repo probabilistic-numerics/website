@@ -4,7 +4,7 @@ layout: meeting
 title: Roundtable on Probabilistic Numerics
 event: Max Planck Institute for Intelligent Systems
 location: Tübingen, Germany
-organizers: [["Philipp", "Hennig"], ["Michael", "Osborne"]]
+organizers: [["Philipp", "Hennig"], ["Maike", "Osborne"]]
 
 date: 2014-08-21
 date_end: 2014-08-22
