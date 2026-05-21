@@ -4,7 +4,7 @@ layout: meeting
 title: Probabilistic Numerics for Differential Equations
 event: University of Warwick
 location: Warwick, United Kingdom
-organizers: [["Philipp", "Hennig"], ["Michael", "Osborne"], ["Chris", "Oates"], ["Mark", "Girolami"]]
+organizers: [["Philipp", "Hennig"], ["Maike", "Osborne"], ["Chris", "Oates"], ["Mark", "Girolami"]]
 
 date: 2015-04-21
 date_end:
