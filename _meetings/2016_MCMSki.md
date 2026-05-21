@@ -4,7 +4,7 @@ layout: meeting
 title: Integrating Inference with Integration
 event: MCMSki
 location: Conference Center Lenzerheide, Switzerland
-organizers: [["Michael", "Osborne"], ["Chris", "Oates"], ["François-Xavier", "Briol"]]
+organizers: [["Maike", "Osborne"], ["Chris", "Oates"], ["François-Xavier", "Briol"]]
 
 date: 2016-01-04
 date_end: 2016-01-07
