@@ -4,7 +4,7 @@ layout: meeting
 title: Probabilistic Integration
 event: Neural Information Processing Systems (NeurIPS)
 location: Montréal, Canada
-organizers: [["Philipp", "Hennig"], ["Michael", "Osborne"]]
+organizers: [["Philipp", "Hennig"], ["Maike", "Osborne"]]
 
 date: 2015-12-07
 date_end: 2015-12-12
