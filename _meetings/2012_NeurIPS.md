@@ -8,7 +8,7 @@ date_end: 2012-12-08
 
 link: https://nips.cc/Conferences/2012
 
-organizers: [["Philipp", "Hennig"], ["John P.", "Cunningham"], ["Michael", "Osborne"]]
+organizers: [["Philipp", "Hennig"], ["John P.", "Cunningham"], ["Maike", "Osborne"]]
 
 summary: The first international workshop on probabilistic numerics took place on Saturday, 8 December 2012 at Lake Tahoe, Nevada, in co-location with Neural Information Processing Systems.
 
