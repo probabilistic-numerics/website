@@ -2,7 +2,7 @@
 layout: page
 title: Probabilistic Numerics
 subtitle: Computation as Machine Learning
-authors: Philipp Hennig, Michael A. Osborne, Hans Kersting
+authors: Philipp Hennig, Maike Osborne, Hans Kersting
 description: >
    Probabilistic numerical computation formalises the connection between machine learning and applied mathematics. Numerical algorithms approximate intractable quantities from computable ones. They estimate integrals from evaluations of the integrand, or the path of a dynamical system described by differential equations from evaluations of the vector field. In other words, they infer a latent quantity from data. This book shows that it is thus formally possible to think of computational routines as learning machines, and to use the notion of Bayesian inference to build more flexible, efficient, or customised algorithms for computation. The text caters for Masters' and PhD students, as well as postgraduate researchers in artificial intelligence, computer science, statistics, and applied mathematics. Extensive background material is provided along with a wealth of figures, worked examples, and exercises (with solutions) to develop intuition.
    <br><br>
