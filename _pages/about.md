@@ -4,7 +4,7 @@ title: About
 permalink: /
 
 banner: /assets/img/logos/pn-logo-dark-txtbelow.svg  # link to banner image relative to root
-news: true  # includes a list of news items
+news: false  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 ---
 
