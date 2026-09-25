@@ -3,10 +3,13 @@
     url: https://nathanaelbosch.github.io/
 "Cockayne":
   - firstname: ["Jon", "J."]
-    url: http://www.joncockayne.com/
+    url: https://joncockayne.me/
 "Cunningham":
   - firstname: ["John", "John P.", "JP"]
     url: https://stat.columbia.edu/~cunningham/
+"Gessner":
+  - firstname: ["Alexandra", "A."]
+    url: https://github.com/alpiges
 "Girolami":
   - firstname: ["Mark", "M."]
     url: http://www.eng.cam.ac.uk/profiles/mag92
@@ -16,6 +19,12 @@
 "Ipsen":
   - firstname: ["Ilse", "I."]
     url: https://ipsen.math.ncsu.edu/
+"Karvonen":
+  - firstname: ["Toni", "T."]
+    url: https://tskarvone.github.io/
+"Kouw":
+  - firstname: ["Wouter", "Wouter M.", "W.", "W. M."]
+    url: https://wmkouw.github.io/
 "Mahsereci":
   - firstname: ["Maren", "M."]
     url:
@@ -37,6 +46,9 @@
 "Sullivan":
   - firstname: ["T.", "Tim", "TJ", "Tim J", "T. J.", "Tim J."]
     url: http://www.tjsullivan.org.uk/
+"Tronarp":
+  - firstname: ["Filip", "F."]
+    url: https://filtron.github.io/
 "Wenger":
   - firstname: ["J.", "Jonathan"]
     url: https://jonathanwenger.netlify.app
