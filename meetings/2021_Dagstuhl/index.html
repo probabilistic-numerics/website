@@ -11,7 +11,7 @@
   Probabilistic Numerics
 
 
-  | blog
+  | Probabilistic Numerical Methods - From Theory to Implementation
 
 </title>
 <meta name="description" content="Quantifying Uncertainty in Computation.
@@ -45,7 +45,7 @@
 
 <!-- Styles -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/meetings/2021_Dagstuhl/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -114,18 +114,14 @@
           </li>
           
           <!-- Blog -->
-          <!-- <li class="nav-item active">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
-              <span class="sr-only">(current)</span>
               
             </a>
           </li> -->
           
           <!-- Other pages -->
-          
-          
           
           
           
@@ -265,58 +261,158 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>Probabilistic Numerics</h1>
-    <h2>a simple whitespace theme for academics</h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Probabilistic Numerical Methods - From Theory to Implementation</h1>
 
-  <ul class="post-list">
     
-      <li>
-        <h3><a class="post-title" href="/blog/2021/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">May 22, 2021</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
+    <div class="article-banner">
+      <img src="/assets/img/meetings/2021_Dagstuhl.jpg" alt="meeting thumbnail"/>
+      
+      <span class="img-caption">Schloss Dagstuhl by Jonathan Wenger</span>
+      
+    </div>
     
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2015/comments/">a post with comments</a></h3>
-        <p class="post-meta">October 20, 2015</p>
-        <p>an example of a blog post with comments</p>
-      </li>
-    
-  </ul>
+
+    <hr>
+    <table>
+      <tbody>
+        
+        <tr>
+          <td><b>When?</b></td>
+          <td>October 24, 2021
+             - October 29, 2021 
+
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Where?</b></td>
+          <td>Castle Dagstuhl, Wadern, Germany</td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Organizers</b></td>
+          <td>
+            <!-- PhilippHennigIlseIpsenMarenMahsereciTimSullivanJonathanWenger -->
+            
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://uni-tuebingen.de/de/134782" target="_blank">Philipp Hennig</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://ipsen.math.ncsu.edu/" target="_blank">Ilse Ipsen</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                  Maren Mahsereci,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="http://www.tjsullivan.org.uk/" target="_blank">Tim Sullivan</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://jonathanwenger.netlify.app" target="_blank">Jonathan Wenger</a>
+                  
+              
+            
+          
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Official Site</b></td>
+          <td><a href="https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21432">https://www.dagstuhl.de/en/program/calendar/semhp/?semnr=21432</a></td>
+        </tr>
+        
+      </tbody>
+      </table>
+      <hr>
+  </header>
+
+  <article class="post-content">
+    <h2 id="motivation">Motivation</h2>
+
+<p>Numerical methods provide the computational foundation of science and power automated data analysis and inference in its contemporary form of machine learning. Probabilistic numerical methods aim to explicitly represent uncertainty resulting from limited computational resources and imprecise inputs in these models. In recent years, algorithms arising from this formalism have repeatedly shown that they can enrich and improve upon classic methods in tasks where hyperparameter adaptation is not straightforward; where computational stochasticity and low precision play a prominent role; where limited data make uncertainty quantification a key functionality; where related problems have to be solved repeatedly; and where extreme scale or tight budgets call for rough approximations at low cost.</p>
+
+<p>With theoretical analysis well underway, software development is now a key next step to wide-spread success.</p>
+
+<p>From Lapack to SciPy to PyTorch, open-source software libraries have driven scientific advancement in their respective domains. Indeed, the lack of high-quality implementations of probabilistic numerical methods is increasingly a bottleneck for our field. Addressing this issue is a main goal of the seminar. We recently started a community effort to develop an open-source framework named ProbNum. You can track its progress at <a href="http://probnum.org/">probnum.org</a>.</p>
+
+<p>The goals of this Dagstuhl Seminar are thus two-fold. First, we want to rekindle our community spirit. The meeting will provide the opportunity to update others on your own research and to discuss new directions and ideas together, after the deadening silence of the Covid years. We have invited a diverse group of people like yourself, hailing from CS/AI/ML, from statistics, optimization, and from numerical analysis. On the other hand, the seminar will act as a milestone for the ProbNum software: we hope some of you may want to join the development effort to shape functionality, structure and interface of the library ahead of a first release, and an associated publication.</p>
+
+<h2 id="schedule">Schedule</h2>
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FBerlin&amp;mode=WEEK&amp;dates=20211024/20211030&amp;showNav=0&amp;showCalendars=0&amp;showTabs=0&amp;hl=en&amp;src=cHJvYm51bS5kYWdzdHVobEBnbWFpbC5jb20&amp;color=%23F6BF26" style="border-width:0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blog">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blog - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blog - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
