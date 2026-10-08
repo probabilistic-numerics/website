@@ -1,0 +1,38 @@
+# Tags for the research list (_pages/research.md).
+# Order here is the order of the filter chips.
+# `description` is shown above the list when only that tag is selected.
+
+- id: general
+  label: General
+- id: linear-algebra
+  label: Linear Algebra
+- id: quadrature
+  label: Quadrature
+- id: optimization
+  label: Optimization
+- id: local-optimization
+  label: Local Optimization
+- id: global-optimization
+  label: Global Optimization
+- id: ode
+  label: ODEs
+  description: >
+    There are two common ways in which probabilistic methods are used in
+    combination with ordinary differential equations. The "classic" problem of
+    numerics is to infer the solution to an initial value problem given access
+    to the differential equation (tag "Solving ODEs"). The reverse problem has
+    also found interest in machine learning: inferring a differential equation
+    from (noisy) observations of trajectories that are assumed to be governed by
+    this ODE (tag "Inferring ODEs").
+- id: ode-solving
+  label: Solving ODEs
+- id: ode-inference
+  label: Inferring ODEs
+- id: pde
+  label: PDEs
+- id: sampling
+  label: Sampling
+- id: related
+  label: Related
+- id: historical
+  label: Historical

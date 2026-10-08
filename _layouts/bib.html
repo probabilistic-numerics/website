@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="row">
+<div class="row" data-tags="{{ entry.tags }}">
   <div class="col-sm-2 abbr">
   {% if entry.abbr %}
     {% if site.data.venues[entry.abbr] %}
@@ -128,6 +128,14 @@
     {% endif %}
     {% if entry.website %}
       <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
+    {% endif %}
+    {% if entry.tags %}
+      {% assign entry_tags = entry.tags | split: "," %}
+      {% for t in entry_tags %}
+        {% assign t = t | strip %}
+        {% assign tag_info = site.data.research_tags | where: "id", t | first %}
+        <a href="{{ '/research/' | relative_url }}?tags={{ t }}" class="paper-tag" data-tag="{{ t }}">{{ tag_info.label | default: t }}</a>
+      {% endfor %}
     {% endif %}
     </div>
 

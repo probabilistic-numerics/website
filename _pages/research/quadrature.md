@@ -1,10 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/quadrature/
-title: Quadrature
-description:
+redirect_to: /research/?tags=quadrature
+sitemap: false
 ---
-
-<div class="publications">
-{% bibliography --file quadrature %}
-</div>

@@ -1,10 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/general/
-title: General and Foundational Research
-description:
+redirect_to: /research/?tags=general
+sitemap: false
 ---
-
-<div class="publications">
-{% bibliography --file general %}
-</div>

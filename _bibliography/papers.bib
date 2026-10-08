@@ -1,0 +1,2216 @@
+@article{2017arXiv170203673C,
+tags = {general},
+  abstract    = {The emergent field of probabilistic numerics has thus far lacked rigorous statistical principals. This paper establishes Bayesian probabilistic numerical methods as those which can be cast as solutions to certain Bayesian inverse problems, albeit problems that are non-standard. This allows us to establish general conditions under which Bayesian probabilistic numerical methods are well-defined, encompassing both non-linear and non-Gaussian models. For general computation, a numerical approximation scheme is developed and its asymptotic convergence is established. The theoretical development is then extended to pipelines of computation, wherein probabilistic numerical methods are composed to solve more challenging numerical tasks. The contribution highlights an important research frontier at the interface of numerical analysis and uncertainty quantification, with some illustrative applications presented.},
+  author      = {{Cockayne}, J. and {Oates}, C. and {Sullivan}, T. and {Girolami}, M.
+                 },
+  bibtex_show = {true},
+  journal     = {arXiv e-prints},
+  link        = {https://arxiv.org/abs/1702.03673},
+  month       = feb,
+  pdf         = {https://arxiv.org/pdf/1702.03673.pdf},
+  title       = {{{B}ayesian Probabilistic Numerical Methods}},
+  volume      = {stat.ME 1702.03673},
+  year        = 2017
+}
+
+@article{2019arXiv190104326O,
+tags = {general},
+  abstract    = {It is well understood that Bayesian decision theory and average case analysis are essentially identical. However, if one is interested in performing uncertainty quantification for a numerical task, it can be argued that the decision-theoretic framework is neither appropriate nor sufficient. To this end, we consider an alternative optimality criterion from Bayesian experimental design and study its implied optimal information in the numerical context. This information is demonstrated to differ, in general, from the information that would be used in an average-case-optimal numerical method. The explicit connection to Bayesian experimental design suggests several distinct regimes in which optimal probabilistic numerical methods can be developed.},
+  author      = {{Oates}, Chris J. and {Cockayne}, Jon and {Prangle}, Dennis and
+                 {Sullivan}, T. J. and {Girolami}, Mark},
+  bibtex_show = {true},
+  journal     = {arXiv e-prints},
+  link        = {https://arxiv.org/abs/1901.04326},
+  month       = {Jan},
+  pdf         = {https://arxiv.org/pdf/1901.04326.pdf},
+  title       = {{Optimality Criteria for Probabilistic Numerical Methods}},
+  volume      = {1901.04326},
+  year        = {2019}
+}
+
+@article{2019arXiv190104457O,
+tags = {general},
+  abstract     = {This article attempts to cast the emergence of probabilistic numerics as a mathematical-statistical research field within its historical context and to explore how its gradual development can be related to modern formal treatments and applications. We highlight in particular the parallel contributions of Sul'din and Larkin in the 1960s and how their pioneering early ideas have reached a degree of maturity in the intervening period, mediated by paradigms such as average-case analysis and information-based complexity. We provide a subjective assessment of the state of research in probabilistic numerics and highlight some difficulties to be addressed by future works.},
+  author       = {{Oates}, C. J. and {Sullivan}, T. J.},
+  bibtex_show  = {true},
+  journal      = {arXiv e-prints},
+  link         = {https://arxiv.org/abs/1901.04457},
+  month        = {Jan},
+  pdf          = {https://arxiv.org/pdf/1901.04457.pdf},
+  primaryclass = {math.NA},
+  title        = {{A Modern Retrospective on Probabilistic Numerics}},
+  volume       = {1901.04457},
+  year         = {2019}
+}
+
+@article{diaconis1988bayesian,
+tags = {general},
+  author      = {Diaconis, Persi},
+  bibtex_show = {true},
+  journal     = {Statistical decision theory and related topics IV},
+  notes       = {This text is arguably the first to very explicitly discuss the notion of "Bayesian Numerics".},
+  pages       = {163--175},
+  pdf         = {../assets/pdf/Diaconis_1988.pdf},
+  publisher   = {Springer-Verlag, New York},
+  title       = {Bayesian numerical analysis},
+  volume      = {1},
+  year        = {1988}
+}
+
+@book{hennig_osborne_kersting_2022,
+tags = {general},
+  author      = {Hennig, Philipp and Osborne, Michael A. and Kersting, Hans P.},
+  bibtex_show = {true},
+  doi         = {10.1017/9781316681411},
+  pdf         = {../ProbabilisticNumerics.pdf},
+  publisher   = {Cambridge University Press},
+  title       = {Probabilistic Numerics: Computation as Machine Learning},
+  year        = {2022}
+}
+
+@article{HenOsbGirRSPA2015,
+tags = {general},
+  abstract    = {We deliver a call to arms for probabilistic numerical methods: algorithms for
+                 numerical tasks, including linear algebra, integration, optimization and
+                 solving differential equations, that return uncertainties in their
+                 calculations. Such uncertainties, arising from the loss of precision induced by
+                 numerical calculation with limited time or hardware, are important for much
+                 contemporary science and industry. Within applications such as climate science
+                 and astrophysics, the need to make decisions on the basis of computations with
+                 large and complex data has led to a renewed focus on the management of
+                 numerical uncertainty. We describe how several seminal classic numerical
+                 methods can be interpreted naturally as probabilistic inference. We then show
+                 that the probabilistic view suggests new algorithms that can flexibly be
+                 adapted to suit application specifics, while delivering improved empirical
+                 performance. We provide concrete illustrations of the benefits of probabilistic
+                 numeric algorithms on real scientific problems from astrometry and astronomical
+                 imaging, while highlighting open problems with these new algorithms. Finally,
+                 we describe how probabilistic numerical methods provide a coherent framework
+                 for identifying the uncertainty in calculations performed with a combination of
+                 numerical algorithms (e.g. both numerical optimisers and differential equation
+                 solvers), potentially allowing the diagnosis (and control) of error sources in
+                 computations.},
+  author      = {Hennig, Philipp and Osborne, Michael A. and Girolami, Mark},
+  bibtex_show = {true},
+  journal     = {Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences},
+  link        = {http://rspa.royalsocietypublishing.org/content/471/2179/20150142},
+  number      = {2179},
+  pdf         = {http://rspa.royalsocietypublishing.org/content/royprsa/471/2179/20150142.full.pdf},
+  publisher   = {The Royal Society},
+  title       = {Probabilistic numerics and uncertainty in computations},
+  volume      = {471},
+  year        = {2015}
+}
+
+@article{larkin1972gaussian,
+tags = {general},
+  abstract    = {The numerical analyst is often called upon to estimate a function from a very limited knowledge of its properties (e.g. a finite number of ordinate values). This problem may be made well posed in a variety of ways, but an attractive approach is to regard the required function as a member of a linear space on which a probability measure is constructed, and then use established techniques of probability theory and statistics in order to infer properties of the function from the given information. This formulation agrees with established theory, for the problem of optimal linear approximation (using a Gaussian probability distribution), and also permits the estimation of nonlinear functionals, as well as extension to the case of "noisy" data.},
+  author      = {Larkin, F. M.},
+  bibtex_show = {true},
+  journal     = {Rocky Mountain Journal of Mathematics},
+  number      = {3},
+  pages       = {379--422},
+  title       = {Gaussian measure in {H}ilbert space and applications in numerical analysis},
+  volume      = {2},
+  year        = {1972}
+}
+
+
+@article{o1992some,
+tags = {general},
+  author      = {O’Hagan, Anthony},
+  bibtex_show = {true},
+  journal     = {Bayesian Statistics},
+  number      = {345--363},
+  pages       = {4--2},
+  pdf         = {../assets/pdf/OHagan1991.pdf},
+  title       = {Some {B}ayesian numerical analysis},
+  volume      = {4},
+  year        = {1992}
+}
+
+
+@article{owhadi_conditioning_2015,
+tags = {general},
+  abstract    = {For a Gaussian measure on a separable Hilbert space with covariance operator \$C\$, we show that the family of conditional measures associated with conditioning on a closed subspace \$S{\textasciicircum}\{{\textbackslash}perp\}\$ are Gaussian with covariance operator the short \${\textbackslash}mathcal\{S\}(C)\$ of the operator \$C\$ to \$S\$. We provide two proofs. The first uses the theory of Gaussian Hilbert spaces and a characterization of the shorted operator by Andersen and Trapp. The second uses recent developments by Corach, Maestripieri and Stojanoff on the relationship between the shorted operator and \$C\$-symmetric oblique projections onto \$S{\textasciicircum}\{{\textbackslash}perp\}\$. To obtain the assertion when such projections do not exist, we develop an approximation result for the shorted operator by showing, for any positive operator \$A\$, how to construct a sequence of approximating operators \$A{\textasciicircum}\{n\}\$ which possess \$A{\textasciicircum}\{n\}\$-symmetric oblique projections onto \$S{\textasciicircum}\{{\textbackslash}perp\}\$ such that the sequence of shorted operators \${\textbackslash}mathcal\{S\}(A{\textasciicircum}\{n\})\$ converges to \${\textbackslash}mathcal\{S\}(A)\$ in the weak operator topology. This result combined with the martingale convergence of random variables associated with the corresponding approximations \$C{\textasciicircum}\{n\}\$ establishes the main assertion in general. Moreover, it in turn strengthens the approximation theorem for shorted operator when the operator is trace class; then the sequence of shorted operators \${\textbackslash}mathcal\{S\}(A{\textasciicircum}\{n\})\$ converges to \${\textbackslash}mathcal\{S\}(A)\$ in trace norm.},
+  author      = {Owhadi, Houman and Scovel, Clint},
+  bibtex_show = {true},
+  journal     = {arXiv:1506.04208 [math]},
+  keywords    = {28C20, Mathematics - Probability},
+  month       = jun,
+  note        = {arXiv: 1506.04208},
+  pdf         = {https://arxiv.org/pdf/1506.04208.pdf},
+  title       = {Conditioning {Gaussian} measure on {Hilbert} space},
+  url         = {http://arxiv.org/abs/1506.04208},
+  urldate     = {2017-09-10},
+  year        = 2015
+}
+
+@article{owhadi_universal_2017,
+tags = {general},
+  abstract    = {We show how the discovery of robust scalable numerical solvers for arbitrary bounded linear operators can be automated as a Game Theory problem by reformulating the process of computing with partial information and limited resources as that of playing underlying hierarchies of adversarial information games. When the solution space is a Banach space \$B\$ endowed with a quadratic norm \${\textbackslash}{\textbar}{\textbackslash}cdot{\textbackslash}{\textbar}\$, the optimal measure (mixed strategy) for such games (e.g. the adversarial recovery of \$u{\textbackslash}in B\$, given partial measurements \$[{\textbackslash}phi\_i, u]\$ with \${\textbackslash}phi\_i{\textbackslash}in B{\textasciicircum}*\$, using relative error in \${\textbackslash}{\textbar}{\textbackslash}cdot{\textbackslash}{\textbar}\$-norm as a loss) is a centered Gaussian field \${\textbackslash}xi\$ solely determined by the norm \${\textbackslash}{\textbar}{\textbackslash}cdot{\textbackslash}{\textbar}\$, whose conditioning (on measurements) produces optimal bets. When measurements are hierarchical, the process of conditioning this Gaussian field produces a hierarchy of elementary bets (gamblets). These gamblets generalize the notion of Wavelets and Wannier functions in the sense that they are adapted to the norm \${\textbackslash}{\textbar}{\textbackslash}cdot{\textbackslash}{\textbar}\$ and induce a multi-resolution decomposition of \$B\$ that is adapted to the eigensubspaces of the operator defining the norm \${\textbackslash}{\textbar}{\textbackslash}cdot{\textbackslash}{\textbar}\$. When the operator is localized, we show that the resulting gamblets are localized both in space and frequency and introduce the Fast Gamblet Transform (FGT) with rigorous accuracy and (near-linear) complexity estimates. As the FFT can be used to solve and diagonalize arbitrary PDEs with constant coefficients, the FGT can be used to decompose a wide range of continuous linear operators (including arbitrary continuous linear bijections from \$H{\textasciicircum}s\_0\$ to \$H{\textasciicircum}\{-s\}\$ or to \$L{\textasciicircum}2\$) into a sequence of independent linear systems with uniformly bounded condition numbers and leads to \${\textbackslash}mathcal\{O\}(N {\textbackslash}operatorname\{polylog\} N)\$ solvers and eigenspace adapted Multiresolution Analysis (resulting in near linear complexity approximation of all eigensubspaces).},
+  annote      = {Comment: 142 pages. 14 Figures. Presented at AFOSR (Aug 2016), DARPA (Sep 2016), IPAM (Apr 3, 2017), Hausdorff (April 13, 2017) and ICERM (June 5, 2017)},
+  author      = {Owhadi, Houman and Scovel, Clint},
+  bibtex_show = {true},
+  journal     = {arXiv:1703.10761 [math, stat]},
+  keywords    = {68T99, 65T60, 65M55, 65N55, 65F99, 65N75, 62C99, 62C20, 62C10, 42C40, 60G42, 68Q25, 15A18, 35Q91, Mathematics - Analysis of PDEs, Mathematics - Numerical Analysis, Statistics - Machine Learning},
+  month       = mar,
+  pdf         = {https://arxiv.org/pdf/1703.10761.pdf},
+  title       = {Universal {Scalable} {Robust} {Solvers} from {Computational} {Information} {Games} and fast eigenspace adapted {Multiresolution} {Analysis}},
+  url         = {http://arxiv.org/abs/1703.10761},
+  urldate     = {2017-09-10},
+  year        = {2017}
+}
+
+@incollection{Owhadi-Scovel-TowardsMachineWald,
+tags = {general},
+  abstract    = {The past century has seen a steady increase in the need of estimating and predicting complex systems and making (possibly critical) decisions with limited information. Although computers have made possible the numerical evaluation of sophisticated statistical models, these models are still designed by humans because there is currently no known recipe or algorithm for dividing the design of a statistical model into a sequence of arithmetic operations. Indeed enabling computers to think as humans, especially when faced with uncertainty, is challenging in several major ways: (1) Finding optimal statistical models remains to be formulated as a well-posed problem when information on the system of interest is incomplete and comes in the form of a complex combination of sample data, partial knowledge of constitutive relations and a limited description of the distribution of input random variables. (2) The space of admissible scenarios along with the space of relevant information, assumptions, and/or beliefs, tends to be infinite dimensional, whereas calculus on a computer is necessarily discrete and finite. With this purpose, this paper explores the foundations of a rigorous framework for the scientific computation of optimal statistical estimators/models and reviews their connections with decision theory, machine learning, Bayesian inference, stochastic optimization, robust optimization, optimal uncertainty quantification, and information-based complexity.},
+  author      = {Houman Owhadi and Clint Scovel},
+  bibtex_show = {true},
+  booktitle   = {Springer Handbook of Uncertainty Quantification},
+  link        = {http://arxiv.org/abs/1508.02449},
+  pages       = {1--35},
+  pdf         = {http://arxiv.org/pdf/1508.02449v2.pdf},
+  publisher   = {Springer},
+  title       = {Toward Machine {W}ald},
+  year        = 2016
+}
+
+@article{teymur2021black,
+tags = {general},
+  abstract    = {Probabilistic numerics casts numerical tasks, such the numerical solution of differential equations, as inference problems to be solved. One approach is to model the unknown quantity of interest as a random variable, and to constrain this variable using data generated during the course of a traditional numerical method. However, data may be nonlinearly related to the quantity of interest, rendering the proper conditioning of random variables difficult and limiting the range of numerical tasks that can be addressed. Instead, this paper proposes to construct probabilistic numerical methods based only on the final output from a traditional method. A convergent sequence of approximations to the quantity of interest constitute a dataset, from which the limiting quantity of interest can be extrapolated, in a probabilistic analogue of Richardson's deferred approach to the limit. This black box approach (1) massively expands the range of tasks to which probabilistic numerics can be applied, (2) inherits the features and performance of state-of-the-art numerical methods, and (3) enables provably higher orders of convergence to be achieved. Applications are presented for nonlinear ordinary and partial differential equations, as well as for eigenvalue problems-a setting for which no probabilistic numerical methods have yet been developed.},
+  author      = {Teymur, Onur and Foley, Christopher N and Breen, Philip G and Karvonen, Toni and Oates, Chris J},
+  bibtex_show = {true},
+  journal     = {arXiv e-prints},
+  link        = {https://arxiv.org/abs/2106.13718},
+  pdf         = {https://arxiv.org/pdf/2106.13718.pdf},
+  title       = {Black Box Probabilistic Numerics},
+  volume      = {2106.13718},
+  year        = {2021}
+}
+@article{2014arXiv14022058H,
+tags = {linear-algebra},
+  abstract    = {This paper proposes a probabilistic framework for algorithms
+                 that iteratively solve unconstrained linear problems Bx = b with positive
+                 definite B for x. The goal is to replace the point estimates returned by
+                 existing methods with a Gaussian posterior belief over the elements of the
+                 inverse of B, which can be used to estimate errors. Recent probabilistic
+                 interpretations of the secant family of quasi-Newton optimization algorithms
+                 are extended. Combined with properties of the conjugate gradient algorithm,
+                 this leads to uncertainty-calibrated methods with very limited cost overhead
+                 over conjugate gradients, a self-contained novel interpretation of the
+                 quasi-Newton and conjugate gradient algorithms, and a foundation for new
+                 nonlinear optimization methods.},
+  author      = {P. {Hennig}},
+  bibtex_show = {true},
+  file        = {http://probabilistic-numerics.org/assets/pdf/HennigLinear2015.pdf},
+  issue       = 1,
+  journal     = {SIAM J on Optimization},
+  link        = {http://epubs.siam.org/doi/abs/10.1137/140955501?journalCode=sjope8},
+  month       = Jan,
+  title       = {{Probabilistic Interpretation of Linear Solvers}},
+  volume      = 25,
+  year        = 2015
+}
+
+@proceedings{BarHen16,
+tags = {linear-algebra},
+  abstract    = {Least-squares and kernel-ridge / Gaussian process regression are among the foundational algorithms of statistics and machine learning. Famously, the worst-case cost of exact nonparametric regression grows cubically with the data-set size; but a growing number of approximations have been developed that estimate good solutions at lower cost. These algorithms typically return point estimators, without measures of uncertainty. Leveraging recent results casting elementary linear algebra operations as probabilistic inference, we propose a new approximate method for nonparametric least-squares that affords a probabilistic uncertainty estimate over the error between the approximate and exact least-squares solution (this is not the same as the posterior variance of the associated Gaussian process regressor). This allows estimating the error of the least-squares solution on a subset of the data relative to the full-data solution. The uncertainty can be used to control the computational effort invested in the approximation. Our algorithm has linear cost in the data-set size, and a simple formal form, so that it can be implemented with a few lines of code in programming languages with linear algebra functionality.},
+  author      = {Bartels, S. and Hennig, P.},
+  bibtex_show = {true},
+  booktitle   = {Proceedings of the 19th International Conference on Artificial Intelligence and Statistics (AISTATS 2016)},
+  editors     = {Gretton, A. and Robert, C. C. },
+  file        = {http://jmlr.org/proceedings/papers/v51/bartels16.pdf},
+  link        = {http://jmlr.org/proceedings/papers/v51/bartels16.html},
+  pages       = {676--684},
+  series      = {JMLR Workshop and Conference Proceedings},
+  title       = {Probabilistic Approximate Least-Squares},
+  volume      = {51},
+  year        = {2016}
+}
+
+@article{cockayne2019bayesian,
+tags = {linear-algebra},
+  author      = {Cockayne, Jon and Oates, Chris J and Ipsen, Ilse CF and Girolami, Mark},
+  bibtex_show = {true},
+  journal     = {Bayesian Analysis},
+  number      = {3},
+  pages       = {937--1012},
+  publisher   = {International Society for Bayesian Analysis},
+  title       = {A Bayesian conjugate gradient method (with discussion)},
+  volume      = {14},
+  year        = {2019}
+}
+
+
+@article{cockayne2020probabilistic,
+tags = {linear-algebra},
+  author      = {Cockayne, Jon and Ipsen, Ilse CF and Oates, Chris J and Reid, Tim W},
+  bibtex_show = {true},
+  journal     = {arXiv preprint arXiv:2012.12615},
+  title       = {Probabilistic Iterative Methods for Linear Systems},
+  year        = {2020}
+}
+
+@inproceedings{fitzsimons_bayesian_2017,
+tags = {linear-algebra},
+  abstract    = {The log-determinant of a kernel matrix appears in a variety of machine learning problems, ranging from determinantal point processes and generalized Markov random fields, through to the training of Gaussian processes. Exact calculation of this term is often intractable when the size of the kernel matrix exceeds a few thousand. In the spirit of probabilistic numerics, we reinterpret the problem of computing the log-determinant as a Bayesian inference problem. In particular, we combine prior knowledge in the form of bounds from matrix theory and evidence derived from stochastic trace estimation to obtain probabilistic estimates for the log-determinant and its associated uncertainty within a given computational budget. Beyond its novelty and theoretic appeal, the performance of our proposal is competitive with state-of-the-art approaches to approximating the log-determinant, while also quantifying the uncertainty due to budget-constrained evidence.},
+  author      = {Fitzsimons, Jack and Cutajar, Kurt and Osborne, Michael and Roberts, Stephen and Filippone, Maurizio},
+  bibtex_show = {true},
+  booktitle   = {Uncertainty in {Artificial} {Intelligence}},
+  file        = {http://probabilistic-numerics.org/assets/pdf/Fitzsimons et al. - 2017 - Bayesian Inference of Log Determinants.pdf},
+  title       = {Bayesian {Inference} of {Log} {Determinants}},
+  url         = {https://arxiv.org/abs/1704.01445},
+  urldate     = {2017-06-21},
+  year        = {2017}
+}
+
+
+@article{PhysRevE85021134,
+tags = {linear-algebra},
+  abstract    = {Estimating the diagonal entries of a matrix, that is not directly accessible but only available as a linear operator in the form of a computer routine, is a common necessity in many computational applications, especially in image reconstruction and statistical inference. Here, methods of statistical inference are used to improve the accuracy or the computational costs of matrix probing methods to estimate matrix diagonals. In particular, the generalized Wiener filter methodology, as developed within information field theory, is shown to significantly improve estimates based on only a few sampling probes, in cases in which some form of continuity of the solution can be assumed. The strength, length scale, and precise functional form of the exploited autocorrelation function of the matrix diagonal is determined from the probes themselves. The developed algorithm is successfully applied to mock and real world problems. These performance tests show that, in situations where a matrix diagonal has to be calculated from only a small number of computationally expensive probes, a speedup by a factor of 2 to 10 is possible with the proposed method. },
+  author      = {Selig, Marco and Oppermann, Niels and En\ss{}lin, Torsten A.},
+  bibtex_show = {true},
+  issue       = {2},
+  journal     = {Phys. Rev. E},
+  link        = {https://link.aps.org/doi/10.1103/PhysRevE.85.021134},
+  month       = {Feb},
+  numpages    = {7},
+  pages       = {021134},
+  publisher   = {American Physical Society},
+  title       = {Improving stochastic estimates with inference methods: Calculating matrix diagonals},
+  volume      = {85},
+  year        = {2012}
+}
+
+@article{PhysRevE92013302,
+tags = {linear-algebra},
+  abstract    = {Matrix determinants play an important role in data analysis, in particular when Gaussian processes are involved. Due to currently exploding data volumes, linear operations---matrices---acting on the data are often not accessible directly but are only represented indirectly in form of a computer routine. Such a routine implements the transformation a data vector undergoes under matrix multiplication. While efficient probing routines to estimate a matrix's diagonal or trace, based solely on such computationally affordable matrix-vector multiplications, are well known and frequently used in signal inference, there is no stochastic estimate for its determinant. We introduce a probing method for the logarithm of a determinant of a linear operator. Our method rests upon a reformulation of the log-determinant by an integral representation and the transformation of the involved terms into stochastic expressions. This stochastic determinant determination enables large-size applications in Bayesian inference, in particular evidence calculations, model comparison, and posterior determination.},
+  author      = {Dorn, Sebastian and En\ss{}lin, Torsten A.},
+  bibtex_show = {true},
+  issue       = {1},
+  journal     = {Phys. Rev. E},
+  link        = {https://link.aps.org/doi/10.1103/PhysRevE.92.013302},
+  month       = {Jul},
+  numpages    = {8},
+  pages       = {013302},
+  publisher   = {American Physical Society},
+  title       = {Stochastic determination of matrix determinants},
+  volume      = {92},
+  year        = {2015}
+}
+
+@article{reid2020probabilistic,
+tags = {linear-algebra},
+  author      = {Reid, Tim W and Ipsen, Ilse CF and Cockayne, Jon and Oates, Chris J},
+  bibtex_show = {true},
+  journal     = {arXiv preprint arXiv:2008.03225},
+  title       = {A Probabilistic Numerical Extension of the Conjugate Gradient Method},
+  year        = {2020}
+}
+
+@article{schafer_compression_2017,
+tags = {linear-algebra},
+  abstract    = {Dense kernel matrices \${\textbackslash}Theta {\textbackslash}in {\textbackslash}mathbb\{R\}{\textasciicircum}\{N {\textbackslash}times N\}\$ obtained from point evaluations of a covariance function \$G\$ at locations \${\textbackslash}\{ x\_\{i\} {\textbackslash}\}\_\{1 {\textbackslash}leq i {\textbackslash}leq N\}\$ arise in statistics, machine learning, and numerical analysis. For covariance functions that are Green's functions elliptic boundary value problems and approximately equally spaced sampling points, we show how to identify a subset \$S {\textbackslash}subset {\textbackslash}\{ 1 , {\textbackslash}dots , N {\textbackslash}\} {\textbackslash}times {\textbackslash}\{ 1 , {\textbackslash}dots , N {\textbackslash}\}\$, with \${\textbackslash}\# S = O ( N {\textbackslash}log (N) {\textbackslash}log{\textasciicircum}\{d\} ( N / {\textbackslash}epsilon ) )\$, such that the zero fill-in block-incomplete Cholesky decomposition of \${\textbackslash}Theta\_\{i,j\} 1\_\{( i,j ) {\textbackslash}in S\}\$ is an \${\textbackslash}epsilon\$-approximation of \${\textbackslash}Theta\$. This block-factorisation can provably be obtained in \$O{\textbackslash}left(N {\textbackslash}log{\textasciicircum}\{2\} ( N ) {\textbackslash}left( {\textbackslash}log (1/{\textbackslash}epsilon ) + {\textbackslash}log{\textasciicircum}\{2\} ( N ) {\textbackslash}right){\textasciicircum}\{4d+1\} {\textbackslash}right)\$ complexity in time. Numerical evidence further suggests that element-wise Cholesky decomposition with the same ordering constitutes an \$O{\textbackslash}left( N {\textbackslash}log{\textasciicircum}\{2\} ( N ) {\textbackslash}log{\textasciicircum}\{2d\} ( N/{\textbackslash}epsilon ) {\textbackslash}right)\$ solver. The algorithm only needs to know the spatial configuration of the \$x\_\{i\}\$ and does not require an analytic representation of \$G\$. Furthermore, an approximate PCA with optimal rate of convergence in the operator norm can be easily read off from this decomposition. Hence, by using only subsampling and the incomplete Cholesky decomposition, we obtain at nearly linear complexity the compression, inversion and approximate PCA of a large class of covariance matrices. By inverting the order of the Cholesky decomposition we also obtain a near-linear-time solver for elliptic PDEs.},
+  author      = {Schäfer, Florian and Sullivan, T. J. and Owhadi, Houman},
+  bibtex_show = {true},
+  file        = {https://arxiv.org/pdf/1706.02205.pdf},
+  journal     = {arXiv:1706.02205 [cs, math]},
+  keywords    = {65F30, 42C40, 65F50, 65N55, 65N75, 60G42, 68Q25, 68W40, Computer Science - Computational Complexity, Computer Science - Data Structures and Algorithms, Mathematics - Numerical Analysis, Mathematics - Probability},
+  month       = jun,
+  note        = {arXiv: 1706.02205},
+  title       = {Compression, inversion, and approximate {PCA} of dense kernel matrices at near-linear computational complexity},
+  url         = {http://arxiv.org/abs/1706.02205},
+  urldate     = {2017-09-10},
+  year        = {2017}
+}
+
+@inproceedings{wenger2020problinsolve,
+tags = {linear-algebra},
+  author      = {Jonathan Wenger and Philipp Hennig},
+  bibtex_show = {true},
+  booktitle   = {Advances in Neural Information Processing Systems (NeurIPS)},
+  code        = {https://github.com/JonathanWenger/probabilistic-linear-solvers-for-ml},
+  link        = {https://arxiv.org/abs/2010.09691},
+  pdf         = {https://arxiv.org/pdf/2010.09691.pdf},
+  title       = {Probabilistic Linear Solvers for Machine Learning},
+  year        = {2020}
+}
+
+@inproceedings{wenger2022computational,
+tags = {linear-algebra},
+  author    = {Jonathan Wenger and Geoff Pleiss and Marvin Pf{\"o}rtner and Philipp Hennig and John P. Cunningham},
+  bibtex_show = {true},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  title     = {Posterior and Computational Uncertainty in {G}aussian processes},
+  link       = {https://arxiv.org/abs/2205.15449},
+  pdf       = {https://arxiv.org/pdf/2205.15449.pdf},
+  year      = {2022}
+}
+
+@article{OHagan1987,
+tags = {quadrature},
+ jstor_articletype = {research-article},
+ title = {Monte Carlo is Fundamentally Unsound},
+ author = {O'Hagan, A.},
+ journal = {Journal of the Royal Statistical Society. Series D (The Statistician)},
+ jstor_issuetitle = {Special Issue: Practical Bayesian Statistics},
+ volume = {36},
+ number = {2/3},
+ jstor_formatteddate = {1987},
+ pages = {pp. 247-249},
+ link = {http://www.jstor.org/stable/2348519},
+ ISSN = {00390526},
+ abstract = {We present some fundamental objections to the Monte Carlo method of numerical integration.},
+ language = {English},
+ year = {1987},
+ publisher = {Wiley for the Royal Statistical Society},
+ copyright = {Copyright © 1987 Royal Statistical Society}
+}
+
+@article{kennedy1996iterative,
+tags = {quadrature},
+  title={Iterative rescaling for Bayesian quadrature},
+  author={Kennedy, MC and O’Hagan, A},
+  journal={Bayesian Statistics},
+  volume={5},
+  pages={639--645},
+  year={1996},
+  publisher={Oxford University Press Oxford}
+}
+
+@article{kennedy1998bayesian,
+tags = {quadrature},
+  title={Bayesian quadrature with non-normal approximating functions},
+  author={Kennedy, Marc},
+  journal={Statistics and Computing},
+  volume={8},
+  number={4},
+  pages={365--375},
+  year={1998},
+  link={http://dl.acm.org/citation.cfm?id=599295},
+  publisher={Springer}
+}
+
+
+@article{ohagan1991bayes,
+tags = {quadrature},
+  title =	 {{B}ayes--{H}ermite quadrature},
+  author =	 {O'Hagan, A.},
+  journal =	 {Journal of statistical planning and inference},
+  volume =	 29,
+  number =	 3,
+  pages =	 {245--260},
+  year =	 1991,
+  abstract =	 {Bayesian quadrature treats the problem of numerical
+                  integration as one of statistical inference. A prior Gaussian
+                  process distribution is assumed for the integrand,
+                  observations arise from evaluating the integrand at selected
+                  points, and a posterior distribution is derived for the
+                  integrand and the integral. Methods are developed for
+                  quadrature in p. A particular application is integrating the
+                  posterior density arising from some other Bayesian analysis.
+                  Simulation results are presented, to show that the resulting
+                  Bayes–Hermite quadrature rules may perform better than the
+                  conventional Gauss–Hermite rules for this application. A key
+                  result is derived for product designs, which makes Bayesian
+                  quadrature practically useful for integrating in several
+                  dimensions. Although the method does not at present provide a
+                  solution to the more difficult problem of quadrature in high
+                  dimensions, it does seem to offer real improvements over
+                  existing methods in relatively low dimensions.}
+}
+
+@techreport{minka2000deriving,
+tags = {quadrature},
+  author =	 {T.P. Minka},
+  institution =	 {Statistics Department, Carnegie Mellon University},
+  title =	 {{Deriving quadrature rules from {G}aussian processes}},
+  year =	 2000,
+  link = {http://research.microsoft.com/en-us/um/people/minka/papers/quadrature.html},
+  abstract =	 {Quadrature rules are often designed to achieve zero error on
+                  a small set of functions, e.g. polynomials of specified
+                  degree. A more robust method is to minimize average error
+                  over a large class or distribution of functions. If functions
+                  are distributed according to a Gaussian process, then
+                  designing an average-case quadrature rule reduces to solving
+                  a system of 2n equations, where n is the number of nodes in
+                  the rule (O'Hagan, 1991). It is shown how this very general
+                  technique can be used to design customized quadrature rules,
+                  in the style of Yarvin & Rokhlin (1998), without the need for
+                  singular value decomposition and in any number of
+                  dimensions. It is also shown how classical Gaussian
+                  quadrature rules, trigonometric lattice rules, and spline
+                  rules can be extended to the average-case and to multiple
+                  dimensions by deriving them from Gaussian processes. In
+                  addition to being more robust, multidimensional quadrature
+                  rules designed for the average-case are found to be much less
+                  ambiguous than those designed for a given polynomial degree.}
+}
+
+@inproceedings{ghahramani2002bayesian,
+tags = {quadrature},
+  title={Bayesian {Monte Carlo}},
+  author={Ghahramani, Zoubin and Rasmussen, Carl E},
+  booktitle={Advances in neural information processing systems},
+  pages={489--496},
+  file={http://machinelearning.wustl.edu/mlpapers/paper_files/AA01.pdf},
+  year={2002},
+  abstract = { We investigate Bayesian alternatives to classical Monte Carlo
+    methods for evaluating integrals. Bayesian Monte Carlo (BMC) allows the in-
+    corporation of prior knowledge, such as smoothness of the integrand, into
+    the estimation. In a simple problem we show that this outperforms any
+    classical importance sampling method. We also attempt more chal- lenging
+    multidimensional integrals involved in computing marginal like- lihoods of
+    statistical models (a.k.a. partition functions and model evi- dences). We
+    find that Bayesian Monte Carlo outperformed Annealed Importance Sampling,
+    although for very high dimensional problems or problems with massive
+    multimodality BMC may be less adequate. One advantage of the Bayesian
+    approach to Monte Carlo is that samples can be drawn from any distribution.
+    This allows for the possibility of active design of sample points so as to
+    maximise information gain. }
+}
+
+
+@article{Kong2003,
+tags = {quadrature},
+abstract = {The task of estimating an integral by Monte Carlo methods is formulated as a statistical model using simulated observations as data. The difficulty in this exercise is that we ordinarily have at our disposal all of the information required to compute integrals exactly by calculus or numerical integration, but we choose to ignore some of the information for simplicity or computational feasibility. Our proposal is to use a semiparametric statistical model that makes explicit what information is ignored and what information is retained. The parameter space in this model is a set of measures on the sample space, which is ordinarily an infinite dimensional object. None-the-less, from simulated data the base-line measure can be estimated by maximum likelihood, and the required integrals computed by a simple formula previously derived by Vardi and by Lindsay in a closely related model for biased sampling. The same formula was also suggested by Geyer and by Meng and Wong using entirely different arguments. By contrast with Geyer's retrospective likelihood, a correct estimate of simulation error is available directly from the Fisher information. The principal advantage of the semiparametric model is that variance reduction techniques are associated with submodels in which the maximum likelihood estima-tor in the submodel may have substantially smaller variance than the traditional estimator. The method is applicable to Markov chain and more general Monte Carlo sampling schemes with multiple samplers.},
+author = {Augustine Kong and Peter McCullagh and Xiao-Li Meng and Dan L. Nicolae and Zhiquiang Tan},
+journal = {Journal of the Royal Statistical Society, Series B (Statistical Methodology)},
+number = {3},
+pages = {585--618},
+title = {{A theory of statistical models for Monte Carlo integration}},
+volume = {65},
+year = {2003},
+link = {http://onlinelibrary.wiley.com/doi/10.1111/1467-9868.00404/abstract}
+}
+
+@article{Tan2004,
+tags = {quadrature},
+abstract = {The use of estimating equations has been a common approach for constructing Monte Carlo estimators. Recently, Kong et al. proposed a formulation of Monte Carlo integration as a statistical model, making explicit what information is ignored and what is retained about the baseline measure. From simulated data, the baseline measure is estimated by maximum likelihood, and then integrals of interest are estimated by substituting the estimated measure. For two different situations in which independent observations are simulated from multiple distributions, we show that this likelihood approach achieves the lowest asymptotic variance possible by using estimating equations. In the first situation, the normalizing constants of the design distributions are estimated, and Meng andWong’s bridge sampling estimating equation is considered. In the second situation, the values of the normalizing constants are known, thereby imposing linear constraints on the baseline measure. Estimating equations including Hesterberg’s stratified importance sampling estimator, Veach and Guibas’s multiple importance sampling estimator, and Owen and Zhou’s method of control variates are considered.},
+author = {Zhiqiang Tan},
+journal = {Journal of the American Statistical Association},
+number = {468},
+pages = {1027--1036},
+title = {{On a Likelihood Approach for Monte Carlo Integration}},
+volume = {99},
+year = {2004},
+link = {http://www.jstor.org/stable/27590482?seq=1#page_scan_tab_contents}
+}
+
+@article{Kong2007,
+tags = {quadrature},
+abstract = {Monte-Carlo estimation of an integral is usually based on the method of moments or an estimating equation. Recently, Kong, McCullagh, Meng, Nicolae and Tan (2003) proposed a likelihood based theory, which puts Monte-Carlo estimation of integrals on a firmer, less ad hoc, basis by formulating the problem as a likelihood inference problems for the baseline measure with simulated observations as data. In this paper, we provide further exploration and development of this theory. After an overview of the likelihood formulation, we first demonstrate the power of the likelihood-based method by presenting a universally improved importance sampling estimator. We then prove that the formal, infinite-dimensional Fisher-information based variance calculation given in Kong et al. (2003) is asymptotically the same as the sampling based "sandwich" variance estimator. Next, we explore the gain in Monte Carlo efficiency when the baseline measure can be parameterized. Furthermore, we show how the Monte Carlo integration problem can also be dealt with by the method of empirical likelihood, and how the baseline measure parameter can be properly profiled out to form a profile likelihood for the integrals only. As a byproduct, we obtain four equivalent conditions for the existence of unique maximum likelihood estimate for mixture models with known components. We also discuss an apparent paradox for Bayesian inference with Monte Carlo integration.},
+author = {Augustine Kong and Peter McCullagh and Xiao-Li Meng and Dan L. Nicolae},
+journal = {Advances in Statistical Modelling and Inference},
+number = {March},
+pages = {563--592},
+title = {{Further Explorations of Likelihood Theory for Monte Carlo Integration}},
+year = {2007},
+link = {http://www.worldscientific.com/doi/abs/10.1142/9789812708298_0028}
+}
+
+
+
+@inproceedings{osborne2012bayesian,
+tags = {quadrature},
+  author =	 {M.A. Osborne and R. Garnett and S.J. Roberts and C. Hart and
+                  S.  Aigrain and N. Gibson},
+  booktitle =	 {{International Conference on Artificial Intelligence and
+                  Statistics}},
+  pages =	 {832--840},
+  title =	 {{Bayesian quadrature for ratios}},
+  year =	 2012,
+  abstract =	 {We describe a novel approach to quadrature for ratios of
+                  probabilistic integrals, such as are used to compute
+                  posterior probabilities. This approach offers performance
+                  superior to Monte Carlo methods by exploiting a Bayesian
+                  quadrature framework. We improve upon previous Bayesian
+                  quadrature techniques by explicitly modelling the
+                  non-negativity of our integrands, and the correlations that
+                  exist between them. It offers most where the integrand is
+                  multi-modal and expensive to evaluate. We demonstrate the
+                  efficacy of our method on data from the Kepler space
+                  telescope.},
+  file =	 {../assets/pdf/Osborne2012Bayesian.pdf}
+}
+
+
+@inproceedings{osborne2012active,
+tags = {quadrature},
+  author =	 {M.A. Osborne and D.K. Duvenaud and R. Garnett and
+                  C.E. Rasmussen and S.J. Roberts and Z. Ghahramani},
+  booktitle =	 {{Advances in Neural Information Processing Systems (NIPS)}},
+  pages =	 {46--54},
+  title =	 {{Active Learning of Model Evidence Using Bayesian
+                  Quadrature.}},
+  year =	 2012,
+  abstract =	 { Numerical integration is a key component of many problems in
+                  scientific computing, statistical modelling, and machine
+                  learning. Bayesian Quadrature is a model-based method for
+                  numerical integration which, relative to standard Monte Carlo
+                  methods, offers increased sample efficiency and a more robust
+                  estimate of the uncertainty in the estimated integral. We
+                  propose a novel Bayesian Quadrature approach for numerical
+                  integration when the integrand is non-negative, such as the
+                  case of computing the marginal likelihood, predictive
+                  distribution, or normalising constant of a probabilistic
+                  model. Our approach approximately marginalises the quadrature
+                  model’s hyperparameters in closed form, and introduces an ac-
+                  tive learning scheme to optimally select function
+                  evaluations, as opposed to using Monte Carlo samples. We
+                  demonstrate our method on both a number of synthetic
+                  benchmarks and a real scientific problem from astronomy.},
+ file =	 {../assets/pdf/Osborne2012active.pdf
+}
+}
+
+@inproceedings{sarkkagaussian,
+tags = {quadrature},
+  title =	 {Gaussian Process Quadratures in Nonlinear Sigma-Point
+                  Filtering and Smoothing},
+  author =	 {S{\"a}rkk{\"a}, Simo and Hartikainen, Jouni and Svensson,
+                  Lennart and Sandblom, Fredrik},
+  booktitle =	 {FUSION},
+  year =	 2014,
+  file =	 {http://becs.aalto.fi/~ssarkka/pub/gp_quad_fusion_2014.pdf},
+  abstract =	 {This paper is concerned with the use of Gaussian process
+                  regression based quadrature rules in the context of sigma-
+                  point-based nonlinear Kalman filtering and smoothing. We show
+                  how Gaussian process (i.e., Bayesian or Bayes–Hermite)
+                  quadratures can be used for numerical solving of the
+                  Gaussian integrals arising in the filters and smoothers. An
+                  interesting additional result is that with suitable
+                  selections of Hermite polynomial covariance functions the
+                  Gaussian process quadratures can be reduced to unscented
+                  transforms, spherical cubature rules, and to Gauss- Hermite
+                  rules previously proposed for approximate nonlinear Kalman
+                  filter and smoothing. Finally, the performance of the
+                  Gaussian process quadratures in this context is evaluated
+                  with numerical simulations. }
+}
+
+@InProceedings{gunter14-fast-bayesian-quadrature,
+tags = {quadrature},
+  author =	 {Tom Gunter and Michael A. Osborne and Roman Garnett and
+                  Philipp Hennig and Stephen Roberts},
+  title =	 {Sampling for Inference in Probabilistic Models with Fast
+                  Bayesian Quadrature},
+  booktitle =	 {Advances in Neural Information Processing Systems (NIPS)},
+  year =	 2014,
+  editor =	 {C. Cortes and N. Lawrence},
+  abstract =	 {We propose a novel sampling framework for inference in
+                  probabilistic models: an active learning approach that
+                  converges more quickly (in wall-clock time) than Markov chain
+                  Monte Carlo (MCMC) benchmarks. The central challenge in
+                  probabilistic inference is numerical integration, to average
+                  over ensembles of models or unknown (hyper-)parameters (for
+                  example to compute marginal likelihood or a partition
+                  function). MCMC has provided approaches to numerical
+                  integration that deliver state-of-the-art inference, but can
+                  suffer from sample inefficiency and poor convergence
+                  diagnostics. Bayesian quadrature techniques offer a
+                  model-based solution to such problems, but their uptake has
+                  been hindered by prohibitive computation costs. We introduce
+                  a warped model for probabilistic integrands (likelihoods)
+                  that are known to be non-negative, permitting a cheap active
+                  learning scheme to optimally select sample locations. Our
+                  algorithm is demonstrated to offer faster convergence (in
+                  seconds) relative to simple Monte Carlo and annealed
+                  importance sampling on both synthetic and real-world
+                  examples.},
+  code =	 {https://github.com/OxfordML/wsabi}
+}
+
+@ARTICLE{2015arXiv150405994S,
+tags = {quadrature},
+   author = {{S{\"a}rkk{\"a}}, S. and {Hartikainen}, J. and {Svensson}, L. and
+  {Sandblom}, F.},
+    title = "{On the relation between Gaussian process quadratures and sigma-point methods}",
+  journal = {arXiv preprint stat.ME 1504.05994},
+     year = 2015,
+    month = apr,
+    abstract = {This article is concerned with Gaussian process quadratures, which are numerical integration methods based on Gaussian process regression methods, and sigma-point methods, which are used in advanced non-linear Kalman filtering and smoothing algorithms. We show that many sigma-point methods can be interpreted as Gaussian quadrature based methods with suitably selected covariance functions. We show that this interpretation also extends to more general multivariate Gauss--Hermite integration methods and related spherical cubature rules. Additionally, we discuss different criteria for selecting the sigma-point locations: exactness for multivariate polynomials up to a given order, minimum average error, and quasi-random point sets. The performance of the different methods is tested in numerical experiments.},
+    file = {http://arxiv.org/pdf/1504.05994v1.pdf}
+}
+
+@inproceedings{NIPS2014_5595,
+tags = {quadrature},
+title = {Just-In-Time Learning for Fast and Flexible Inference},
+author = {Eslami, S. M. Ali and Tarlow, Daniel and Kohli, Pushmeet and Winn, John},
+booktitle = {Advances in Neural Information Processing Systems (NIPS) 27},
+editor = {Z. Ghahramani and M. Welling and C. Cortes and N.D. Lawrence and K.Q. Weinberger},
+pages = {154--162},
+year = {2014},
+file = {http://papers.nips.cc/paper/5595-just-in-time-learning-for-fast-and-flexible-inference.pdf},
+abstract = {Much of research in machine learning has centered around the search for inference algorithms that are both general-purpose and efficient. The problem is extremely challenging and general inference remains computationally expensive. We seek to address this problem by observing that in most specific applications of a model, we typically only need to perform a small subset of all possible inference computations. Motivated by this, we introduce just-in-time learning, a framework for fast and flexible inference that learns to speed up inference at run-time. Through a series of experiments, we show how this framework can allow us to combine the flexibility of sampling with the efficiency of deterministic message-passing.}
+}
+
+
+
+@InProceedings{Jitkrittum1503,
+tags = {quadrature},
+   author = {{Jitkrittum}, W. and {Gretton}, A. and {Heess}, N. and {Eslami}, S.~M.~A. and
+  {Lakshminarayanan}, B. and {Sejdinovic}, D. and {Szab{\'o}}, Z.
+  },
+    title = "{Kernel-Based Just-In-Time Learning for Passing Expectation Propagation Messages}",
+  booktitle = {Uncertainty in Artificial Intelligence (UAI) 31},
+     year = 2015,
+     file = {http://auai.org/uai2015/proceedings/papers/235.pdf},
+     abstract  = {We propose an efficient nonparametric strategy for learning a message operator in expectation propagation (EP), which takes as input the set of incoming messages to a factor node, and produces an outgoing message as output. This learned operator replaces the multivariate integral required in classical EP, which may not have an analytic expression. We use kernel-based regression, which is trained on a set of probability distributions representing the incoming messages, and the associated outgoing messages. The kernel approach has two main advantages: first, it is fast, as it is implemented using a novel two-layer random feature representation of the input message distributions; second, it has principled uncertainty estimates, and can be cheaply updated online, meaning it can request and incorporate new training data when it encounters inputs on which it is uncertain. In experiments, our approach is able to solve learning problems where a single message operator is required for multiple, substantially different data sets (logistic regression for a variety of classification problems), where it is essential to accurately assess uncertainty and to efficiently and robustly update the message operator.}
+}
+
+
+
+@InProceedings{briol_frank-wolfe_2015,
+tags = {quadrature},
+  title = {Frank-{Wolfe} {Bayesian} {Quadrature}: {Probabilistic} {Integration} with {Theoretical} {Guarantees}},
+  shorttitle = {Frank-{Wolfe} {Bayesian} {Quadrature}},
+  url = {http://arxiv.org/abs/1506.02681},
+  abstract = {There is renewed interest in formulating integration as an inference problem, motivated by obtaining a full distribution over numerical error that can be propagated through subsequent computation. Current methods, such as Bayesian Quadrature, demonstrate impressive empirical performance but lack theoretical analysis. An important challenge is to reconcile these probabilistic integrators with rigorous convergence guarantees. In this paper, we present the first probabilistic integrator that admits such theoretical treatment, called Frank-Wolfe Bayesian Quadrature (FWBQ). Under FWBQ, convergence to the true value of the integral is shown to be exponential and posterior contraction rates are proven to be superexponential. In simulations, FWBQ is competitive with state-of-the-art methods and out-performs alternatives based on Frank-Wolfe optimisation. Our approach is applied to successfully quantify numerical error in the solution to a challenging model choice problem in cellular biology.},
+  booktitle =  {Advances in Neural Information Processing Systems (NIPS)},
+  author = {Briol, François-Xavier and Oates, Chris J. and Girolami, Mark and Osborne, Michael A.},
+  year = {2015},
+  keywords = {Statistics - Machine Learning},
+  file = {http://arxiv.org/pdf/1506.02681v1.pdf}
+}
+
+@article{bach2015equivalence,
+tags = {quadrature},
+  title={On the Equivalence between Quadrature Rules and Random Features},
+  author={Bach, Francis},
+  abstract={
+    We show that kernel-based quadrature rules for computing in tegrals can be seen as a special case of random feature expansions for positive definite kernels, for a particular decomposition that always exists for such kernels. We provide a theoretical analysis of the number of required samples for a given approximation error, leading to both upper and lower bounds that are based solely on the eigenvalues of the associated integral operator and match up to logarithmic terms. In particular, we show that the upper bound may be obtained from independent an d identically distributed samples from a specific non-uniform distribution, while the lower bo und if valid for any set of points. Applying our results to kernel-based quadrature, while our results are fairly general, we recover known upper and lower bounds for the special cases of Sobolev spaces. Moreover, our results extend to the more general problem of full function approxim ations (beyond simply computing an integral), with results in L2- and L∞-norm that match known results for special cases.  Applying our results to random features, we show an improvement of the number of random features needed to preserve the generalization guarantees for learning with Lipshitz-continuous losses.
+  },
+  journal={arXiv preprint arXiv:1502.06800},
+  file={http://arxiv.org/pdf/1502.06800v2.pdf},
+  year={2015}
+}
+
+
+@article{briol_probabilistic_2015,
+tags = {quadrature},
+  title = {Probabilistic {Integration}: A Role for Statisticians in Numerical Analysis?},
+  url = {http://arxiv.org/abs/1512.00933},
+  abstract = {A research frontier has emerged in scientific computation, founded on the principle that numerical error entails epistemic uncertainty that ought to be subjected to statistical analysis. This viewpoint raises several interesting challenges, including the design of statistical methods that enable the coherent propagation of probabilities through a (possibly deterministic) computational pipeline. This paper examines thoroughly the case for probabilistic numerical methods in statistical computation and a specific case study is presented for Markov chain and Quasi Monte Carlo methods. A probabilistic integrator is equipped with a full distribution over its output, providing a measure of epistemic uncertainty that is shown to be statistically valid at finite computational levels, as well as in asymptotic regimes. The approach is motivated by expensive integration problems, where, as in krigging, one is willing to expend, at worst, cubic computational effort in order to gain uncertainty quantification. There, probabilistic integrators enjoy the "best of both worlds", leveraging the sampling efficiency of Monte Carlo methods whilst providing a principled route to assessment of the impact of numerical error on scientific conclusions. Several substantial applications are provided for illustration and critical evaluation, including examples from statistical modelling, computer graphics and uncertainty quantification in oil reservoir modelling.},
+  urldate = {2015-07-22},
+  journal = {arXiv:1512.00933 [cs, math, stat]},
+  author = {Briol, François-Xavier and Oates, Chris J. and Girolami, Mark and Osborne, Michael A. and Sejdinovic, Dino},
+  year = {2015},
+  note = {arXiv: 1512.00933},
+  file = {http://arxiv.org/pdf/1512.00933.pdf}
+}
+
+@incollection{Pruher2016,
+tags = {quadrature},
+  author = {Pr{\"u}her, Jakub and {\v{S}}imandl, Miroslav},
+  title = {{Bayesian Quadrature Variance in Sigma-Point Filtering}},
+  editor = {Filipe, Joaquim and Madani, Kurosh and Gusikhin, Oleg and Sasiadek, Jurek},
+  booktitle = {International Conference on Informatics in Control, Automation and Robotics (ICINCO) Revised Selected Papers},
+  address = {Colmar, France},
+  volume = {12},
+  pages = {355--370},
+  publisher = {Springer International Publishing},
+  year = {2016},
+  abstract = {Sigma-point filters are algorithms for recursive state estimation of the stochastic dynamic systems from noisy measurements, which rely on moment integral approximations by means of various numerical quadrature rules. In practice, however, it is hardly guaranteed that the system dynamics or measurement functions will meet the restrictive requirements of the classical quadratures, which inevitably results in approximation errors that are not accounted for in the current state-of-the-art sigma-point filters. We propose a method for incorporating information about the integral approximation error into the filtering algorithm by exploiting features of a Bayesian quadrature—an alternative to classical numerical integration. This is enabled by the fact that the Bayesian quadrature treats numerical integration as a statistical estimation problem, where the posterior distribution over the values of the integral serves as a model of numerical error. We demonstrate superior performance of the proposed filters on a simple univariate benchmarking example.},
+  link = {http://dx.doi.org/10.1007/978-3-319-31898-1_20},
+  code = {https://github.com/jacobnzw/icinco-code}
+}
+
+@incollection{NIPS2016-6174,
+tags = {quadrature},
+  title = {Convergence guarantees for kernel-based quadrature rules in misspecified settings},
+  author = {Kanagawa, Motonobu and Sriperumbudur, Bharath K. and Fukumizu, Kenji},
+  booktitle = {Advances in Neural Information Processing Systems 29},
+  editor = {D. D. Lee and M. Sugiyama and U. V. Luxburg and I. Guyon and R. Garnett},
+  pages = {3288--3296},
+  year = {2016},
+  publisher = {Curran Associates, Inc.},
+  file = {http://papers.nips.cc/paper/6174-convergence-guarantees-for-kernel-based-quadrature-rules-in-misspecified-settings.pdf},
+  abstract = {Kernel-based quadrature rules are becoming important in machine learning and statistics, as they achieve super-$\sqrt{n}$ convergence rates in numerical integration, and thus provide alternatives to Monte Carlo integration in challenging settings where integrands are expensive to evaluate or where integrands are high dimensional. These rules are based on the assumption that the integrand has a certain degree of smoothness, which is expressed as that the integrand belongs to a certain reproducing kernel Hilbert space (RKHS). However, this assumption can be violated in practice (e.g., when the integrand is a black box function), and no general theory has been established for the convergence of kernel quadratures in such misspecified settings. Our contribution is in proving that kernel quadratures can be consistent even when the integrand does not belong to the assumed RKHS, i.e., when the integrand is less smooth than assumed. Specifically, we derive convergence rates that depend on the (unknown) lesser smoothness of the integrand, where the degree of smoothness is expressed via powers of RKHSs or via Sobolev spaces.},
+  link = {http://papers.nips.cc/paper/6174-convergence-guarantees-for-kernel-based-quadrature-rules-in-misspecified-settings}
+}
+
+
+@inproceedings{karvonen_classical_2017,
+tags = {quadrature},
+  author={Karvonen, Toni and Särkkä, Simo},
+  booktitle={2017 IEEE 27th International Workshop on Machine Learning for Signal Processing (MLSP)},
+  title={Classical quadrature rules via Gaussian processes},
+  year={2017},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={10.1109/MLSP.2017.8168195}
+}
+
+
+
+@article{karvonen_fully_2017,
+tags = {quadrature},
+  title = {Fully symmetric kernel quadrature},
+  url = {http://arxiv.org/abs/1703.06359},
+  abstract = {Kernel quadratures and other kernel-based approximation methods typically suffer from prohibitive cubic time and quadratic space complexity in the number of function evaluations. The problem arises because a system of linear equations needs to be solved. In this article we show that the weights of a kernel quadrature rule can be computed efficiently and exactly for up to tens of millions of nodes if the kernel, integration domain, and measure are fully symmetric and the node set is a union of fully symmetric sets. This is based on the observations that in such a setting there are only as many distinct weights as there are fully symmetric sets and that these weights can be solved from a linear system of equations constructed out of row sums of certain submatrices of the full kernel matrix. We present several numerical examples that show feasibility, both for a large number of nodes and in high dimensions, of the developed fully symmetric kernel quadrature rules. Most prominent of the fully symmetric kernel quadrature rules we propose are those that use sparse grids.},
+  urldate = {2017-09-11},
+  journal = {arXiv:1703.06359 [cs, math, stat]},
+  author = {Karvonen, Toni and S{\"a}rkk{\"a}, Simo},
+  month = mar,
+  year = {2017},
+  note = {arXiv: 1703.06359},
+  keywords = {Computer Science - Numerical Analysis, Mathematics - Numerical Analysis, Statistics - Computation},
+  file = {https://arxiv.org/pdf/1703.06359.pdf}
+}
+
+
+
+
+@inproceedings{briol_sampling_2017,
+tags = {quadrature},
+  title = {On the {Sampling} {Problem} for {Kernel} {Quadrature}},
+  url = {http://arxiv.org/abs/1706.03369},
+  abstract = {The standard Kernel Quadrature method for numerical integration with random point sets (also called Bayesian Monte Carlo) is known to converge in root mean square error at a rate determined by the ratio \$s/d\$, where \$s\$ and \$d\$ encode the smoothness and dimension of the integrand. However, an empirical investigation reveals that the rate constant \$C\$ is highly sensitive to the distribution of the random points. In contrast to standard Monte Carlo integration, for which optimal importance sampling is well-understood, the sampling distribution that minimises \$C\$ for Kernel Quadrature does not admit a closed form. This paper argues that the practical choice of sampling distribution is an important open problem. One solution is considered; a novel automatic approach based on adaptive tempering and sequential Monte Carlo. Empirical results demonstrate a dramatic reduction in integration error of up to 4 orders of magnitude can be achieved with the proposed method.},
+  urldate = {2017-09-11},
+  booktitle = {Thirty-fourth {International} {Conference} on {Machine} {Learning} ({ICML} 2017)},
+  author = {Briol, François-Xavier and Oates, Chris J. and Cockayne, Jon and Chen, Wilson Ye and Girolami, Mark},
+  month = jun,
+  year = {2017},
+  note = {arXiv: 1706.03369},
+  keywords = {Computer Science - Learning, Mathematics - Numerical Analysis, Statistics - Computation, Statistics - Machine Learning},
+  file = {https://arxiv.org/pdf/1706.03369.pdf}
+}
+
+@article{oates_probabilistic_2016,
+tags = {quadrature},
+  title = {Probabilistic {Models} for {Integration} {Error} in the {Assessment} of {Functional} {Cardiac} {Models}},
+  url = {https://arxiv.org/pdf/1606.06841.pdf},
+  abstract = {This paper studies the numerical computation of integrals, representing estimates or predictions, over the output \$f(x)\$ of a computational model with respect to a distribution \$p({\textbackslash}mathrm\{d\}x)\$ over uncertain inputs \$x\$ to the model. For the functional cardiac models that motivate this work, neither \$f\$ nor \$p\$ possess a closed-form expression and evaluation of either requires \${\textbackslash}approx\$ 100 CPU hours, precluding standard numerical integration methods. Our proposal is to treat integration as an estimation problem, with a joint model for both the a priori unknown function \$f\$ and the a priori unknown distribution \$p\$. The result is a posterior distribution over the integral that explicitly accounts for dual sources of numerical approximation error due to a severely limited computational budget. This construction is applied to account, in a statistically principled manner, for the impact of numerical errors that (at present) are confounding factors in functional cardiac model assessment.},
+  urldate = {2017-09-11},
+  journal = {arXiv:1606.06841 [stat]},
+  author = {Oates, Chris J. and Niederer, Steven and Lee, Angela and Briol, François-Xavier and Girolami, Mark},
+  month = jun,
+  year = {2016},
+  note = {arXiv: 1606.06841},
+  keywords = {Statistics - Methodology}
+}
+
+
+@article{kanagawa_convergence_2017,
+tags = {quadrature},
+  title = {Convergence {Analysis} of {Deterministic} {Kernel}-{Based} {Quadrature} {Rules} in {Misspecified} {Settings}},
+  url = {http://arxiv.org/abs/1709.00147},
+  file = {https://arxiv.org/pdf/1709.00147.pdf},
+  abstract = {This paper presents convergence analysis of kernel-based quadrature rules in misspecified settings, focusing on deterministic quadrature in Sobolev spaces. In particular, we deal with misspecified settings where a test integrand is less smooth than a Sobolev RKHS based on which a quadrature rule is constructed. We provide convergence guarantees based on two different assumptions on a quadrature rule: one on quadrature weights, and the other on design points. More precisely, we show that convergence rates can be derived (i) if the sum of absolute weights remains constant (or does not increase quickly), or (ii) if the minimum distance between distance design points does not decrease very quickly. As a consequence of the latter result, we derive a rate of convergence for Bayesian quadrature in misspecified settings. We reveal a condition on design points to make Bayesian quadrature robust to misspecification, and show that, under this condition, it may adaptively achieve the optimal rate of convergence in the Sobolev space of a lesser order (i.e., of the unknown smoothness of a test integrand), under a slightly stronger regularity condition on the integrand.},
+  urldate = {2017-09-12},
+  journal = {arXiv:1709.00147 [cs, math, stat]},
+  author = {Kanagawa, Motonobu and Sriperumbudur, Bharath K. and Fukumizu, Kenji},
+  month = sep,
+  year = {2017},
+  note = {arXiv: 1709.00147},
+  keywords = {Computer Science - Numerical Analysis, Mathematics - Numerical Analysis, Statistics - Machine Learning, 65D30 (Primary), 65D32, 65D05, 46E35, 46E22 (Secondary)},
+  annote = {Comment: 34 pages}
+}
+
+@article{2018arXiv180104153X,
+tags = {quadrature},
+   author = {{Xi}, X. and {Briol}, F.-X. and {Girolami}, M.},
+    title = "{Bayesian Quadrature for Multiple Related Integrals}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1801.04153},
+ primaryClass = "stat.CO",
+ keywords = {Statistics - Computation, Computer Science - Numerical Analysis, Mathematics - Numerical Analysis, Statistics - Machine Learning},
+     year = 2018,
+    month = jan,
+    link = {https://arxiv.org/abs/1801.04153},
+    file = {https://arxiv.org/pdf/1801.04153.pdf},
+    abstract = {Bayesian probabilistic numerical methods are a set of tools providing posterior distributions on the output of numerical methods. The use of these methods is usually motivated by the fact that they can represent our uncertainty due to incomplete/finite information about the continuous mathematical problem being approximated. In this paper, we demonstrate that this paradigm can provide additional advantages, such as the possibility of transferring information between several numerical methods. This allows users to represent uncertainty in a more faithfully manner and, as a by-product, provide increased numerical efficiency. We propose the first such numerical method by extending the well-known Bayesian quadrature algorithm to the case where we are interested in computing the integral of several related functions. We then demonstrate its efficiency in the context of multi-fidelity models for complex engineering systems, as well as a problem of global illumination in computer graphics.}
+}
+
+@article{2017arXiv170704723E,
+tags = {quadrature},
+   author = {{Ehler}, M. and {Graef}, M. and {Oates}, C.~J.},
+    title = "{Optimal Monte Carlo integration on closed manifolds}",
+  journal = {ArXiv e-prints},
+archivePrefix = "arXiv",
+   eprint = {1707.04723},
+ primaryClass = "math.NA",
+    year = 2017,
+    month = jul,
+    link  = {https://arxiv.org/abs/1707.04723},
+    file = {https://arxiv.org/pdf/1707.04723.pdf},
+    abstract = {The worst case integration error in reproducing kernel Hilbert spaces of standard Monte Carlo methods with n random points decays as 1/sqrt(n). However, re-weighting of random points can sometimes be used to improve the convergence order. This paper contributes general theoretical results for Sobolev spaces on closed Riemannian manifolds, where we verify that such re-weighting yields optimal approximation rates up to a logarithmic factor. We also provide numerical experiments matching the theoretical results for some Sobolev spaces on the unit sphere and on the Grassmannian manifold. Our theoretical findings also cover function spaces on more general sets such as the unit ball, the cube, and the simplex.}
+}
+
+@inproceedings{fisher2020locally,
+tags = {quadrature},
+  title={A locally adaptive Bayesian cubature method},
+  author={Fisher, Matthew and Oates, Chris and Powell, Catherine and Teckentrup, Aretha},
+  booktitle={International Conference on Artificial Intelligence and Statistics},
+  pages={1265--1275},
+  year={2020},
+  organization={PMLR}
+}
+
+@inproceedings{HennigKiefel,
+tags = {optimization, local-optimization},
+  author =	 {P. Hennig and M. Kiefel},
+  booktitle =	 {{International Conference on Machine Learning (ICML)}},
+  title =	 {{Quasi-{N}ewton methods -- a new direction}},
+  year =	 2012,
+  abstract =	 {Four decades after their invention, quasi- Newton methods are
+                  still state of the art in unconstrained numerical
+                  optimization. Al- though not usually interpreted thus, these
+                  are learning algorithms that fit a local quadratic
+                  approximation to the objective function. We show that many,
+                  including the most popular, quasi-Newton methods can be
+                  interpreted as approximations of Bayesian linear regression
+                  under varying prior assumptions. This new notion elucidates
+                  some shortcomings of clas- sical algorithms, and lights the
+                  way to a novel nonparametric quasi-Newton method, which is
+                  able to make more efficient use of available information at
+                  computational cost similar to its predecessors.},
+  video =
+                  {http://techtalks.tv/talks/quasi-newton-methods-a-new-direction/57289/},
+  file =	 {../assets/pdf/hennig13quasiNewton.pdf}
+}
+
+@article{hennig13_quasi_newton_method,
+tags = {optimization, local-optimization},
+  author =	 {P. Hennig and M. Kiefel},
+  journal =	 {Journal of Machine Learning Research},
+  month =	 {March},
+  pages =	 {834--865},
+  title =	 {Quasi-{N}ewton Methods -- a new direction},
+  volume =	 14,
+  year =	 2013,
+  abstract =	 {Four decades after their invention, quasi-Newton methods are
+                  still state of the art in unconstrained numerical
+                  optimization. Although not usually interpreted thus, these
+                  are learning algorithms that fit a local quadratic
+                  approximation to the objective function. We show that many,
+                  including the most popular, quasi-Newton methods can be
+                  interpreted as approximations of Bayesian linear regression
+                  under varying prior assumptions. This new notion elucidates
+                  some shortcomings of classical algorithms, and lights the
+                  way to a novel nonparametric quasi-Newton method, which is
+                  able to make more efficient use of available information at
+                  computational cost similar to its predecessors.},
+  file = {http://jmlr.org/papers/volume14/hennig13a/hennig13a.pdf}
+}
+
+@inproceedings{StochasticNewton,
+tags = {optimization, local-optimization},
+  author =	 {P. Hennig},
+  booktitle =	 {{International Conference on Machine Learning (ICML)}},
+  title =	 {{Fast Probabilistic Optimization from Noisy Gradients}},
+  year =	 {2013},
+  abstract =	 {Stochastic gradient descent remains popular in large-scale
+                  machine learning, on account of its very low computational
+                  cost and robust- ness to noise. However, gradient descent is
+                  only linearly efficient and not transformation
+                  invariant. Scaling by a local measure can substantially
+                  improve its performance. One natural choice of such a scale
+                  is the Hessian of the objective function: Were it available,
+                  it would turn linearly efficient gradient descent into the
+                  quadratically efficient Newton-Raphson optimization. Existing
+                  covariant methods, though, are either super-linearly
+                  expensive or do not address noise. Generalising recent
+                  results, this paper constructs a nonparametric Bayesian
+                  quasi-Newton algorithm that learns gradient and Hessian from
+                  noisy evaluations of the gradient. Importantly, the resulting
+                  algorithm, like stochastic gradient descent, has cost linear
+                  in the number of input dimensions},
+  file = {../assets/pdf/hennig13noisy.pdf}
+}
+
+@incollection{NIPS2015_5753,
+tags = {optimization, local-optimization},
+title = {Probabilistic Line Searches for Stochastic Optimization},
+author = {Mahsereci, Maren and Hennig, Philipp},
+booktitle = {Advances in Neural Information Processing Systems 28},
+editor = {C. Cortes and N. D. Lawrence and D. D. Lee and M. Sugiyama and R. Garnett},
+pages = {181--189},
+year = {2015},
+publisher = {Curran Associates, Inc.},
+file = {http://papers.nips.cc/paper/5753-probabilistic-line-searches-for-stochastic-optimization.pdf},
+abstract = {In deterministic optimization, line searches are a standard tool ensuring stability and efficiency. Where only stochastic gradients are available, no direct equivalent has so far been formulated, because uncertain gradients do not allow for a strict sequence of decisions collapsing the search space. We construct a probabilistic line search by combining the structure of existing deterministic methods with notions from Bayesian optimization. Our method retains a Gaussian process surrogate of the univariate optimization objective, and uses a probabilistic belief over the Wolfe conditions to monitor the descent. The algorithm has very low computational cost, and no user-controlled parameters. Experiments show that it effectively removes the need to define a learning rate for stochastic gradient descent.},
+code = {https://is.tuebingen.mpg.de/uploads_file/attachment/attachment/242/probLS.zip},
+link = {http://papers.nips.cc/paper/5753-probabilistic-line-searches-for-stochastic-optimization}
+}
+
+@ARTICLE{2018arXiv180704594D,
+tags = {optimization, local-optimization},
+   author = {{Deniz Akyildiz}, {\"O}. and {Elvira}, V. and {Miguez}, J.},
+    title = "{The Incremental Proximal Method: A Probabilistic Perspective}",
+  journal = {ArXiv e-prints},
+   volume = {1807.04594},
+     year = 2018,
+    month = jul,
+   abstract = {In this work, we highlight a connection between the incremental proximal method and stochastic filters. We begin by showing that the proximal operators coincide, and hence can be realized with, Bayes updates. We give the explicit form of the updates for the linear regression problem and show that there is a one-to-one correspondence between the proximal operator of the least-squares regression and the Bayes update when the prior and the likelihood are Gaussian. We then carry out this observation to a general sequential setting: We consider the incremental proximal method, which is an algorithm for large-scale optimization, and show that, for a linear-quadratic cost function, it can naturally be realized by the Kalman filter. We then discuss the implications of this idea for nonlinear optimization problems where proximal operators are in general not realizable. In such settings, we argue that the extended Kalman filter can provide a systematic way for the derivation of practical procedures.},
+   link = {https://arxiv.org/abs/1807.04594},
+   file = {https://arxiv.org/pdf/1807.04594.pdf}
+}
+
+@article{mockus1978application,
+tags = {optimization, global-optimization},
+  title={The application of Bayesian methods for seeking the extremum},
+  author={Mockus, Jonas and Tiesis, Vytautas and Zilinskas, Antanas},
+  journal={Towards global optimization},
+  volume={2},
+  number={117-129},
+  pages={2},
+  year={1978}
+}
+
+@article{HennigS2012,
+tags = {optimization, global-optimization},
+  title =	 {Entropy Search for Information-Efficient Global Optimization},
+  author =	 {Hennig, P. and Schuler, CJ.},
+  month =	 jun,
+  volume =	 13,
+  pages =	 {1809-1837},
+  abstract =	 {Contemporary global optimization algorithms are based on
+                  local measures of utility, rather than a probability measure
+                  over location and value of the optimum. They thus attempt to
+                  collect low function values, not to learn about the
+                  optimum. The reason for the absence of probabilistic global
+                  optimizers is that the corresponding inference problem is
+                  intractable in several ways. This paper develops desiderata
+                  for probabilistic optimization algorithms, then presents a
+                  concrete algorithm which addresses each of the computational
+                  intractabilities with a sequence of approximations and
+                  explicitly adresses the decision problem of maximizing
+                  information gain from each evaluation. },
+  journal =	 {Journal of Machine Learning Research},
+  year =	 2012,
+  file =
+                  {http://jmlr.csail.mit.edu/papers/volume13/hennig12a/hennig12a.pdf},
+  link =	 {http://jmlr.csail.mit.edu/papers/v13/hennig12a.html},
+  code = {http://probabilistic-optimization.org/Global.html}
+}
+
+
+
+@article{Hull1966,
+tags = {ode, ode-solving},
+abstract = {In any prolonged computation it is generally assumed that the accumulated effect of roundoff errors is in some sense statistical. The purpose of this paper is to give precise descriptions of certain probabilistic models for roundoff error, and then to described a series of experiments for testing the validity of these models. It is concluded that the models are in general very good. Discrepancies are both rare and mild. The test techniques can also be used to experiment with various types of special arithmetic.},
+author = {T. E. Hull and  J. R. Swenson},
+journal = {Communications of the ACM},
+number = {2},
+pages = {108--113},
+title = {{Test of Probabilistic Models for the Propagation of Roundoff Errors}},
+volume = {9},
+year = {1966},
+link = {http://dl.acm.org/citation.cfm?id=365696.365698}
+}
+
+@article{Kuki1973,
+tags = {ode, ode-solving},
+abstract = {This paper presents the statistical results of tests of the accuracy of certain arithmetic systems in evaluating sums, products and inner products, and analytic error estimates for some of the computations. The arithmetic systems studied are 6-digit hexadecimal and 22-digit binary floating point number representations combined with the usual chop and round modes of arithmetic with various numbers of guard digits, and with a modified round mode with guard digits. In a certain sense, arithmetic systems differing only in their use of binary or hexadecimal number representations are shown to be approximately statistically equivalent in accuracy. Further, the usual round mode with guard digits is shown to be statistically superior in accuracy to the usual chop mode in all cases save one. The modified round mode is found to be superior to the chop mode in all cases.},
+author = {H. Kuki and W. J. Cody},
+journal = {Communications of the ACM},
+number = {1},
+pages = {223--230},
+title = {{A Statistical Study Of The Accuracy Of Floating Point Number Systems}},
+volume = {16},
+year = {1973},
+link = {http://doi.acm.org/10.1145/362003.362013}
+}
+
+
+@article{skilling1991bayesian,
+tags = {ode, ode-solving},
+  author =	 {J. Skilling},
+  journal =	 {Maximum Entropy and Bayesian Methods, Seattle},
+  title =	 {{Bayesian solution of ordinary differential equations}},
+  year =	 {1991},
+  abstract =	 {In the numerical solution of ordinary differential equations,
+                  a function y(x) is to be reconstructed from knowledge of the
+                  functional form of its derivative: dy/dx=f(x,y), together
+                  with an appropriate boundary condition. The derivative f is
+                  evaluated at a sequence of suitably chosen points (x_k,y_k),
+                  from which the form of y(.) is estimated. This is an
+                  inference problem, which can and perhaps should be treated by
+                  Bayesian techniques. As always, the inference appears as a
+                  probability distribution prob(y(.)), from which random
+                  samples show the probabilistic reliability of the
+                  results. Examples are given.}
+}
+
+@inproceedings{graepel2003solving,
+tags = {ode, ode-solving},
+  title =  {Solving noisy linear operator equations by Gaussian
+                  processes: Application to ordinary and partial differential
+                  equations},
+  author =   {Graepel, Thore},
+  booktitle =  {ICML},
+  pages =  {234--241},
+  year =   {2003},
+  file =   {http://www.aaai.org/Papers/ICML/2003/ICML03-033.pdf}
+}
+
+@article{Mosbach2009,
+tags = {ode, ode-solving},
+abstract = {We examine numerical rounding errors of some deterministic solvers for systems of ordinary differential equations (ODEs). We show that the accumulation of rounding errors results in a solution that is inherently random and we obtain the theoretical distribution of the trajectory as a function of time, the step size and the numerical precision of the computer. We consider, in particular, systems which amplify the effect of the rounding errors so that over long time periods the solutions exhibit divergent behaviour. By performing multiple repetitions with different values of the time step size, we observe numerically the random distributions predicted theoretically. We mainly focus on the explicit Euler and RK4 methods but also briefly consider more complex algorithms such as the implicit solvers VODE and RADAU5.},
+author = {Sebastian Mosbach and Amanda G. Turner},
+journal = {Computers {\&} Mathematics with Applications},
+number = {7},
+pages = {1157--1167},
+title = {{A quantitative probabilistic investigation into the accumulation of rounding errors in numerical ODE solution}},
+volume = {57},
+year = {2009},
+link = {http://arxiv.org/abs/math/0512364}
+}
+
+@article{PhysRevE87022719,
+tags = {ode, ode-solving},
+  title = {Simulation of stochastic network dynamics via entropic matching},
+  author = {Ramalho, Tiago and Selig, Marco and Gerland, Ulrich and En\ss{}lin, Torsten A.},
+  journal = {Phys. Rev. E},
+  volume = {87},
+  issue = {2},
+  pages = {022719},
+  numpages = {9},
+  year = {2013},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevE.87.022719},
+  link = {https://link.aps.org/doi/10.1103/PhysRevE.87.022719},
+  abstract = {The simulation of complex stochastic network dynamics arising, for instance, from models of coupled biomolecular processes remains computationally challenging. Often, the necessity to scan a model's dynamics over a large parameter space renders full-fledged stochastic simulations impractical, motivating approximation schemes. Here we propose an approximation scheme which improves upon the standard linear noise approximation while retaining similar computational complexity. The underlying idea is to minimize, at each time step, the Kullback-Leibler divergence between the true time evolved probability distribution and a Gaussian approximation (entropic matching). This condition leads to ordinary differential equations for the mean and the covariance matrix of the Gaussian. For cases of weak nonlinearity, the method is more accurate than the linear method when both are compared to stochastic simulations.},
+}
+
+
+@inproceedings{HennigAISTATS2014,
+tags = {ode, ode-solving},
+  author =	 {Philipp Hennig and S{\o}ren Hauberg},
+  booktitle =	 {{Proc. of the 17th int. Conf. on Artificial Intelligence and
+                  Statistics ({AISTATS})}},
+  publisher =	 {JMLR, W\&CP},
+  title =	 {{Probabilistic Solutions to Differential Equations and their
+                  Application to Riemannian Statistics}},
+  volume =	 33,
+  year =	 2014,
+  abstract =	 {We study a probabilistic numerical method for the solution of
+                  both boundary and initial value problems that returns a joint
+                  Gaussian process posterior over the solution. Such methods
+                  have concrete value in the statistics on Riemannian
+                  manifolds, where non-analytic ordinary differential equations
+                  are involved in virtually all computations. The probabilistic
+                  formulation permits marginalising the uncertainty of the
+                  numerical solution such that statistics are less sensitive to
+                  inaccuracies. This leads to new Riemannian algorithms for
+                  mean value computations and principal geodesic
+                  analysis. Marginalisation also means results can be less
+                  precise than point estimates, enabling a noticeable speed-up
+                  over the state of the art. Our approach is an argument for a
+                  wider point that uncertainty caused by numerical calculations
+                  should be tracked throughout the pipeline of machine learning
+                  algorithms.},
+  file  = 	 {http://jmlr.org/proceedings/papers/v33/hennig14.pdf},
+  video =	 {https://www.youtube.com/watch?v=fLCS0KXmiXs},
+  code  =        {http://www.probabilistic-numerics.org/GP_ODE_Solver.zip},
+supplements = {http://www.probabilistic-numerics.org/22-supp.zip}
+}
+
+@article{13_bayes_uncer_quant_differ_equat,
+tags = {ode, ode-solving},
+  author =	 {O. Chkrebtii and D.A. Campbell and M.A. Girolami and
+                  B. Calderhead},
+  journal =	 {Bayesin Analysis (discussion paper)},
+  title =	 {{B}ayesian Uncertainty Quantification for Differential
+                  Equations},
+  year =	 2013,
+  pages = {in press},
+  abstract =	 {This paper advocates expansion of the role of Bayesian
+                  statistical inference when formally quantifying uncertainty
+                  in computer models defined by systems of ordinary or partial
+                  differential equations. We adopt the perspective that
+                  implicitly defined infinite dimensional functions
+                  representing model states are objects to be inferred
+                  probabilistically. We develop a general methodology for the
+                  probabilistic integration of differential equations via model
+                  based updating of a joint prior measure on the space of
+                  functions and their temporal and spatial derivatives. This
+                  results in a posterior measure over functions reflecting how
+                  well they satisfy the system of differential equations and
+                  corresponding initial and boundary values. We show how this
+                  posterior measure can be naturally incorporated within the
+                  Kennedy and O'Hagan framework for uncertainty quantification
+                  and provides a fully Bayesian approach to model
+                  calibration. By taking this probabilistic viewpoint, the full
+                  force of Bayesian inference can be exploited when seeking to
+                  coherently quantify and propagate epistemic uncertainty in
+                  computer models of complex natural and physical systems. A
+                  broad variety of examples are provided to illustrate the
+                  potential of this framework for characterising discretization
+                  uncertainty, including initial value, delay, and boundary
+                  value differential equations, as well as partial differential
+                  equations. We also demonstrate our methodology on a large
+                  scale system, by modeling discretization uncertainty in the
+                  solution of the Navier-Stokes equations of fluid flow,
+                  reduced to over 16,000 coupled and stiff ordinary
+                  differential equations. Finally, we discuss the wide range of
+                  open research themes that follow from the work presented.},
+  link =	 {http://arxiv.org/abs/1306.2365}
+}
+
+@inproceedings{LNCS86750265,
+tags = {ode, ode-solving},
+  author =	 {Michael Schober and Niklas Kasenburg and Aasa Feragen and
+                  Philipp Hennig and S{\o}ren Hauberg},
+  editor =	 {Polina Golland and Nobuhiko Hata and Christian Barillot and
+                  Joachim Hornegger and Robert Howe},
+  booktitle =	 {Medical Image Computing and Computer-Assisted Intervention --
+                  MICCAI 2014},
+  publisher =	 {Springer},
+  location =	 {Heidelberg},
+  series =	 {Lecture Notes in Computer Science},
+  volume =	 {8675},
+  year =	 {2014},
+  pages =	 {265--272},
+  title =	 {{Probabilistic shortest path tractography in {DTI} using
+                  {G}aussian {P}rocess {ODE} solvers}},
+  abstract =	 {Tractography in diffusion tensor imaging estimates
+                  connectivity in the brain through observations of local
+                  diffusivity. These observations are noisy and of low
+                  resolution and, as a consequence, connections cannot be found
+                  with high precision. We use probabilistic numerics to
+                  estimate connectivity between regions of interest and
+                  contribute a Gaussian Process tractography algorithm which
+                  allows for both quantification and visualization of its
+                  posterior uncertainty. We use the uncertainty both in
+                  visualization of individual tracts as well as in heat maps of
+                  tract locations.  Finally, we provide a quantitative
+                  evaluation of different metrics and algorithms showing that
+                  the adjoint metric combined with our algorithm produces paths
+                  which agree most often with experts.},
+  file =	 {../assets/pdf/Schober2014MICCAI.pdf},
+  video =	 {https://www.youtube.com/watch?v=VrhulgVaRMg},
+  supplements =	 {http://www.probabilistic-numerics.org/MICCAI2014-supp.zip}
+}
+
+@incollection{schober2014nips,
+tags = {ode, ode-solving},
+  title =	 {Probabilistic {ODE} Solvers with {R}unge-{K}utta Means},
+  author =	 {Schober, Michael and Duvenaud, David K and Hennig, Philipp},
+  booktitle =	 {Advances in Neural Information Processing Systems 27},
+  editor =	 {Z. Ghahramani and M. Welling and C. Cortes and N.D. Lawrence
+                  and K.Q. Weinberger},
+  pages =	 {739--747},
+  year =	 {2014},
+  publisher =	 {Curran Associates, Inc.},
+  abstract =	 {Runge-Kutta methods are the classic family of solvers for
+                  ordinary differential equations (ODEs), and the basis for the
+                  state of the art. Like most numerical methods, they return
+                  point estimates. We construct a family of probabilistic
+                  numerical methods that instead return a Gauss-Markov process
+                  defining a probability distribution over the ODE solution. In
+                  contrast to prior work, we construct this family such that
+                  posterior means match the outputs of the Runge-Kutta family
+                  exactly, thus inheriting their proven good
+                  properties. Remaining degrees of freedom not identified by
+                  the match to Runge-Kutta are chosen such that the posterior
+                  probability measure fits the observed structure of the
+                  ODE. Our results shed light on the structure of Runge-Kutta
+                  solvers from a new direction, provide a richer, probabilistic
+                  output, have low computational cost, and raise new research
+                  questions.},
+  file =
+                  {http://papers.nips.cc/paper/5451-probabilistic-ode-solvers-with-runge-kutta-means.pdf},
+  supplements =
+                  {http://papers.nips.cc/paper/5451-probabilistic-ode-solvers-with-runge-kutta-means-supplemental.zip}
+}
+
+
+@article{2014arXiv14083807B,
+tags = {ode, ode-solving},
+  author =	 {{Barber}, D.},
+  title =	 "{On solving Ordinary Differential Equations using Gaussian
+                  Processes}",
+  journal =	 {ArXiv pre-print 1408.3807},
+  year =	 2014,
+  month =	 aug,
+  link =	 {http://arxiv.org/abs/1408.3807},
+  abstract =	 {We describe a set of Gaussian Process based approaches that
+                  can be used to solve non-linear Ordinary Differential
+                  Equations. We suggest an explicit probabilistic solver and
+                  two implicit methods, one analogous to Picard iteration and
+                  the other to gradient matching. All methods have greater
+                  accuracy than previously suggested Gaussian Process
+                  approaches. We also suggest a general approach that can yield
+                  error estimates from any standard ODE solver.}
+}
+
+@inproceedings{Hauberg_MICCAI_2015,
+tags = {ode, ode-solving},
+ title = {A Random Riemannian Metric for Probabilistic Shortest-Path Tractography},
+ author = {S{\o}ren Hauberg and Michael Schober and Matthew Liptrot and Philipp Hennig and Aasa Feragen},
+ booktitle = {Medical Image Computing and Computer-Assisted Intervention (MICCAI)},
+ address = {Munich, Germany},
+ volume = 18,
+ month = sep,
+ year = {2015},
+ file = {http://www2.compute.dtu.dk/~sohau/papers/miccai2015/MICCAI2015.pdf},
+ video = {https://www.youtube.com/watch?v=xQwoT92B0YU},
+ abstract = {Shortest-path tractography (SPT) algorithms solve global optimization problems defined from local distance functions. As diffusion MRI data is inherently noisy, so are the voxelwise tensors from which local distances are derived. We extend Riemannian SPT by modeling the stochasticity of the diffusion tensor as a “random Riemannian metric”, where a geodesic is a distribution over tracts. We approximate this distribution with a Gaussian process and present a probabilistic numerics algorithm for computing the geodesic distribution. We demonstrate SPT improvements on data from the Human Connectome Project.}
+}
+
+@inproceedings{KerstingHennigUAI2016,
+tags = {ode, ode-solving},
+  author = {Hans P. Kersting and Philipp Hennig},
+  title  = {Active Uncertainty Calibration in {B}ayesian {ODE} Solvers},
+  editor = {Janzing and Ihlers},
+  booktitle = {Uncertainty in Artificial Intelligence (UAI)},
+  volume = {32},
+  year = {2016},
+  abstract = {There is resurging interest, in statistics and machine learning, in solvers for ordinary differential equations (ODEs) that return probability measures instead of point estimates. Recently, Conrad et al. introduced a sampling-based class of methods that are 'well-calibrated' in a specific sense. But the computational cost of these methods is significantly above that of classic methods. On the other hand, Schober et al. pointed out a precise connection between classic Runge-Kutta ODE solvers and Gaussian filters, which gives only a rough probabilistic calibration, but at negligible cost overhead. By formulating the solution of ODEs as approximate inference in linear Gaussian SDEs, we investigate a range of probabilistic ODE solvers, that bridge the trade-off between computational cost and probabilistic calibration, and identify the inaccurate gradient measurement as the crucial source of uncertainty. We propose the novel filtering-based method Bayesian Quadrature filtering (BQF) which uses Bayesian quadrature to actively learn the imprecision in the gradient measurement by collecting multiple gradient evaluations.},
+  link = {http://arxiv.org/abs/1605.03364},
+  file = {http://arxiv.org/pdf/1605.03364v2.pdf}
+}
+
+@article{2016arXiv161005261S,
+tags = {ode, ode-solving},
+   author = {{Schober}, M. and {S{\"a}rkk{\"a}}, S. and {Hennig}, P.},
+    title = {A probabilistic model for the numerical solution of initial value problems},
+  journal = {ArXiv e-prints},
+   eprint = {1610.05261},
+     year = 2016,
+    month = oct,
+    abstract = {Like many numerical methods, solvers for initial value problems (IVPs) on ordinary differential equations estimate an analytically intractable quantity, using the results of tractable computations as inputs. This structure is closely connected to the notion of inference on latent variables in statistics. We describe a class of algorithms that formulate the solution to an IVP as inference on a latent path that is a draw from a Gaussian process probability measure (or equivalently, the solution of a linear stochastic differential equation). We then show that certain members of this class are connected precisely to generalized linear methods for ODEs, a number of Runge--Kutta methods, and Nordsieck methods. This probabilistic formulation of classic methods is valuable in two ways: analytically, it highlights implicit prior assumptions favoring certain approximate solutions to the IVP over others, and gives a precise meaning to the old observation that these methods act like filters. Practically, it endows the classic solvers with `docking points' for notions of uncertainty and prior information about the initial value, the value of the ODE itself, and the solution of the problem.},
+    link = {https://arxiv.org/abs/1610.05261},
+    file = {https://arxiv.org/pdf/1610.05261.pdf}
+}
+
+
+@ARTICLE{2018arXiv180101340A,
+tags = {ode, ode-solving},
+   author = {{Abdulle}, A. and {Garegnani}, G.},
+    title = "{Random time step probabilistic methods for uncertainty quantification in chaotic and geometric numerical integration}",
+  journal = {ArXiv e-prints},
+  volume = {1801.01340},
+     year = 2018,
+    month = 1,
+  abstract= {A novel probabilistic numerical method for quantifying the uncertainty induced by the time integration of ordinary differential equations (ODEs) is introduced. Departing from the classical strategy to randomize ODE solvers by adding a random forcing term, we show that a probability measure over the numerical solution of ODEs can be obtained by introducing suitable random time-steps in a classical time integrator. This intrinsic randomization allows for the conservation of geometric properties of the underlying deterministic integrator such as mass conservation, symplecticity or conservation of first integrals. Weak and mean-square convergence analysis are derived. We also analyze the convergence of the Monte Carlo estimator for the proposed random time step method and show that the measure obtained with repeated sampling converges in mean-square sense independently of the number of samples. Numerical examples including chaotic Hamiltonian systems, chemical reactions and Bayesian inferential problems illustrate the accuracy, robustness and versatility of our probabilistic numerical method.},
+  file = {https://arxiv.org/pdf/1801.01340},
+  link = {https://arxiv.org/abs/1801.01340}
+}
+
+
+@article{kersting2020convergence,
+tags = {ode, ode-solving},
+  title = {Convergence Rates of {G}aussian {ODE} Filters},
+  author = {Kersting, Hans and Sullivan, T. J. and Hennig, Philipp},
+  journal = {Statistics and Computing},
+  volume = {30},
+  number = {6},
+  pages = {1791--1816},
+  year = {2020},
+  doi = {10.1007/s11222-020-09972-4},
+  link = {https://doi.org/10.1007/s11222-020-09972-4},
+  arxiv = {1807.09737},
+  abstract = {A recently-introduced class of probabilistic (uncertainty-aware) solvers for ordinary differential equations (ODEs) applies Gaussian (Kalman) filtering to initial value problems. These methods model the true solution x and its first q derivatives a priori as a Gauss--Markov process X, which is then iteratively conditioned on information about x'. We prove worst-case local convergence rates of order h^{q+1} for a wide range of versions of this Gaussian ODE filter, as well as global convergence rates of order h^q in the case of $q=1$ and an integrated Brownian motion prior, and analyze how inaccurate information on x' coming from approximate evaluations of f affects these rates. Moreover, we present explicit formulas for the steady states and show that the posterior confidence intervals are well calibrated in all considered cases that exhibit global convergence---in the sense that they globally contract at the same rate as the truncation error.},
+}
+
+
+@incollection{teymur16,
+tags = {ode, ode-solving},
+  title = {Probabilistic {{Linear Multistep Methods}}},
+  booktitle = {Advances in {{Neural Information Processing Systems}} 29},
+  publisher = {{Curran Associates, Inc.}},
+  year = {2016},
+  pages = {4314--4321},
+  author = {Teymur, Onur and Zygalakis, Kostas and Calderhead, Ben},
+  editor = {Lee, D. D. and Sugiyama, M. and Luxburg, U. V. and Guyon, I. and Garnett, R.},
+  abstract = {We present a derivation and theoretical investigation of the Adams-Bashforth and Adams-Moulton family of linear multistep   methods for solving ordinary differential equations, starting from a Gaussian process (GP) framework. In the limit, this formulation coincides with the classical deterministic methods, which have been used as higher-order initial value problem solvers for over a century. Furthermore, the natural probabilistic framework provided by the GP formulation allows us to derive probabilistic versions of these methods, in the spirit of a number of other probabilistic ODE solvers presented in the recent literature. In contrast to higher-order Runge-Kutta methods, which require multiple intermediate function evaluations per step, Adams family methods make use of previous function evaluations, so that increased accuracy arising from a higher-order multistep approach comes at very little additional computational cost. We show that through a careful choice of covariance function for the GP, the posterior mean and standard deviation over the numerical solution can be made to exactly coincide with the value given by the deterministic method and its local truncation error respectively. We provide a rigorous proof of the convergence of these new methods, as well as an empirical investigation (up to fifth order) demonstrating their convergence rates in practice.},
+  link = {https://papers.nips.cc/paper/6356-probabilistic-linear-multistep-methods},
+  file = {https://papers.nips.cc/paper/6356-probabilistic-linear-multistep-methods.pdf}
+}
+
+
+@incollection{teymur18,
+tags = {ode, ode-solving},
+  title = {{{Implicit Probabilistic Integrators for ODEs}}},
+  booktitle = {Advances in {{Neural Information Processing Systems}} 31},
+  publisher = {{Curran Associates, Inc.}},
+  year = {2018},
+  author = {Teymur, Onur and Lie, Han Cheng and Sullivan, Tim and Calderhead, Ben},
+  abstract = {We introduce a family of implicit probabilistic integrators for initial value problems (IVPs) taking as a starting point the multistep Adams--Moulton method. The implicit construction allows for dynamic feedback from the forthcoming time-step, by contrast with previous probabilistic integrators, all of which are based on explicit methods. We begin with a concise survey of the rapidly-expanding field of probabilistic ODE solvers. We then introduce our method, which builds on and adapts the work of Conrad et al. (2016) and Teymur et al. (2016), and provide a rigorous proof of its well-definedness and convergence. We discuss the problem of the calibration of such integrators and suggest one approach. We give an illustrative example highlighting the effect of the use of probabilistic integrators -- including our new method -- in the setting of parameter inference within an inverse problem.},
+  link = {https://nips.cc/Conferences/2018/Schedule?showEvent=11698},
+  file = {https://arxiv.org/pdf/1805.07970.pdf}
+}
+
+@article{wang2020role,
+tags = {ode, ode-solving},
+  title={A role for symmetry in the {B}ayesian solution of differential equations},
+  author={Wang, Junyang and Cockayne, Jon and Oates, Chris J},
+  journal={Bayesian Analysis},
+  volume={15},
+  number={4},
+  pages={1057--1085},
+  year={2020},
+  publisher={International Society for Bayesian Analysis}
+}
+
+@article{tronarp2019probabilistic,
+tags = {ode, ode-solving},
+  title = {Probabilistic Solutions to Ordinary Differential Equations as Nonlinear {B}ayesian Filtering: A New Perspective},
+  author = {Tronarp, Filip and Kersting, Hans and Särkkä, Simo and Hennig, Philipp},
+  journal = {Statistics and Computing},
+  volume = {29},
+  number = {6},
+  pages = {1297--1315},
+  year = {2019},
+  doi = {10.1007/s11222-019-09900-1},
+  link = {https://doi.org/10.1007/s11222-019-09900-1},
+  arxiv = {1810.03440},
+  abstract = {We formulate probabilistic numerical approximations to solutions of ordinary differential equations (ODEs) as problems in Gaussian process (GP) regression with non-linear measurement functions. This is achieved by defining the measurement sequence to consist of the observations of the difference between the derivative of the GP and the vector field evaluated at the GP---which are all identically zero at the solution of the ODE. When the GP has a state-space representation, the problem can be reduced to a non-linear Bayesian filtering problem and all widely-used approximations to the Bayesian filtering and smoothing problems become applicable. Furthermore, all previous GP-based ODE solvers that are formulated in terms of generating synthetic measurements of the gradient field come out as specific approximations. Based on the non-linear Bayesian filtering problem posed in this paper, we develop novel Gaussian solvers for which we establish favourable stability properties. Additionally, non-Gaussian approximations to the filtering problem are derived by the particle filter approach. The resulting solvers are compared with other probabilistic solvers in illustrative experiments.},
+}
+
+@article{tronarp2021bayesian,
+tags = {ode, ode-solving},
+  title = {{B}ayesian {ODE} Solvers: The Maximum A Posteriori Estimate},
+  author = {Tronarp, Filip and Särkkä, Simo and Hennig, Philipp},
+  journal = {Statistics and Computing},
+  volume = {31},
+  number = {3},
+  year = {2021},
+  doi = {10.1007/s11222-021-09993-7},
+  link = {https://doi.org/10.1007/s11222-021-09993-7},
+  arxiv = {2004.00623},
+  abstract = {It has recently been established that the numerical solution of ordinary differential equations can be posed as a nonlinear Bayesian inference problem, which can be approximately solved via Gaussian filtering and smoothing, whenever a Gauss--Markov prior is used. In this paper the class of $ν$ times differentiable linear time invariant Gauss--Markov priors is considered. A taxonomy of Gaussian estimators is established, with the maximum a posteriori estimate at the top of the hierarchy, which can be computed with the iterated extended Kalman smoother. The remaining three classes are termed explicit, semi-implicit, and implicit, which are in similarity with the classical notions corresponding to conditions on the vector field, under which the filter update produces a local maximum a posteriori estimate. The maximum a posteriori estimate corresponds to an optimal interpolant in the reproducing Hilbert space associated with the prior, which in the present case is equivalent to a Sobolev space of smoothness $ν+1$. Consequently, using methods from scattered data approximation and nonlinear analysis in Sobolev spaces, it is shown that the maximum a posteriori estimate converges to the true solution at a polynomial rate in the fill-distance (maximum step size) subject to mild conditions on the vector field. The methodology developed provides a novel and more natural approach to study the convergence of these estimators than classical methods of convergence analysis. The methods and theoretical results are demonstrated in numerical examples.},
+}
+
+@inproceedings{bosch2021calibrated,
+tags = {ode, ode-solving},
+  title = {Calibrated Adaptive Probabilistic ODE Solvers},
+  author = {Bosch, Nathanael and Hennig, Philipp and Tronarp, Filip},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {130},
+  pages = {3466--3474},
+  year = {2021},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v130/bosch21a.html},
+  pdf = {http://proceedings.mlr.press/v130/bosch21a/bosch21a.pdf},
+  arxiv = {2012.08202},
+  abstract = {Probabilistic solvers for ordinary differential equations assign a posterior measure to the solution of an initial value problem. The joint covariance of this distribution provides an estimate of the (global) approximation error. The contraction rate of this error estimate as a function of the solver’s step-size identifies it as a well-calibrated worst-case error, but its explicit numerical value for a certain step size is not automatically a good estimate of the explicit error. Addressing this issue, we introduce, discuss, and assess several probabilistically motivated ways to calibrate the uncertainty estimate. Numerical experiments demonstrate that these calibration methods interact efficiently with adaptive step-size selection, resulting in descriptive, and efficiently computable posteriors. We demonstrate the efficiency of the methodology by benchmarking against the classic, widely used Dormand-Prince 4/5 Runge-Kutta method.},
+}
+
+@inproceedings{kramer2021linear,
+tags = {ode, ode-solving},
+  title = {Linear-Time Probabilistic Solution of Boundary Value Problems},
+  author = {Krämer, Nicholas and Hennig, Philipp},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume = {34},
+  pages = {11160--11171},
+  year = {2021},
+  link = {https://proceedings.neurips.cc/paper_files/paper/2021/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.pdf},
+  pdf = {https://proceedings.neurips.cc/paper_files/paper/2021/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf},
+  arxiv = {2106.07761},
+  abstract = {We propose a fast algorithm for the probabilistic solution of boundary value problems (BVPs), which are ordinary differential equations subject to boundary conditions. In contrast to previous work, we introduce a Gauss--Markov prior and tailor it specifically to BVPs, which allows computing a posterior distribution over the solution in linear time, at a quality and cost comparable to that of well-established, non-probabilistic methods. Our model further delivers uncertainty quantification, mesh refinement, and hyperparameter adaptation. We demonstrate how these practical considerations positively impact the efficiency of the scheme. Altogether, this results in a practically usable probabilistic BVP solver that is (in contrast to non-probabilistic algorithms) natively compatible with other parts of the statistical modelling tool-chain.},
+}
+
+@inproceedings{bosch2022pickandmix,
+tags = {ode, ode-solving},
+  title = {Pick-and-Mix Information Operators for Probabilistic ODE Solvers},
+  author = {Bosch, Nathanael and Tronarp, Filip and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {151},
+  pages = {10015--10027},
+  year = {2022},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v151/bosch22a.html},
+  pdf = {https://proceedings.mlr.press/v151/bosch22a/bosch22a.pdf},
+  arxiv = {2110.10770},
+  abstract = {Probabilistic numerical solvers for ordinary differential equations compute posterior distributions over the solution of an initial value problem via Bayesian inference. In this paper, we leverage their probabilistic formulation to seamlessly include additional information as general likelihood terms. We show that second-order differential equations should be directly provided to the solver, instead of transforming the problem to first order. Additionally, by including higher-order information or physical conservation laws in the model, solutions become more accurate and more physically meaningful. Lastly, we demonstrate the utility of flexible information operators by solving differential-algebraic equations. In conclusion, the probabilistic formulation of numerical solvers offers a flexible way to incorporate various types of information, thus improving the resulting solutions.},
+}
+
+@inproceedings{kramer2022probabilistic,
+tags = {ode, ode-solving},
+  title = {Probabilistic ODE Solutions in Millions of Dimensions},
+  author = {Krämer, Nicholas and Bosch, Nathanael and Schmidt, Jonathan and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {162},
+  pages = {11634--11649},
+  year = {2022},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v162/kramer22b.html},
+  pdf = {https://proceedings.mlr.press/v162/kramer22b/kramer22b.pdf},
+  arxiv = {2110.11812},
+  abstract = {Probabilistic solvers for ordinary differential equations (ODEs) have emerged as an efficient framework for uncertainty quantification and inference on dynamical systems. In this work, we explain the mathematical assumptions and detailed implementation schemes behind solving high-dimensional ODEs with a probabilistic numerical algorithm. This has not been possible before due to matrix-matrix operations in each solver step, but is crucial for scientifically relevant problems—most importantly, the solution of discretised partial differential equations. In a nutshell, efficient high-dimensional probabilistic ODE solutions build either on independence assumptions or on Kronecker structure in the prior model. We evaluate the resulting efficiency on a range of problems, including the probabilistic numerical simulation of a differential equation with millions of dimensions.},
+}
+
+@inproceedings{bosch2023probabilistic,
+tags = {ode, ode-solving},
+  title = {Probabilistic Exponential Integrators},
+  author = {Bosch, Nathanael and Hennig, Philipp and Tronarp, Filip},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume = {36},
+  pages = {40450--40467},
+  year = {2023},
+  link = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/7f64034009f4a5fa417a57e1a987c5cd-Abstract-Conference.pdf},
+  pdf = {https://proceedings.neurips.cc/paper_files/paper/2023/file/7f64034009f4a5fa417a57e1a987c5cd-Paper-Conference.pdf},
+  arxiv = {2305.14978},
+  abstract = {Probabilistic solvers provide a flexible and efficient framework for simulation, uncertainty quantification, and inference in dynamical systems. However, like standard solvers, they suffer performance penalties for certain stiff systems, where small steps are required not for reasons of numerical accuracy but for the sake of stability. This issue is greatly alleviated in semi-linear problems by the probabilistic exponential integrators developed in this paper. By including the fast, linear dynamics in the prior, we arrive at a class of probabilistic integrators with favorable properties. Namely, they are proven to be L-stable, and in a certain case reduce to a classic exponential integrator -- with the added benefit of providing a probabilistic account of the numerical error. The method is also generalized to arbitrary non-linear systems by imposing piece-wise semi-linearity on the prior via Jacobians of the vector field at the previous estimates, resulting in probabilistic exponential Rosenbrock methods. We evaluate the proposed methods on multiple stiff differential equations and demonstrate their improved stability and efficiency over established probabilistic solvers. The present contribution thus expands the range of problems that can be effectively tackled within probabilistic numerics.},
+}
+
+@article{kramer2024stable,
+tags = {ode, ode-solving},
+  title = {Stable Implementation of Probabilistic {ODE} Solvers},
+  author = {Krämer, Nicholas and Hennig, Philipp},
+  journal = {Journal of Machine Learning Research},
+  volume = {25},
+  number = {111},
+  pages = {1--29},
+  year = {2024},
+  link = {https://jmlr.org/papers/v25/20-1423.html},
+  pdf = {https://jmlr.org/papers/volume25/20-1423/20-1423.pdf},
+  arxiv = {2012.10106},
+  abstract = {Probabilistic solvers for ordinary differential equations (ODEs) provide efficient quantification of numerical uncertainty associated with simulation of dynamical systems. Their convergence rates have been established by a growing body of theoretical analysis. However, these algorithms suffer from numerical instability when run at high order or with small step-sizes -- that is, exactly in the regime in which they achieve the highest accuracy. The present work proposes and examines a solution to this problem. It involves three components: accurate initialisation, a coordinate change preconditioner that makes numerical stability concerns step-size-independent, and square-root implementation. Using all three techniques enables numerical computation of probabilistic solutions of ODEs with algorithms of order up to 11, as demonstrated on a set of challenging test problems. The resulting rapid convergence is shown to be competitive to high-order, state-of-the-art, classical methods. As a consequence, a barrier between analysing probabilistic ODE solvers and applying them to interesting machine learning problems is effectively removed.},
+}
+
+@article{bosch2024parallel,
+tags = {ode, ode-solving},
+  title = {Parallel-in-Time Probabilistic Numerical {ODE} Solvers},
+  author = {Bosch, Nathanael and Corenflos, Adrien and Yaghoobi, Fatemeh and Tronarp, Filip and Hennig, Philipp and Särkkä, Simo},
+  journal = {Journal of Machine Learning Research},
+  volume = {25},
+  number = {206},
+  pages = {1--27},
+  year = {2024},
+  link = {https://jmlr.org/papers/v25/23-1261.html},
+  pdf = {https://jmlr.org/papers/volume25/23-1261/23-1261.pdf},
+  arxiv = {2310.01145},
+  abstract = {Probabilistic numerical solvers for ordinary differential equations (ODEs) treat the numerical simulation of dynamical systems as problems of Bayesian state estimation. Aside from producing posterior distributions over ODE solutions and thereby quantifying the numerical approximation error of the method itself, one less-often noted advantage of this formalism is the algorithmic flexibility gained by formulating numerical simulation in the framework of Bayesian filtering and smoothing. In this paper, we leverage this flexibility and build on the time-parallel formulation of iterated extended Kalman smoothers to formulate a parallel-in-time probabilistic numerical ODE solver. Instead of simulating the dynamical system sequentially in time, as done by current probabilistic solvers, the proposed method processes all time steps in parallel and thereby reduces the span cost from linear to logarithmic in the number of time steps. We demonstrate the effectiveness of our approach on a variety of ODEs and compare it to a range of both classic and probabilistic numerical ODE solvers.},
+}
+
+@article{bosch2024probnumdiffeq,
+tags = {ode, ode-solving},
+  title = {{ProbNumDiffEq.jl}: Probabilistic Numerical Solvers for Ordinary Differential Equations in {J}ulia},
+  author = {Bosch, Nathanael},
+  journal = {Journal of Open Source Software},
+  volume = {9},
+  number = {101},
+  pages = {7048},
+  year = {2024},
+  doi = {10.21105/joss.07048},
+  link = {https://doi.org/10.21105/joss.07048},
+}
+
+@inproceedings{kramer2025adaptive,
+tags = {ode, ode-solving},
+  title = {Adaptive Probabilistic ODE Solvers Without Adaptive Memory Requirements},
+  author = {Krämer, Nicholas},
+  booktitle = {Proceedings of the First International Conference on Probabilistic Numerics},
+  series = {Proceedings of Machine Learning Research},
+  volume = {271},
+  pages = {12--24},
+  year = {2025},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v271/kramer25a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v271/main/assets/kramer25a/kramer25a.pdf},
+  arxiv = {2410.10530},
+  abstract = {Despite substantial progress in recent years, probabilistic solvers with adaptive step sizes can still not solve memory-demanding differential equations$-$unless we care only about a single point in time (which is far too restrictive; we want the whole time series). Counterintuitively, the culprit is the adaptivity itself: Its unpredictable memory demands easily exceed our machine’s capabilities, making our simulations fail unexpectedly and without warning. Still, dropping adaptivity would abandon years of progress, which can’t be the answer. In this work, we solve this conundrum. We develop an adaptive probabilistic solver with fixed memory demands building on recent developments in robust state estimation. Switching to our method (i) eliminates memory issues for long time series, (ii) accelerates simulations by orders of magnitude through unlocking just-in-time compilation, and (iii) makes adaptive probabilistic solvers compatible with scientific computing in JAX.},
+}
+
+@inproceedings{yao2025propagating,
+tags = {ode, ode-solving},
+  title = {Propagating Model Uncertainty through Filtering-based Probabilistic Numerical ODE Solvers},
+  author = {Yao, Dingling and Tronarp, Filip and Bosch, Nathanael},
+  booktitle = {Proceedings of the First International Conference on Probabilistic Numerics},
+  series = {Proceedings of Machine Learning Research},
+  volume = {271},
+  pages = {25--34},
+  year = {2025},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v271/yao25a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v271/main/assets/yao25a/yao25a.pdf},
+  arxiv = {2503.04684},
+  abstract = {Filtering-based probabilistic numerical solvers for ordinary differential equations (ODEs), also known as ODE filters, have been established as efficient methods for quantifying numerical uncertainty in the solution of ODEs. In practical applications, however, the underlying dynamical system often contains uncertain parameters, requiring the propagation of this model uncertainty to the ODE solution. In this paper, we demonstrate that ODE filters, despite their probabilistic nature, do not automatically solve this uncertainty propagation problem. To address this limitation, we present a novel approach that combines ODE filters with numerical quadrature to properly marginalize over uncertain parameters, while accounting for both parameter uncertainty and numerical solver uncertainty. Experiments across multiple dynamical systems demonstrate that the resulting uncertainty estimates closely match reference solutions. Notably, we show how the numerical uncertainty from the ODE solver can help prevent overconfidence in the propagated uncertainty estimates, especially when using larger step sizes. Our results illustrate that probabilistic numerical methods can effectively quantify both numerical and parametric uncertainty in dynamical systems.},
+}
+
+@inproceedings{deceuster2026probabilistic,
+tags = {ode, ode-solving},
+  title = {Probabilistic Numerics for Hamiltonian Dynamics},
+  author = {De Ceuster, Frederik and Colemont, Tom and Van Gompel, Mathias and Li, Tjonnie G.-F.},
+  booktitle = {Proceedings of the Second International Conference on Probabilistic Numerics},
+  series = {Proceedings of Machine Learning Research},
+  volume = {341},
+  pages = {39--48},
+  year = {2026},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v341/de-ceuster26a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v341/main/assets/de-ceuster26a/de-ceuster26a.pdf},
+  abstract = {Many ordinary differential equations (ODEs) encountered in science originate from physical principles that contain substantially more structure than the ODE alone. In particular, Hamiltonian systems arise from variational principles, possess a symplectic structure, and exhibit conservation laws induced by symmetries. Standard probabilistic ODE solvers, that typically condition on the residual of the ODE, can overlook this additional physical information. In this paper, we focus on Hamiltonian dynamics, we revisit variational integrators and propose a probabilistic-numerical extension, based on a physics-informed prior. Furthermore, we discuss the symmetry-based Bayesian ODE framework of Wang et al. (2020), clarifying the role of integrability in Hamiltonian systems and the related Lie-algebra structure in defining Bayesian formulations},
+}
+
+@inproceedings{vangompel2026initial,
+tags = {ode, ode-solving},
+  title = {Initial Value Problem Uncertainty Propagation},
+  author = {Van Gompel, Mathias and Colemont, Tom and Li, Tjonnie G.-F. and Suykens, Johan and De Ceuster, Frederik},
+  booktitle = {Proceedings of the Second International Conference on Probabilistic Numerics},
+  series = {Proceedings of Machine Learning Research},
+  volume = {341},
+  pages = {198--211},
+  year = {2026},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v341/van-gompel26a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v341/main/assets/van-gompel26a/van-gompel26a.pdf},
+  abstract = {Probabilistic ODE solvers quantify numerical uncertainty by returning a posterior distribution over the solution, rather than only a point estimate. However, these methods typically assume that the initial value problem (IVP) itself is deterministic and fully known. When initial conditions or parameters are uncertain, increasing the numerical accuracy during the solve should not reduce uncertainty about the IVP itself. Standard probabilistic ODE solvers do not distinguish clearly between numerical uncertainty and IVP uncertainty, and may therefore contract the latter inappropriately. Recent work addressed this issue by combining filtering-based probabilistic ODE solvers with numerical quadrature to marginalise correctly over the IVP uncertainty. We extend this work by formulating this outer marginalisation problem in a Bayesian quadrature framework, allowing uncertainty from the quadrature approximation itself to be quantified alongside propagated IVP uncertainty and conditional solver uncertainty. In addition, for Gaussian uncertainty in the initial conditions or parameters, we derive closed-form recursions that can be incorporated directly into filtering and smoothing methods, thereby avoiding numerical quadrature altogether.},
+}
+
+@inproceedings{toyota2026bayesian,
+tags = {ode, ode-solving},
+  title = {Bayesian Inference of Discretization Error Means in ODEs via Ensemble Kalman Filtering},
+  author = {Toyota, Shoji and Miyatake, Yuto},
+  booktitle = {Proceedings of the Second International Conference on Probabilistic Numerics},
+  series = {Proceedings of Machine Learning Research},
+  volume = {341},
+  pages = {181--197},
+  year = {2026},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v341/toyota26a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v341/main/assets/toyota26a/toyota26a.pdf},
+  arxiv = {2607.26552},
+  abstract = {We propose a Bayesian framework to quantify discretization errors in numerical solutions of ODE models based on observational data. The discretization error is modeled as a random variable, and its mean—referred to as the discretization error mean—is inferred from the observations. By introducing a Markov prior on the temporal evolution of the discretization error mean, we formulate the problem as a state-space model with a linear Gaussian observation process, which enables efficient inference via the Ensemble Kalman Filter. We also propose a specific form of a Markov prior motivated by classical discretization error analysis, in which global errors accumulate from local errors. It depends on a step size of a numerical solver, and we establish its convergence rate in probability as the step size tends to zero. Numerical experiments on the pendulum system and the FitzHugh–Nagumo model demonstrate the effectiveness of the proposed approach.},
+}
+
+
+@incollection{NIPS2008_3497,
+tags = {ode, ode-inference},
+  title =	 {Accelerating Bayesian Inference over Nonlinear Differential
+                  Equations with Gaussian Processes},
+  author =	 {Ben Calderhead and Mark Girolami and Neil D. Lawrence},
+  booktitle =	 {Advances in Neural Information Processing Systems 21},
+  editor =	 {D. Koller and D. Schuurmans and Y. Bengio and L. Bottou},
+  pages =	 {217--224},
+  year =	 {2009},
+  publisher =	 {Curran Associates, Inc.},
+  link =
+                  {http://papers.nips.cc/paper/3497-accelerating-bayesian-inference-over-nonlinear-differential-equations-with-gaussian-processes},
+  file =
+                  {http://papers.nips.cc/paper/3497-accelerating-bayesian-inference-over-nonlinear-differential-equations-with-gaussian-processes.pdf}
+}
+
+@article{korostil2013adaptive,
+tags = {ode, ode-inference},
+  title =	 {Adaptive Markov chain Monte Carlo forward projection for
+                  statistical analysis in epidemic modelling of human
+                  papillomavirus},
+  author =	 {Korostil, Igor A and Peters, Gareth W and Cornebise, Julien
+                  and Regan, David G},
+  journal =	 {Statistics in medicine},
+  volume =	 32,
+  number =	 11,
+  pages =	 {1917--1953},
+  year =	 2013,
+abstract={A Bayesian statistical model and estimation methodology based on
+                  forward projection adaptive Markov chain Monte Carlo is
+                  developed in order to perform the calibration of a
+                  high-dimensional nonlinear system of ordinary differential
+                  equations representing an epidemic model for human
+                  papillomavirus types 6 and 11 (HPV-6, HPV-11). The model is
+                  compartmental and involves stratification by age, gender and
+                  sexual-activity group. Developing this model and a means to
+                  calibrate it efficiently is relevant because HPV is a very
+                  multi-typed and common sexually transmitted infection with
+                  more than 100 types currently known. The two types studied in
+                  this paper, types 6 and 11, are causing about 90\% of
+                  anogenital warts. We extend the development of a sexual
+                  mixing matrix on the basis of a formulation first suggested
+                  by Garnett and Anderson, frequently used to model sexually
+                  transmitted infections. In particular, we consider a
+                  stochastic mixing matrix framework that allows us to jointly
+                  estimate unknown attributes and parameters of the mixing
+                  matrix along with the parameters involved in the calibration
+                  of the HPV epidemic model. This matrix describes the sexual
+                  interactions between members of the population under study
+                  and relies on several quantities that are a priori
+                  unknown. The Bayesian model developed allows one to estimate
+                  jointly the HPV-6 and HPV-11 epidemic model parameters as
+                  well as unknown sexual mixing matrix parameters related to
+                  assortativity. Finally, we explore the ability of an
+                  extension to the class of adaptive Markov chain Monte Carlo
+                  algorithms to incorporate a forward projection strategy for
+                  the ordinary differential equation state
+                  trajectories. Efficient exploration of the Bayesian posterior
+                  distribution developed for the ordinary differential equation
+                  parameters provides a challenge for any Markov chain sampling
+                  methodology, hence the interest in adaptive Markov chain
+                  methods. We conclude with simulation studies on synthetic and
+                  recent actual data.},
+link = {http://arxiv.org/abs/1108.3137},
+file = {http://arxiv.org/pdf/1108.3137v1.pdf}
+}
+
+@InProceedings{wang-barber-ICML-14,
+tags = {ode, ode-inference},
+  author =	 {Yali Wang and David Barber},
+  title =	 {{G}aussian Processes for {B}ayesian Estimation in Ordinary
+                  Differential Equations},
+  booktitle =	 {International Conference on Machine Learning -- ICML},
+  year =	 2014,
+  file =
+                  {http://web4.cs.ucl.ac.uk/staff/d.barber/publications/gpodeICML2014.pdf},
+  abstract =	 {Bayesian parameter estimation in coupled ordinary
+                  differential equations (ODEs) is challenging due to the high
+                  computational cost of numerical integration. In gradient
+                  matching a separate data model is introduced with the
+                  property that its gradient may be calculated
+                  easily. Parameter estimation is then achieved by requiring
+                  consistency between the gradients computed from the data
+                  model and those specified by the ODE. We propose a Gaussian
+                  process model that directly links state derivative
+                  information with system observations, simplifying previous
+                  approaches and improving estimation accuracy.}
+}
+
+@incollection{NIPS2017_7066,
+tags = {ode, ode-inference},
+  title = {Scalable Variational Inference for Dynamical Systems},
+  author = {Gorbach, Nico S and Bauer, Stefan and Buhmann, Joachim M},
+  booktitle = {Advances in Neural Information Processing Systems 30},
+  editor = {I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages = {4809--4818},
+  year = {2017},
+  publisher = {Curran Associates, Inc.},
+  link = {http://papers.nips.cc/paper/7066-scalable-variational-inference-for-dynamical-systems},
+  file = {http://papers.nips.cc/paper/7066-scalable-variational-inference-for-dynamical-systems.pdf},
+  abstract = {Gradient matching is a promising tool for learning parameters and state dynamics of ordinary differential equations. It is a grid free inference approach, which, for fully observable systems is at times competitive with numerical integration. However, for many real-world applications, only sparse observations are available or even unobserved variables are included in the model description. In these cases most gradient matching methods are difficult to apply or simply do not provide satisfactory results. That is why, despite the high computational cost, numerical integration is still the gold standard in many applications. Using an existing gradient matching approach, we propose a scalable variational inference framework which can infer states and parameters simultaneously, offers computational speedups, improved accuracy and works well even under model misspecifications in a partially observable system.}
+}
+
+@inproceedings{kersting2020differentiable,
+tags = {ode, ode-inference},
+  title = {Differentiable Likelihoods for Fast Inversion of 'Likelihood-Free' Dynamical Systems},
+  author = {Kersting, Hans and Krämer, Nicholas and Schiegg, Martin and Daniel, Christian and Tiemann, Michael and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {119},
+  pages = {5198--5208},
+  year = {2020},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v119/kersting20a.html},
+  pdf = {http://proceedings.mlr.press/v119/kersting20a/kersting20a.pdf},
+  arxiv = {2002.09301},
+  abstract = {Likelihood-free (a.k.a. simulation-based) inference problems are inverse problems with expensive, or intractable, forward models. ODE inverse problems are commonly treated as likelihood-free, as their forward map has to be numerically approximated by an ODE solver. This, however, is not a fundamental constraint but just a lack of functionality in classic ODE solvers, which do not return a likelihood but a point estimate. To address this shortcoming, we employ Gaussian ODE filtering (a probabilistic numerical method for ODEs) to construct a local Gaussian approximation to the likelihood. This approximation yields tractable estimators for the gradient and Hessian of the (log-)likelihood. Insertion of these estimators into existing gradient-based optimization and sampling methods engenders new solvers for ODE inverse problems. We demonstrate that these methods outperform standard likelihood-free approaches on three benchmark-systems.},
+}
+
+@inproceedings{schmidt2021probabilistic,
+tags = {ode, ode-inference},
+  title = {A Probabilistic State Space Model for Joint Inference from Differential Equations and Data},
+  author = {Schmidt, Jonathan and Krämer, Nicholas and Hennig, Philipp},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume = {34},
+  pages = {12374--12385},
+  year = {2021},
+  link = {https://proceedings.neurips.cc/paper_files/paper/2021/hash/6734fa703f6633ab896eecbdfad8953a-Abstract.pdf},
+  pdf = {https://proceedings.neurips.cc/paper_files/paper/2021/file/6734fa703f6633ab896eecbdfad8953a-Paper.pdf},
+  arxiv = {2103.10153},
+  abstract = {Mechanistic models with differential equations are a key component of scientific applications of machine learning. Inference in such models is usually computationally demanding, because it involves repeatedly solving the differential equation. The main problem here is that the numerical solver is hard to combine with standard inference techniques. Recent work in probabilistic numerics has developed a new class of solvers for ordinary differential equations (ODEs) that phrase the solution process directly in terms of Bayesian filtering. We here show that this allows such methods to be combined very directly, with conceptual and numerical ease, with latent force models in the ODE itself. It then becomes possible to perform approximate Bayesian inference on the latent force as well as the ODE solution in a single, linear complexity pass of an extended Kalman filter / smoother - that is, at the cost of computing a single ODE solution. We demonstrate the expressiveness and performance of the algorithm by training, among others, a non-parametric SIRD model on data from the COVID-19 outbreak.},
+}
+
+@inproceedings{tronarp2022fenrir,
+tags = {ode, ode-inference},
+  title = {Fenrir: Physics-Enhanced Regression for Initial Value Problems},
+  author = {Tronarp, Filip and Bosch, Nathanael and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {162},
+  pages = {21776--21794},
+  year = {2022},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v162/tronarp22a.html},
+  pdf = {https://proceedings.mlr.press/v162/tronarp22a/tronarp22a.pdf},
+  arxiv = {2202.01287},
+  abstract = {We show how probabilistic numerics can be used to convert an initial value problem into a Gauss–Markov process parametrised by the dynamics of the initial value problem. Consequently, the often difficult problem of parameter estimation in ordinary differential equations is reduced to hyper-parameter estimation in Gauss–Markov regression, which tends to be considerably easier. The method’s relation and benefits in comparison to classical numerical integration and gradient matching approaches is elucidated. In particular, the method can, in contrast to gradient matching, handle partial observations, and has certain routes for escaping local optima not available to classical numerical integration. Experimental results demonstrate that the method is on par or moderately better than competing approaches.},
+}
+
+@inproceedings{wu2024data,
+tags = {ode, ode-inference},
+  title = {Data-Adaptive Probabilistic Likelihood Approximation for Ordinary Differential Equations},
+  author = {Wu, Mohan and Lysy, Martin},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {238},
+  pages = {1018--1026},
+  year = {2024},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v238/wu24b.html},
+  pdf = {https://proceedings.mlr.press/v238/wu24b/wu24b.pdf},
+  arxiv = {2306.05566},
+  abstract = {Estimating the parameters of ordinary differential equations (ODEs) is of fundamental importance in many scientific applications. While ODEs are typically approximated with deterministic algorithms, new research on probabilistic solvers indicates that they produce more reliable parameter estimates by better accounting for numerical errors. However, many ODE systems are highly sensitive to their parameter values. This produces deep local maxima in the likelihood function – a problem which existing probabilistic solvers have yet to resolve. Here we present a novel probabilistic ODE likelihood approximation, DALTON, which can dramatically reduce parameter sensitivity by learning from noisy ODE measurements in a data-adaptive manner. Our approximation scales linearly in both ODE variables and time discretization points, and is applicable to ODEs with both partially-unobserved components and non-Gaussian measurement models. Several examples demonstrate that DALTON produces more accurate parameter estimates via numerical optimization than existing probabilistic ODE solvers, and even in some cases than the exact ODE likelihood itself.},
+}
+
+@inproceedings{beck2024diffusion,
+tags = {ode, ode-inference},
+  title = {Diffusion Tempering Improves Parameter Estimation with Probabilistic Integrators for Ordinary Differential Equations},
+  author = {Beck, Jonas and Bosch, Nathanael and Deistler, Michael and Kadhim, Kyra L. and Macke, Jakob H. and Hennig, Philipp and Berens, Philipp},
+  booktitle = {Proceedings of the International Conference on Machine Learning (ICML)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {235},
+  pages = {3305--3326},
+  year = {2024},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v235/beck24a.html},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v235/main/assets/beck24a/beck24a.pdf},
+  arxiv = {2402.12231},
+  abstract = {Ordinary differential equations (ODEs) are widely used to describe dynamical systems in science, but identifying parameters that explain experimental measurements is challenging. In particular, although ODEs are differentiable and would allow for gradient-based parameter optimization, the nonlinear dynamics of ODEs often lead to many local minima and extreme sensitivity to initial conditions. We therefore propose diffusion tempering, a novel regularization technique for probabilistic numerical methods which improves convergence of gradient-based parameter optimization in ODEs. By iteratively reducing a noise parameter of the probabilistic integrator, the proposed method converges more reliably to the true parameters. We demonstrate that our method is effective for dynamical systems of different complexity and show that it obtains reliable parameter estimates for a Hodgkin–Huxley model with a practically relevant number of parameters.},
+}
+
+@article{2015arXiv150303467O,
+tags = {pde},
+  abstract = {We introduce a near-linear complexity (geometric and meshless/algebraic) multigrid/multiresolution method for PDEs with rough ($L^\infty$) coefficients with rigorous a-priori accuracy and performance estimates. The method is discovered through a decision/game theory formulation of the problems of (1) identifying restriction and interpolation operators (2) recovering a signal from incomplete measurements based on norm constraints on its image under a linear operator (3) gambling on the value of the solution of the PDE based on a hierarchy of nested measurements of its solution or source term. The resulting elementary gambles form a hierarchy of (deterministic) basis functions of $H^1_0(\Omega)$ (gamblets) that (1) are orthogonal across subscales/subbands with respect to the scalar product induced by the energy norm of the PDE (2) enable sparse compression of the solution space in $H^1_0(\Omega)$ (3) induce an orthogonal multiresolution operator decomposition. The operating diagram of the multigrid method is that of an inverted pyramid in which gamblets are computed locally (by virtue of their exponential decay), hierarchically (from fine to coarse scales) and the PDE is decomposed into a hierarchy of independent linear systems with uniformly bounded condition numbers. The resulting algorithm is parallelizable both in space (via localization) and in bandwith/subscale (subscales can be computed independently from each other). Although the method is deterministic it has a natural Bayesian interpretation under the measure of probability emerging (as a mixed strategy) from the information game formulation and multiresolution approximations form a martingale with respect to the filtration induced by the hierarchy of nested measurements.},
+  author   = {{Owhadi}, H.},
+  file     = {http://arxiv.org/pdf/1503.03467v4.pdf},
+  issue    = {1503.03467},
+  journal  = {ArXiv},
+  link     = {http://arxiv.org/abs/1503.03467},
+  month    = mar,
+  title    = {Multigrid with rough coefficients and Multiresolution operator decomposition from Hierarchical Information Games},
+  volume   = {math.NA},
+  year     = 2015
+}
+
+
+@article{2016arXiv160507811C,
+tags = {pde},
+  abstract = {This paper develops a class of meshless methods that are well-suited to statistical inverse problems involving partial differential equations (PDEs). The methods discussed in this paper view the forcing term in the PDE as a random field that induces a probability distribution over the residual error of a symmetric collocation method. This construction enables the solution of challenging inverse problems while accounting, in a rigorous way, for the impact of the discretisation of the forward problem. In particular, this confers robustness to failure of meshless methods, with statistical inferences driven to be more conservative in the presence of significant solver error. In addition, (i) a principled learning-theoretic approach to minimise the impact of solver error is developed, and (ii) the challenging setting of inverse problems with a non-linear forward model is considered. The method is applied to parameter inference problems in which non-negligible solver error must be accounted for in order to draw valid statistical conclusions.},
+  author   = {{Cockayne}, J. and {Oates}, C. and {Sullivan}, T. and {Girolami}, M.},
+  file     = {http://arxiv.org/pdf/1605.07811v1.pdf},
+  issue    = {1605.07811},
+  journal  = {ArXiv},
+  link     = {http://arxiv.org/abs/1605.07811},
+  month    = {may},
+  title    = {Probabilistic Meshless Methods for Partial Differential Equations and {B}ayesian Inverse Problems},
+  year     = 2016
+}
+
+@article{2016arXiv160607686O,
+tags = {pde},
+  abstract = {Implicit schemes are popular methods for the integration of time dependent PDEs such as hyperbolic and parabolic PDEs. However the necessity to solve corresponding linear systems at each time step constitutes a complexity bottleneck in their application to PDEs with rough coefficients. We present a generalization of gamblets introduced in arXiv:1503.03467 enabling the resolution of these implicit systems in near-linear complexity and provide rigorous a-priori error bounds on the resulting numerical approximations of hyperbolic and parabolic PDEs. These generalized gamblets induce a multiresolution decomposition of the solution space that is adapted to both the underlying (hyperbolic and parabolic) PDE (and the system of ODEs resulting from space discretization) and to the time-steps of the numerical scheme.},
+  author   = {{Owhadi}, H. and {Zhang}, L.},
+  file     = {http://arxiv.org/pdf/1606.07686v1.pdf},
+  issue    = {math.NA 1606.07686},
+  journal  = {ArXiv e-prints},
+  link     = {http://arxiv.org/abs/1606.07686},
+  month    = jun,
+  title    = {{Gamblets for opening the complexity-bottleneck of implicit schemes for hyperbolic and parabolic ODEs/PDEs with rough coefficients}},
+  year     = 2016
+}
+
+
+@article{2018arXiv180200971D,
+tags = {pde},
+  abstract      = {We explore a new simulation scheme for partial differential equations (PDE's) called Information Field Dynamics (IFD). Information field dynamics attempts to improve on existing simulation schemes by incorporating Bayesian field inference, which seeks to preserve the maximum amount of information about the field being simulated. The field inference is truly Bayesian and thus depends on a notion of prior belief. Here, we analytically prove that a restricted subset of simulation schemes in IFD are consistent, and thus deliver valid predictions in the limit of high resolutions. This has not previously been done for any IFD schemes. This restricted subset is roughly analogous to traditional fixed-grid numerical PDE solvers, given the additional restriction of translational symmetry. Furthermore, given an arbitrary IFD scheme modelling a PDE, it is a-priori not obvious to what order the scheme is accurate in space and time. For this subset of models, we also derive an easy rule-of-thumb for determining the order of accuracy of the simulation. As with all analytic consistency analysis, an analysis for nontrivial systems is intractable, thus these results are intended as a general indicator of the validity of the approach, and it is hoped that the results will generalize.},
+  archiveprefix = {arXiv},
+  author        = {{Dupont}, M. and {En{\ss}lin}, T.},
+  eprint        = {1802.00971},
+  file          = {https://arxiv.org/pdf/1802.00971},
+  journal       = {ArXiv e-prints},
+  keywords      = {Astrophysics - Instrumentation and Methods for Astrophysics},
+  link          = {https://arxiv.org/abs/1802.00971},
+  month         = feb,
+  primaryclass  = {astro-ph.IM},
+  title         = {Consistency and convergence of simulation schemes in Information field dynamics},
+  year          = 2018
+}
+
+@article{conrad_probability_2015,
+tags = {pde},
+  abstract = {In this paper, we present a formal quantification of epistemic uncertainty induced by numerical solutions of ordinary and partial differential equation models. Numerical solutions of differential equations contain inherent uncertainties due to the finite dimensional approximation of an unknown and implicitly defined function. When statistically analysing models based on differential equations describing physical, or other naturally occurring, phenomena, it is therefore important to explicitly account for the uncertainty introduced by the numerical method. This enables objective determination of its importance relative to other uncertainties, such as those caused by data contaminated with noise or model error induced by missing physical or inadequate descriptors. To this end we show that a wide variety of existing solvers can be randomised, inducing a probability measure over the solutions of such differential equations. These measures exhibit contraction to a Dirac measure around the true unknown solution, where the rates of convergence are consistent with the underlying deterministic numerical method. Ordinary differential equations and elliptic partial differential equations are used to illustrate the approach to quantifying uncertainty in both the statistical analysis of the forward and inverse problems.},
+  author   = {Conrad, Patrick R. and Girolami, Mark and Särkkä, Simo and Stuart, Andrew and Zygalakis, Konstantinos},
+  file     = {http://arxiv.org/pdf/1506.04592v1.pdf},
+  journal  = {arXiv:1506.04592 [stat]},
+  keywords = {Statistics - Methodology},
+  link     = {http://warwick.ac.uk/pints},
+  month    = jun,
+  note     = {arXiv: 1506.04592},
+  title    = {Probability {Measures} for {Numerical} {Solutions} of {Differential} {Equations}},
+  urldate  = {2015-06-16},
+  year     = {2015}
+}
+
+@article{oates_bayesian_2017,
+tags = {pde},
+  abstract = {The use of high-power industrial equipment, such as large-scale mixing equipment or a hydrocyclone for separation of particles in liquid suspension, demands careful monitoring to ensure correct operation. The task of monitoring the liquid suspension can be posed as a time-evolving inverse problem and solved with Bayesian statistical methods. In this paper, we extend Bayesian methods to incorporate statistical models for the error that is incurred in the numerical solution of the physical governing equations. This enables full uncertainty quantification within a principled computation-precision trade-off, in contrast to the over-confident inferences that are obtained when numerical error is ignored. The method is cast with a sequential Monte Carlo framework and an optimised implementation is provided in Python.},
+  author   = {Oates, Chris J. and Cockayne, Jon and Aykroyd, Robert G.},
+  file     = {https://arxiv.org/pdf/1707.06107.pdf},
+  journal  = {arXiv:1707.06107 [stat]},
+  keywords = {Statistics - Applications},
+  month    = jul,
+  note     = {arXiv: 1707.06107},
+  title    = {Bayesian {Probabilistic} {Numerical} {Methods} for {Industrial} {Process} {Monitoring}},
+  url      = {http://arxiv.org/abs/1707.06107},
+  urldate  = {2017-07-20},
+  year     = {2017}
+}
+
+@article{owhadi_gamblets_2017,
+tags = {pde},
+  abstract = {Implicit schemes are popular methods for the integration of time dependent PDEs such as hyperbolic and parabolic PDEs. However the necessity to solve corresponding linear systems at each time step constitutes a complexity bottleneck in their application to PDEs with rough coefficients. We present a generalization of gamblets introduced in {\textbackslash}cite\{OwhadiMultigrid:2015\} enabling the resolution of these implicit systems in near-linear complexity and provide rigorous a-priori error bounds on the resulting numerical approximations of hyperbolic and parabolic PDEs. These generalized gamblets induce a multiresolution decomposition of the solution space that is adapted to both the underlying (hyperbolic and parabolic) PDE (and the system of ODEs resulting from space discretization) and to the time-steps of the numerical scheme.},
+  author   = {Owhadi, Houman and Zhang, Lei},
+  doi      = {10.1016/j.jcp.2017.06.037},
+  file     = {https://arxiv.org/pdf/1606.07686.pdf},
+  issn     = {00219991},
+  journal  = {Journal of Computational Physics},
+  keywords = {65T60, 65N55, 65N75, 62C99, 42C40, 62M86, Mathematics - Numerical Analysis, Statistics - Machine Learning},
+  month    = oct,
+  note     = {arXiv: 1606.07686},
+  pages    = {99--128},
+  title    = {Gamblets for opening the complexity-bottleneck of implicit schemes for hyperbolic and parabolic {ODEs}/{PDEs} with rough coefficients},
+  url      = {http://arxiv.org/abs/1606.07686},
+  urldate  = {2017-09-10},
+  volume   = {347},
+  year     = {2017}
+}
+
+@article{owhadi2015bayesian,
+tags = {pde},
+  abstract  = {Numerical homogenization, i.e. the finite-dimensional approximation of solution spaces of PDEs with arbitrary rough coefficients, requires the identification of accurate basis elements. These basis elements are oftentimes found after a laborious process of scientific investigation and plain guesswork. Can this identification problem be facilitated? Is there a general recipe/decision framework for guiding the design of basis elements? We suggest that the answer to the above questions could be positive based on the reformulation of numerical homogenization as a Bayesian Inference problem in which a given PDE with rough coefficients (or multi-scale operator) is excited with noise (random right hand side/source term) and one tries to estimate the value of the solution at a given point based on a finite number of observations. We apply this reformulation to the identification of bases for the numerical homogenization of arbitrary integro-differential equations and show that these bases have optimal recovery properties. In particular we show how Rough Polyharmonic Splines can be re-discovered as the optimal solution of a Gaussian filtering problem.},
+  author    = {Owhadi, Houman},
+  file      = {http://arxiv.org/pdf/1406.6668v2.pdf},
+  journal   = {Multiscale Modeling \& Simulation},
+  link      = {http://arxiv.org/abs/1406.6668},
+  number    = {3},
+  pages     = {812--828},
+  publisher = {SIAM},
+  title     = {Bayesian Numerical Homogenization},
+  volume    = {13},
+  year      = {2015}
+}
+
+@article{pfoertner2022linpde,
+tags = {pde},
+  author      = {Pförtner, Marvin and Steinwart, Ingo and Hennig, Philipp and Wenger, Jonathan},
+  journal     = {arXiv preprint},
+  link        = {https://arxiv.org/abs/2205.15449},
+  pdf         = {https://arxiv.org/pdf/2205.15449.pdf},
+  bibtex_show = {true},
+  title       = {Physics-Informed {G}aussian Process Regression Generalizes Linear {PDE} Solvers},
+  year        = {2022}
+}
+
+@article{PhysRevE87013308,
+tags = {pde},
+  abstract  = {Information field dynamics (IFD) is introduced here as a framework to derive numerical schemes for the simulation of physical and other fields without assuming a particular subgrid structure as many schemes do. IFD constructs an ensemble of nonparametric subgrid field configurations from the combination of the data in computer memory, representing constraints on possible field configurations, and prior assumptions on the subgrid field statistics. Each of these field configurations can formally be evolved to a later moment since any differential operator of the dynamics can act on fields living in continuous space. However, these virtually evolved fields need again a representation by data in computer memory. The maximum entropy principle of information theory guides the construction of updated data sets via entropic matching, optimally representing these field configurations at the later time. The field dynamics thereby become represented by a finite set of evolution equations for the data that can be solved numerically. The subgrid dynamics is thereby treated within auxiliary analytic considerations. The resulting scheme acts solely on the data space. It should provide a more accurate description of the physical field dynamics than simulation schemes constructed ad hoc, due to the more rigorous accounting of subgrid physics and the space discretization process. Assimilation of measurement data into an IFD simulation is conceptually straightforward since measurement and simulation data can just be merged. The IFD approach is illustrated using the example of a coarsely discretized representation of a thermally excited classical Klein-Gordon field. This should pave the way towards the construction of schemes for more complex systems like turbulent hydrodynamics.},
+  author    = {En\ss{}lin, Torsten A.},
+  doi       = {10.1103/PhysRevE.87.013308},
+  issue     = {1},
+  journal   = {Phys. Rev. E},
+  link      = {https://link.aps.org/doi/10.1103/PhysRevE.87.013308},
+  month     = {Jan},
+  numpages  = {17},
+  pages     = {013308},
+  publisher = {American Physical Society},
+  title     = {Information field dynamics for simulation scheme construction},
+  volume    = {87},
+  year      = {2013}
+}
+
+@article{PhysRevE97033314,
+tags = {pde},
+  abstract  = {Most simulation schemes for partial differential equations (PDEs) focus on minimizing a simple error norm of a discretized version of a field. This paper takes a fundamentally different approach; the discretized field is interpreted as data providing information about a real physical field that is unknown. This information is sought to be conserved by the scheme as the field evolves in time. Such an information theoretic approach to simulation was pursued before by information field dynamics (IFD). In this paper we work out the theory of IFD for nonlinear PDEs in a noiseless Gaussian approximation. The result is an action that can be minimized to obtain an information-optimal simulation scheme. It can be brought into a closed form using field operators to calculate the appearing Gaussian integrals. The resulting simulation schemes are tested numerically in two instances for the Burgers equation. Their accuracy surpasses finite-difference schemes on the same resolution. The IFD scheme, however, has to be correctly informed on the subgrid correlation structure. In certain limiting cases we recover well-known simulation schemes like spectral Fourier-Galerkin methods. We discuss implications of the approximations made. },
+  author    = {Leike, Reimar H. and En\ss{}lin, Torsten A.},
+  doi       = {10.1103/PhysRevE.97.033314},
+  issue     = {3},
+  journal   = {Phys. Rev. E},
+  link      = {https://link.aps.org/doi/10.1103/PhysRevE.97.033314},
+  month     = {Mar},
+  numpages  = {8},
+  pages     = {033314},
+  publisher = {American Physical Society},
+  title     = {Towards information-optimal simulation of partial differential equations},
+  volume    = {97},
+  year      = {2018}
+}
+
+@article{wang2021bayesian,
+tags = {pde},
+  author  = {Wang, Junyang and Cockayne, Jon and Chkrebtii, Oksana and Sullivan, Timothy John and Oates, Chris and others},
+  journal = {Statistics and Computing},
+  link    = {https://arxiv.org/abs/2104.12587},
+  title   = {Bayesian Numerical Methods for Nonlinear Partial Differential Equations},
+  year    = {2021}
+}
+
+@inproceedings{kramer2022probabilisticmol,
+tags = {pde},
+  title = {Probabilistic Numerical Method of Lines for Time-Dependent Partial Differential Equations},
+  author = {Krämer, Nicholas and Schmidt, Jonathan and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {151},
+  pages = {625--639},
+  year = {2022},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v151/kramer22a.html},
+  pdf = {https://proceedings.mlr.press/v151/kramer22a/kramer22a.pdf},
+  arxiv = {2110.11847},
+  abstract = {This work develops a class of probabilistic algorithms for the numerical solution of nonlinear, time-dependent partial differential equations (PDEs). Current state-of-the-art PDE solvers treat the space- and time-dimensions separately, serially, and with black-box algorithms, which obscures the interactions between spatial and temporal approximation errors and misguides the quantification of the overall error. To fix this issue, we introduce a probabilistic version of a technique called method of lines. The proposed algorithm begins with a Gaussian process interpretation of finite difference methods, which then interacts naturally with filtering-based probabilistic ordinary differential equation (ODE) solvers because they share a common language: Bayesian inference. Joint quantification of space- and time-uncertainty becomes possible without losing the performance benefits of well-tuned ODE solvers. Thereby, we extend the toolbox of probabilistic programs for differential equation simulation to PDEs.},
+}
+
+@article{liberty2007randomized,
+tags = {related},
+  title =	 {Randomized algorithms for the low-rank approximation of
+                  matrices},
+  author =	 {Liberty, Edo and Woolfe, Franco and Martinsson, Per-Gunnar
+                  and Rokhlin, Vladimir and Tygert, Mark},
+  journal =	 {Proceedings of the National Academy of Sciences},
+  volume =	 104,
+  number =	 51,
+  pages =	 {20167--20172},
+  year =	 2007
+}
+
+@article{halko2011finding,
+tags = {related},
+  title =	 {Finding structure with randomness: Probabilistic algorithms
+                  for constructing approximate matrix decompositions},
+  author =	 {Halko, Nathan and Martinsson, Per-Gunnar and Tropp, Joel A},
+  journal =	 {SIAM review},
+  volume =	 53,
+  number =	 2,
+  pages =	 {217--288},
+  year =	 2011,
+  publisher =	 {SIAM}
+}
+
+@TechReport{ohagan13-polyn-chaos,
+tags = {related},
+  author =	 {Anthony O'Hagan},
+  title =	 {Polynomial Chaos: A Tutorial and Critique from a
+                  Statistician's Perspective},
+  institution =	 {University of Sheffield, UK},
+  year =	 2013,
+  month =	 {May}
+}
+
+@inproceedings{GarnettOH2013,
+tags = {related},
+  title =	 {Active Learning of Linear Embeddings for Gaussian Processes},
+  author =	 {Garnett, R. and Osborne, M. and Hennig, P.},
+  booktitle =	 {Proceedings of the 30th Conference on Uncertainty in
+                  Artificial Intelligence},
+  editor =	 {Zhang, NL and Tian, J},
+  publisher =	 {AUAI Press},
+  pages =	 {230-239},
+  year =	 2014,
+  url =		 {http://auai.org/uai2014/proceedings/individuals/152.pdf},
+  url2 =	 {https://github.com/rmgarnett/mgp},
+  department =	 {Department Sch{\"o}lkopf},
+  file =	 {http://auai.org/uai2014/proceedings/individuals/152.pdf},
+  code =	 {https://github.com/rmgarnett/mgp},
+  abstract = {We propose an active learning method for discovering
+                  low-dimensional structure in high-dimensional Gaussian
+                  process (GP) tasks. Such problems are increasingly frequent
+                  and important, but have hitherto presented severe practical
+                  difficulties. We further introduce a novel technique for
+                  approximately marginalizing GP hyperparameters, yielding
+                  marginal predictions robust to hyperparameter
+                  misspecification. Our method offers an efficient means of
+                  performing GP regression, quadrature, or Bayesian
+                  optimization in high-dimensional spaces.}
+}
+
+@article{garrabrant,
+tags = {related},
+      author =   {Scott Garrabrant and Tsvi Benson-Tilsen and Andrew Critch and Nate Soares and Jessica Taylor},
+      title =  {Logical Induction},
+      journal =  {arXiv preprint 1609.03543v3},
+      year =   2016,
+      abstract =     {We present a computable algorithm that assigns probabilities to every logical statement in a given formal language, and refines those probabilities over time. For instance, if the language is Peano arithmetic, it assigns probabilities to all arithmetical statements, including claims about the twin prime conjecture, the outputs of long-running computations, and its own probabilities. We show that our algorithm, an instance of what we call a logical inductor, satisfies a number of intuitive desiderata, including: (1) it learns to predict patterns of truth and falsehood in logical statements, often long before having the resources to evaluate the statements, so long as the patterns can be written down in polynomial time; (2) it learns to use appropriate statistical summaries to predict sequences of statements whose truth values appear pseudorandom; and (3) it learns to have accurate beliefs about its own current beliefs, in a manner that avoids the standard paradoxes of self-reference. For example, if a given computer program only ever produces outputs in a certain range, a logical inductor learns this fact in a timely manner; and if late digits in the decimal expansion of π are difficult to predict, then a logical inductor learns to assign ≈10\% probability to "the nth digit of π is a 7" for large n. Logical inductors also learn to trust their future beliefs more than their current beliefs, and their beliefs are coherent in the limit (whenever ϕ⟹ψ, ℙ∞(ϕ)≤ℙ∞(ψ), and so on); and logical inductors strictly dominate the universal semimeasure in the limit.
+
+          These properties and many others all follow from a single logical induction criterion, which is motivated by a series of stock trading analogies. Roughly speaking, each logical sentence ϕ is associated with a stock that is worth \$1 per share if f φ is true and nothing otherwise, and we interpret the belief-state of a logically uncertain reasoner as a set of market prices, where Pn(φ) = 50\% means that on day n, shares of φ may be bought or sold from the reasoner for 50¢. The logical induction criterion says (very roughly) that there should not be any polynomial-time computable trading strategy with finite risk tolerance that earns unbounded profits in that market over time. This criterion bears strong resemblance to the “no Dutch book” criteria that support both expected utility theory (von Neumann and Morgenstern 1944) and Bayesian probability theory (Ramsey 1931; de Finetti 1937).},
+      link =          {https://intelligence.org/2016/09/12/new-paper-logical-induction/},
+      file =     {https://arxiv.org/pdf/1609.03543v3.pdf},
+      notes = {This monograph gives a strong theoretical optimality notion for using bounded computational resources to assign accurate probabilities to the outcomes of computations.}
+}
+
+@InProceedings{pmlr-v9-hennig10a,
+tags = {related},
+  title =    {Coherent Inference on Optimal Play in Game Trees},
+  author =   {Philipp Hennig and David Stern and Thore Graepel},
+  booktitle =    {Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics},
+  pages =    {326--333},
+  year =   {2010},
+  editor =   {Yee Whye Teh and Mike Titterington},
+  volume =   {9},
+  series =   {Proceedings of Machine Learning Research},
+  address =    {Chia Laguna Resort, Sardinia, Italy},
+  month =    {13--15 May},
+  publisher =    {PMLR},
+  file =    {http://proceedings.mlr.press/v9/hennig10a/hennig10a.pdf},
+  link =    {http://proceedings.mlr.press/v9/hennig10a.html},
+  abstract =   {Round-based games are an instance of discrete planning problems. Some of the best contemporary game tree search algorithms use random roll-outs as data. Relying on a good policy, they learn on-policy values by propagating information upwards in the tree, but not between sibling nodes. Here, we present a generative model and a corresponding approximate message passing scheme for inference on the optimal, off-policy value of nodes in smooth AND/OR trees, given random roll-outs. The crucial insight is that the distribution of values in game trees is not completely arbitrary. We define a generative model of the on-policy values using a latent score for each state, representing the value under the random roll-out policy. Inference on the values under the optimal policy separates into an inductive, pre-data step and a deductive, post-data part. Both can be solved approximately with Expectation Propagation, allowing off-policy value inference for any node in the (exponentially big) tree in linear time.}
+  }
+
+@book{poincare1896,
+tags = {historical},
+  address = {Paris},
+  author = {H. Poincar{\'e}},
+  publisher = {Gauthier-Villars},
+  title  = {{Calcul des probabilit{\'e}s}},
+  year   = {1896},
+  notes  = {Likely the first text explicitly discussing the notion of computation as inference. The introduction (§1.7) contains the following insightful, albeit informal, sentence:
+
+  Une question de probabilités ne se pose que par suite de notre ignorance: il n’y aurait place que pour la certitude si nous connaissions toutes les données du problème. D’autre part, notre ignorance ne doit pas être complète, sans quoi nous ne pourrions rien évaluer. Une classification s’opérerait donc suivant le plus ou moins de profondeur de notre ignorance.
+
+  Ainsi la probabilité pour que la sixième décimale d’un nombre dans une table de logarithmes soit égale à 6 est a priori de 1/10; en réalité, toutes les données du problème sont bien déterminées, et, si nous voulions nous en donner la peine, nous connaîtrions exactement cette probabilité. De même, dans les interpolations, dans le calcul des intégrales définies par la méthode de Cotes ou celle de Gauss, etc.
+
+  Further along, in chapter XV, page 292, he constructs a (basic) version of the Wiener integral from scratch and applies it to interpolation problems (in the beginning of that chapter he reviews the problem of interpolating an unknown function over a known basis of polynomials using classical deterministic methods, in the second part he assumes that the coefficients in the basis are Gaussian and treats interpolation points as data in an inference problem). [Many thanks to Houman Owhadi for pointing out this second reference.]
+  }
+}
+
+@article{kac1940gaussian,
+tags = {historical},
+  title =	 {The Gaussian law of errors in the theory of additive number
+                  theoretic functions},
+  author =	 {Erd{\"o}s, P. and Kac, M.},
+  journal =	 {American Journal of Mathematics},
+  pages =	 {738--742},
+  year =	 1940,
+  link =	 {http://www.jstor.org/stable/2371483}
+}
+
+@article{kac1949distributions,
+tags = {historical},
+  title =	 {On distributions of certain {W}iener functionals},
+  author =	 {Kac, M.},
+  journal =	 {Transactions of the AMS},
+  volume =	 65,
+  number =	 1,
+  pages =	 {1--13},
+  year =	 1949,
+  link =	 {http://www.jstor.org/stable/1990512}
+}
+
+@article{sul1959wiener,
+tags = {historical},
+  title={Wiener measure and its applications to approximation methods. I},
+  author={Sul'din, Al'bert Valentinovich},
+  journal={Izvestiya Vysshikh Uchebnykh Zavedenii. Matematika},
+  number={6},
+  pages={145--158},
+  year={1959},
+  publisher={Kazan (Volga region) Federal University}
+}
+
+@article{sul1960wiener,
+tags = {historical},
+  title={Wiener measure and its applications to approximation methods. II},
+  author={Sul'din, Al'bert Valentinovich},
+  journal={Izvestiya Vysshikh Uchebnykh Zavedenii. Matematika},
+  number={5},
+  pages={165--179},
+  year={1960},
+  publisher={Kazan (Volga region) Federal University}
+}
+
+@article{ajne1960naagra,
+tags = {historical},
+  title={N{\aa}gra till{\"a}mpningar av statistiska id{\'e}er p{\aa} numerisk integration},
+  author={Ajna, Bj{\"o}rn and Dalenius, Tore},
+  journal={Nordisk Matematisk Tidskrift},
+  pages={145--152},
+  year={1960},
+  abstract = {[translation by JSTOR]: The usual approximation of a definite integral by a finite sum is applied in the more general case $\underset{-\mathrm{\infty }}{\overset{\mathrm{\infty }}{\int }}\mathrm{g}\left(\mathrm{t}\right)\mathrm{d}\mathrm{F}\left(\mathrm{t}\right)\approx \sum _{\mathrm{k}=1}^{\mathrm{n}}{\mathrm{w}}_{\mathrm{k}}\mathrm{g}\left({\mathrm{t}}_{\mathrm{k}}\right)$, where $F(t)$ is a known distribution function. Interpreting $\mathrm{W}\left(\mathrm{t}\right)=\sum _{{\mathrm{t}}_{\mathrm{k}}\leqq \mathrm{t}}{\mathrm{w}}_{\mathrm{k}}$ as a discrete probability distribution, this can be adjusted to the given distribution $F(t)$ by well known statistical methods. It turns out that the criterion of Kolmogorov-Smirnov and Smirnov's $\omega_2$-test both lead to the so-called tangent-method approximation of ordinary integrals, whereas the moment-method leads to Gaussian numerical integration.},
+  link = {http://www.jstor.org/stable/24524717}
+}
+
+@book{sard1963linear,
+tags = {historical},
+  title={Linear approximation},
+  author={Sard, Arthur},
+  year={1963},
+  publisher={American Mathematical Society},
+  address = {Providence, R.I.},
+  notes = {Towards the end of this book, Sard introduces the probability concepts of his time (Wiener and Kolmogorov) into the classical theory of linear approximation. [Many thanks to Houman Owhadi for this reference.]}
+}
+
+@article{kimeldorf1970correspondence,
+tags = {historical},
+ title={A correspondence between Bayesian estimation on stochastic processes and smoothing by splines},
+ author={Kimeldorf, George S and Wahba, Grace},
+ journal={The Annals of Mathematical Statistics},
+ volume={41},
+ number={2},
+ pages={495--502},
+ year={1970},
+ link={http://www.jstor.org/stable/pdf/2239347.pdf},
+ notes={This seminal paper points out that splines can be interpreted as the posterior mean functions of certain Gaussian processes. The paper does not explicitly make the connection to the use of splines in numerics -- which means that many classic numerical methods in various areas can be interpreted as average-case Gaussian inference rules -- but later authors, most notably Diaconis, make it clear that they got the idea.}
+}
+
+@inproceedings{Kadane1985a,
+tags = {historical},
+author = {J. B. Kadane and G. W. Wasilkowski},
+abstract = {Relations between average case epsilon-complexity and Bayesian statistics are discussed. An algorithm corresponds to a decision function, and the choice of information to the choice of an experiment. Adaptive information in epsilon-complexity theory corresponds to the concept of sequential experiment. Some results are reported, giving epsilon-complexity and minimax-Bayesian interpretations for factor analysis. Results from epsilon-complexity are used to establish the optimal sequential design is no better than optimal nonsequential design for that problem.},
+booktitle = {Bayesian Statistics 2, Proceedings of the Second Valencia International Meeting},
+number = {July},
+pages = {361--374},
+title = {{Average case epsilon-complexity in computer science: A Bayesian view}},
+year = {1985},
+link = {http://academiccommons.columbia.edu/catalog/ac%3A140709}
+}
+
+@article{Kadane1985b,
+tags = {historical},
+abstract = {I borrow themes from statistics - especially the Bayesian ideas underlying average case analysis and ideas of sequential design of experiments - to discuss when parallel computation is likely to be an attractive technique.},
+author = {J. B. Kadane},
+journal = {Journal of Complexity},
+pages = {256--263},
+title = {{Parallel and Sequential Computation: A Statistician's View}},
+volume = {1},
+year = {1985},
+link = {http://www.sciencedirect.com/science/article/pii/0885064X85900147}
+}
+
+@article{kopanov1994probabilistic,
+tags = {historical},
+  title={Probabilistic Analysis of Methods for Numerical Integration},
+  author={Kopanov, P},
+  journal={Dokladi na Bulgarskata Akademia na Naukite},
+  volume={47},
+  number={4},
+  pages={17--20},
+  year={1994},
+  file = {../assets/pdf/Kopanov_1994.pdf}
+}
+
+@article{kopanov1995trapezoidal,
+tags = {historical},
+  title={On the Optimality of the Trapezoidal Method when Integrating the Wiener Process},
+  author={Kopanov, P},
+  journal={Journal of Applied Statistical Science},
+  volume={2},
+  number={4},
+  pages={397--403},
+  year={1995},
+  file = {../assets/pdf/Kopanov_1995.pdf},
+  abstract = {This paper deals with methods for approximate calculation of integrals of stochastic processes. It is shown that, when integrating the Wiener process, the classical trapezoidal method is optimal if variance is taken as a criterion.}
+}
+
+
+@article{kopanov1996rate,
+tags = {historical},
+  title={Rate of Convergence for the Approximate Integration of the Wiener Process},
+  author={Kopanov, P},
+  journal={Mathematica Balkanica},
+  volume={10},
+  number={1},
+  pages={83--88},
+  year={1996},
+  file = {../assets/pdf/Kopanov_1996.pdf},
+  abstract = {We consider approximate methods for calculation of integral of the Wiener process and find the rate of convergence.}
+}
+
+@article{o1987monte,
+tags = {sampling},
+  title =	 {Monte Carlo is fundamentally unsound},
+  author =	 {O'Hagan, Anthony},
+  journal =	 {The Statistician},
+  pages =	 {247--249},
+  year =	 1987,
+  link = {http://www.jstor.org/stable/2348519?seq=1#page_scan_tab_contents}
+}
