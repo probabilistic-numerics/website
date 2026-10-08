@@ -161,3 +161,18 @@
   title   = {Bayesian Numerical Methods for Nonlinear Partial Differential Equations},
   year    = {2021}
 }
+
+@inproceedings{kramer2022probabilisticmol,
+  title = {Probabilistic Numerical Method of Lines for Time-Dependent Partial Differential Equations},
+  author = {Krämer, Nicholas and Schmidt, Jonathan and Hennig, Philipp},
+  booktitle = {Proceedings of the International Conference on Artificial Intelligence and Statistics (AISTATS)},
+  series = {Proceedings of Machine Learning Research},
+  volume = {151},
+  pages = {625--639},
+  year = {2022},
+  publisher = {PMLR},
+  link = {https://proceedings.mlr.press/v151/kramer22a.html},
+  pdf = {https://proceedings.mlr.press/v151/kramer22a/kramer22a.pdf},
+  arxiv = {2110.11847},
+  abstract = {This work develops a class of probabilistic algorithms for the numerical solution of nonlinear, time-dependent partial differential equations (PDEs). Current state-of-the-art PDE solvers treat the space- and time-dimensions separately, serially, and with black-box algorithms, which obscures the interactions between spatial and temporal approximation errors and misguides the quantification of the overall error. To fix this issue, we introduce a probabilistic version of a technique called method of lines. The proposed algorithm begins with a Gaussian process interpretation of finite difference methods, which then interacts naturally with filtering-based probabilistic ordinary differential equation (ODE) solvers because they share a common language: Bayesian inference. Joint quantification of space- and time-uncertainty becomes possible without losing the performance benefits of well-tuned ODE solvers. Thereby, we extend the toolbox of probabilistic programs for differential equation simulation to PDEs.},
+}
