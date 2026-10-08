@@ -1,69 +1,171 @@
 /*******************************************************************************
- * Publications list (research page) and its tag filter
+ * Research page: topic index (sidebar) and publication list
  ******************************************************************************/
 
 $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
+$rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
 
 // Bootstrap outlines every focused button, even after a mouse click;
 // keep the ring only for keyboard focus.
-.tag-chip,
+.topic-index .topic,
 .publications .links > button {
   &:focus:not(:focus-visible) {
     outline: none;
   }
 }
 
-// Tag filter bar
-
-.tag-filter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.4rem;
-  margin-bottom: 0.75rem;
+// Shared look of the "Topics" header and the year headings, so their rules line up.
+@mixin section-heading {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--global-text-color-light);
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid $rule;
 }
 
-.tag-chip {
-  border: 1px solid var(--global-theme-color);
-  background: transparent;
-  color: var(--global-theme-color);
-  border-radius: 1rem;
-  padding: 0.15rem 0.75rem;
-  font-size: 0.85rem;
-  cursor: pointer;
+.research-layout {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  column-gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
 
-  &.active {
-    background: var(--global-theme-color);
-    color: var(--global-bg-color);
+  // the theme's global `div { margin: 0 auto }` would shrink and center grid items
+  > * {
+    margin: 0;
   }
 }
 
-.tag-status {
-  margin-left: auto;
-  font-size: 0.8rem;
-  color: var(--global-text-color-light);
-  white-space: nowrap;
+.topic-index {
+  position: sticky;
+  top: 5rem;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .topic-index-title {
+    @include section-heading;
+  }
+
+  .topic {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 1px;
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    background: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--global-text-color);
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    // the theme colors every span directly, which would break inheritance
+    span {
+      color: inherit;
+    }
+
+    .count {
+      font-size: 0.8rem;
+      color: var(--global-text-color-light);
+      font-variant-numeric: tabular-nums;
+    }
+
+    &:hover {
+      background: color-mix(in srgb, var(--global-theme-color) 6%, transparent);
+    }
+
+    &.active {
+      background: color-mix(in srgb, var(--global-theme-color) 11%, transparent);
+      color: var(--global-theme-color);
+      font-weight: 500;
+
+      .count {
+        color: inherit;
+      }
+    }
+  }
+
+  .subtopic .topic {
+    padding-left: 1.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+// Narrow screens: one column, the index becomes a row of chips and a
+// group's subtopics only appear while that group is selected.
+@media (max-width: 767.98px) {
+  .research-layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .topic-index {
+    position: static;
+
+    .topic-index-title {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .topic,
+    .subtopic .topic {
+      width: auto;
+      margin: 0;
+      padding: 0.15rem 0.7rem;
+      border: 1px solid var(--global-theme-color);
+      border-radius: 1rem;
+      font-size: 0.85rem;
+      color: var(--global-theme-color);
+
+      &.active {
+        background: var(--global-theme-color);
+        color: var(--global-bg-color);
+      }
+    }
+
+    .subtopic {
+      display: none;
+
+      &.group-open {
+        display: block;
+      }
+
+      .topic {
+        border-style: dashed;
+      }
+    }
+  }
 }
 
 // Publication list
 
 .publications {
-  margin-top: 1rem;
-
   h2.bibliography {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--global-text-color-light);
-    letter-spacing: 0.05em;
-    margin: 2rem 0 0.75rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--global-text-color) 12%, transparent);
+    @include section-heading;
   }
 
   ol.bibliography {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0 0 1.75rem;
 
     > li {
       padding-bottom: 0.75rem;

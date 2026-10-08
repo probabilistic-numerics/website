@@ -7,23 +7,28 @@ nav: true
 weight: 20
 ---
 
-<div class="tag-filter">
-  <button type="button" class="tag-chip" data-tag="">All</button>
-  {% for t in site.data.research_tags %}
-  <button type="button" class="tag-chip" data-tag="{{ t.id }}">{{ t.label }}</button>
-  {% endfor %}
-  <span class="tag-status"></span>
-</div>
-<div class="publications">
-{% bibliography --file papers %}
+<div class="research-layout">
+  <nav class="topic-index" aria-label="Topics">
+    <div class="topic-index-title">Topics</div>
+    <ul>
+      <li><button type="button" class="topic" data-tag=""><span class="label">All</span><span class="count"></span></button></li>
+      {% for t in site.data.research_tags %}
+      <li{% if t.parent %} class="subtopic" data-parent="{{ t.parent }}"{% endif %}><button type="button" class="topic" data-tag="{{ t.id }}"><span class="label">{{ t.short | default: t.label }}</span><span class="count"></span></button></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="publications">
+  {% bibliography --file papers %}
+  </div>
 </div>
 
 <script>
 (function () {
-  var chips = document.querySelectorAll('.tag-chip');
+  var topics = document.querySelectorAll('.topic-index .topic');
+  var subtopics = document.querySelectorAll('.topic-index .subtopic');
   var rows = document.querySelectorAll('.publications .row[data-tags]');
   var lists = document.querySelectorAll('.publications ol.bibliography');
-  var status = document.querySelector('.tag-status');
   var selected = new Set();
 
   var rowTags = new Map();
@@ -31,13 +36,23 @@ weight: 20
     rowTags.set(row, row.dataset.tags.split(',').map(function (t) { return t.trim(); }));
   });
 
+  var parentOf = {};
+  subtopics.forEach(function (li) {
+    parentOf[li.querySelector('.topic').dataset.tag] = li.dataset.parent;
+  });
+
+  topics.forEach(function (topic) {
+    var tag = topic.dataset.tag;
+    var n = 0;
+    rowTags.forEach(function (tags) { if (!tag || tags.indexOf(tag) !== -1) n++; });
+    topic.querySelector('.count').textContent = n;
+  });
+
   function apply() {
-    var shown = 0;
     rows.forEach(function (row) {
       var visible = selected.size === 0 || rowTags.get(row).some(function (t) { return selected.has(t); });
       // each row sits in its own <li>
       row.closest('li').hidden = !visible;
-      if (visible) shown++;
     });
     // hide year headings whose list is empty
     lists.forEach(function (ol) {
@@ -46,15 +61,18 @@ weight: 20
       var heading = ol.previousElementSibling;
       if (heading && /^H\d$/.test(heading.tagName)) heading.hidden = empty;
     });
-    chips.forEach(function (chip) {
-      var tag = chip.dataset.tag;
+    topics.forEach(function (topic) {
+      var tag = topic.dataset.tag;
       var active = tag ? selected.has(tag) : selected.size === 0;
-      chip.classList.toggle('active', active);
-      chip.setAttribute('aria-pressed', active);
+      topic.classList.toggle('active', active);
+      topic.setAttribute('aria-pressed', active);
     });
-    status.textContent = selected.size
-      ? shown + ' of ' + rows.length + ' papers'
-      : rows.length + ' papers';
+    // on narrow screens subtopics are only listed while their group is selected
+    var openGroups = new Set();
+    selected.forEach(function (t) { openGroups.add(parentOf[t] || t); });
+    subtopics.forEach(function (li) {
+      li.classList.toggle('group-open', openGroups.has(li.dataset.parent));
+    });
 
     var url = new URL(window.location);
     if (selected.size) url.searchParams.set('tags', Array.from(selected).join(','));
@@ -62,23 +80,28 @@ weight: 20
     history.replaceState(null, '', url);
   }
 
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var tag = chip.dataset.tag;
-      if (!tag) selected.clear();
-      else if (selected.has(tag)) selected.delete(tag);
-      else selected.add(tag);
-      apply();
+  var layout = document.querySelector('.research-layout');
+
+  function select(tag) {
+    selected = tag ? new Set([tag]) : new Set();
+    apply();
+    // after filtering from further down, jump back to the start of the list
+    var top = layout.getBoundingClientRect().top + window.scrollY - 80;
+    if (window.scrollY > top) window.scrollTo({ top: top, behavior: 'smooth' });
+  }
+
+  topics.forEach(function (topic) {
+    topic.addEventListener('click', function () {
+      var tag = topic.dataset.tag;
+      // clicking the active topic again returns to the full list
+      select(selected.size === 1 && selected.has(tag) ? '' : tag);
     });
   });
 
-  // tag links on individual papers select only that tag
   document.querySelectorAll('.publications .paper-tag').forEach(function (link) {
     link.addEventListener('click', function (e) {
       e.preventDefault();
-      selected = new Set([link.dataset.tag]);
-      apply();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      select(link.dataset.tag);
     });
   });
 
