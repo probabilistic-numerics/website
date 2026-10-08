@@ -128,7 +128,8 @@ $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease;
 
-      &:hover {
+      &:hover,
+      &.active {
         background: var(--global-theme-color);
         color: var(--global-bg-color);
         text-decoration: none;
@@ -157,35 +158,44 @@ $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
     }
   }
 
-  // Expandable abstract / BibTeX panels
+  // Expandable abstract / BibTeX panels. Animating grid rows from 0fr to 1fr
+  // collapses to the real content height, unlike a large max-height. The
+  // .panel wrapper must stay free of margin/padding/border, or that space
+  // remains visible when the panel is closed.
   .hidden {
-    font-size: 0.875rem;
-    max-height: 0;
-    overflow: hidden;
-    text-align: justify;
-    transition: all 0.15s ease;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease;
 
-    p {
-      line-height: 1.4em;
-      margin: 10px;
-    }
-
-    pre {
-      font-size: 1em;
-      line-height: 1.4em;
-      padding: 10px;
+    > .panel {
+      min-height: 0;
+      margin: 0;
+      overflow: hidden;
     }
 
     &.open {
-      max-height: 100em;
+      grid-template-rows: 1fr;
     }
   }
 
-  div.abstract.hidden {
-    border: dashed 1px var(--global-bg-color);
+  .abstract.hidden p,
+  .bibtex.hidden figure.highlight {
+    margin: 0.6rem 0 0.2rem;
+    border-left: 2px solid var(--global-theme-color);
+  }
 
-    &.open {
-      border-color: var(--global-text-color);
-    }
+  .abstract.hidden p {
+    padding: 0.1rem 0 0.1rem 0.9rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--global-text-color);
+  }
+
+  .bibtex.hidden pre {
+    margin: 0;
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.78rem;
+    line-height: 1.5;
   }
 }

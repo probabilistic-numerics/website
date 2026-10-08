@@ -111,14 +111,14 @@
     <!-- Hidden abstract block -->
     {% if entry.abstract %}
     <div class="abstract hidden">
-      <p>{{ entry.abstract }}</p>
+      <div class="panel"><p>{{ entry.abstract }}</p></div>
     </div>
     {% endif %}
 
     <!-- Hidden bibtex block -->
     {% if entry.bibtex_show %}
     <div class="bibtex hidden">
-      {% highlight bibtex %}{{ entry.bibtex }}{% endhighlight %}
+      <div class="panel">{% highlight bibtex %}{{ entry.bibtex }}{% endhighlight %}</div>
     </div>
     {% endif %}
   </div>

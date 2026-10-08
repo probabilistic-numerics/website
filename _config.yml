@@ -176,6 +176,8 @@ scholar:
   # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.
   bibtex_filters: [latex, smallcaps, superscript]
+  # site-only fields that should not appear in the BibTeX shown to readers
+  bibtex_skip_fields: [abstract, month_numeric, tags, bibtex_show, pdf, file, link, code, supplements, video, selected, abbr]
 
   sort_by: year,month
   order: descending
