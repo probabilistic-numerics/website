@@ -22,12 +22,20 @@ weight: 20
   .tag-status { font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 1rem; }
   .tag-description { margin-bottom: 1rem; }
   .publications .paper-tag {
-    font-size: 0.75rem;
-    color: var(--global-text-color-light);
-    margin-right: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--global-theme-color);
+    background: color-mix(in srgb, var(--global-theme-color) 10%, transparent);
+    border-radius: 0.75rem;
+    padding: 0.1rem 0.5rem;
+    margin-right: 0.25rem;
+    text-decoration: none;
+    transition: background 0.15s ease;
   }
   .publications .paper-tag::before { content: "#"; }
-  .publications .paper-tag:hover { color: var(--global-theme-color); }
+  .publications .paper-tag:hover {
+    background: color-mix(in srgb, var(--global-theme-color) 20%, transparent);
+    text-decoration: none;
+  }
 </style>
 
 <div class="tag-filter">

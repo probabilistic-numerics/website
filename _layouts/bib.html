@@ -122,9 +122,9 @@
     {% if entry.tags %}
       {% assign entry_tags = entry.tags | split: "," %}
       {% for t in entry_tags %}
-        {% assign t = t | strip %}
-        {% assign tag_info = site.data.research_tags | where: "id", t | first %}
-        <a href="{{ '/research/' | relative_url }}?tags={{ t }}" class="paper-tag" data-tag="{{ t }}">{{ tag_info.label | default: t }}</a>
+        {% assign tag_id = t | strip %}
+        {% assign tag_info = site.data.research_tags | where: "id", tag_id | first %}
+        <a href="{{ '/research/' | relative_url }}?tags={{ tag_id }}" class="paper-tag" data-tag="{{ tag_id }}">{{ tag_info.label | default: tag_id }}</a>
       {% endfor %}
     {% endif %}
     </div>
