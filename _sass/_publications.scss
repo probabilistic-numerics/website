@@ -316,5 +316,8 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
     border-radius: 0 6px 6px 0;
     font-size: 0.78rem;
     line-height: 1.5;
+    // wrap long fields instead of scrolling sideways; copying keeps the original lines
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 }

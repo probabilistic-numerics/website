@@ -92,9 +92,7 @@
       {% if entry.website %}
         <a href="{{ entry.website }}" target="_blank">Website</a>
       {% endif %}
-      {% if entry.bibtex_show %}
         <button type="button" class="bibtex" aria-expanded="false">BibTeX</button>
-      {% endif %}
       </div>
       {% if entry.tags %}
       <div class="paper-tags">
@@ -126,10 +124,8 @@
     {% endif %}
 
     <!-- Hidden bibtex block -->
-    {% if entry.bibtex_show %}
     <div class="bibtex hidden">
       <div class="panel">{% highlight bibtex %}{{ entry.bibtex }}{% endhighlight %}</div>
     </div>
-    {% endif %}
   </div>
 </div>
