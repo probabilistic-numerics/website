@@ -36,12 +36,6 @@
   label: PDEs
   group: diffeq
 
-- id: sampling
-  label: Sampling
-  group: other
 - id: related
   label: Related
-  group: other
-- id: historical
-  label: Historical
   group: other
