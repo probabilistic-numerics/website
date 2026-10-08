@@ -20,6 +20,12 @@ weight: 20
   }
   .tag-chip.active { background: var(--global-theme-color); color: var(--global-bg-color); }
   .tag-status { font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 1rem; }
+  .publications ol.bibliography li {
+    border-bottom: 1px solid color-mix(in srgb, var(--global-text-color) 8%, transparent);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .publications ol.bibliography li:last-child { border-bottom: none; }
   .tag-description { margin-bottom: 1rem; }
   .publications .paper-tag {
     font-size: 0.7rem;
