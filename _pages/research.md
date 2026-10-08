@@ -21,7 +21,40 @@ weight: 20
   .tag-chip.active { background: var(--global-theme-color); color: var(--global-bg-color); }
   .tag-status { font-size: 0.8rem; color: var(--global-text-color-light); margin-left: auto; white-space: nowrap; }
   .publications { margin-top: 1rem; }
-  .publications h2.bibliography { margin-top: 1.25rem; margin-bottom: 0.75rem; }
+  .publications h2.bibliography {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--global-text-color-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--global-text-color) 12%, transparent);
+  }
+  .publications .author {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+  .publications .author a {
+    color: var(--global-text-color-light) !important;
+  }
+  .publications .author a:hover {
+    color: var(--global-theme-color) !important;
+  }
+  .publications .periodical {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+  .publications .links {
+    margin-top: 0.3rem;
+  }
+  .publications .links a.btn {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
   .publications ol.bibliography li {
     border-bottom: 1px solid color-mix(in srgb, var(--global-text-color) 8%, transparent);
     padding-bottom: 0.75rem;
