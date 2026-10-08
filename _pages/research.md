@@ -28,7 +28,6 @@ weight: 20
     margin-bottom: 0.75rem;
   }
   .publications ol.bibliography li:last-child { border-bottom: none; }
-  .tag-description { margin-bottom: 1rem; }
   .publications .paper-tag {
     font-size: 0.7rem;
     color: var(--global-theme-color);
@@ -53,10 +52,6 @@ weight: 20
   {% endfor %}
 </div>
 <div class="tag-status"></div>
-{% for t in site.data.research_tags %}{% if t.description %}
-<p class="tag-description" data-tag="{{ t.id }}" hidden>{{ t.description }}</p>
-{% endif %}{% endfor %}
-
 <div class="publications">
 {% bibliography --file papers %}
 </div>
@@ -66,7 +61,6 @@ weight: 20
   var chips = document.querySelectorAll('.tag-chip');
   var rows = document.querySelectorAll('.publications .row[data-tags]');
   var lists = document.querySelectorAll('.publications ol.bibliography');
-  var descriptions = document.querySelectorAll('.tag-description');
   var status = document.querySelector('.tag-status');
   var selected = new Set();
 
@@ -93,9 +87,6 @@ weight: 20
     chips.forEach(function (chip) {
       var tag = chip.dataset.tag;
       chip.classList.toggle('active', tag ? selected.has(tag) : selected.size === 0);
-    });
-    descriptions.forEach(function (d) {
-      d.hidden = !(selected.size === 1 && selected.has(d.dataset.tag));
     });
     status.textContent = shown + ' of ' + rows.length + ' papers';
 
