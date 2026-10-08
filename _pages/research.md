@@ -2,7 +2,6 @@
 layout: page
 permalink: /research/
 title: Research
-description: Selected publications in all areas of probabilistic numerics, in reversed chronological order. Select topics to restrict the list.
 nav: true
 weight: 20
 ---
