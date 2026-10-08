@@ -10,10 +10,14 @@ weight: 20
 <div class="research-layout">
   <nav class="topic-index" aria-label="Topics">
     <div class="topic-index-title">Topics</div>
-    <ul>
-      <li><button type="button" class="topic" data-tag=""><span class="label">All</span><span class="count"></span></button></li>
+    <button type="button" class="topic-toggle" aria-expanded="false" aria-controls="topic-list">
+      <span class="topic-toggle-name">All papers</span><span class="topic-toggle-count"></span>
+      <svg class="topic-toggle-chevron" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+    <ul id="topic-list">
+      <li><button type="button" class="topic" data-tag="" data-name="All papers"><span class="label">All</span><span class="count"></span></button></li>
       {% for t in site.data.research_tags %}
-      <li{% if t.parent %} class="subtopic" data-parent="{{ t.parent }}"{% endif %}><button type="button" class="topic" data-tag="{{ t.id }}"><span class="label">{{ t.short | default: t.label }}</span><span class="count"></span></button></li>
+      <li{% if t.parent %} class="subtopic" data-parent="{{ t.parent }}"{% endif %}><button type="button" class="topic" data-tag="{{ t.id }}" data-name="{{ t.label }}"><span class="label">{{ t.short | default: t.label }}</span><span class="count"></span></button></li>
       {% endfor %}
     </ul>
   </nav>
@@ -26,7 +30,8 @@ weight: 20
 <script>
 (function () {
   var topics = document.querySelectorAll('.topic-index .topic');
-  var subtopics = document.querySelectorAll('.topic-index .subtopic');
+  var index = document.querySelector('.topic-index');
+  var toggle = index.querySelector('.topic-toggle');
   var rows = document.querySelectorAll('.publications .row[data-tags]');
   var lists = document.querySelectorAll('.publications ol.bibliography');
   var selected = new Set();
@@ -34,11 +39,6 @@ weight: 20
   var rowTags = new Map();
   rows.forEach(function (row) {
     rowTags.set(row, row.dataset.tags.split(',').map(function (t) { return t.trim(); }));
-  });
-
-  var parentOf = {};
-  subtopics.forEach(function (li) {
-    parentOf[li.querySelector('.topic').dataset.tag] = li.dataset.parent;
   });
 
   topics.forEach(function (topic) {
@@ -49,10 +49,12 @@ weight: 20
   });
 
   function apply() {
+    var shown = 0;
     rows.forEach(function (row) {
       var visible = selected.size === 0 || rowTags.get(row).some(function (t) { return selected.has(t); });
       // each row sits in its own <li>
       row.closest('li').hidden = !visible;
+      if (visible) shown++;
     });
     // hide year headings whose list is empty
     lists.forEach(function (ol) {
@@ -67,12 +69,11 @@ weight: 20
       topic.classList.toggle('active', active);
       topic.setAttribute('aria-pressed', active);
     });
-    // on narrow screens subtopics are only listed while their group is selected
-    var openGroups = new Set();
-    selected.forEach(function (t) { openGroups.add(parentOf[t] || t); });
-    subtopics.forEach(function (li) {
-      li.classList.toggle('group-open', openGroups.has(li.dataset.parent));
-    });
+    // the narrow-screen toggle names the current selection
+    var current = selected.size === 1 ? index.querySelector('.topic[data-tag="' + Array.from(selected)[0] + '"]')
+      : selected.size === 0 ? index.querySelector('.topic[data-tag=""]') : null;
+    toggle.querySelector('.topic-toggle-name').textContent = current ? current.dataset.name : 'Several topics';
+    toggle.querySelector('.topic-toggle-count').textContent = shown;
 
     var url = new URL(window.location);
     if (selected.size) url.searchParams.set('tags', Array.from(selected).join(','));
@@ -95,7 +96,23 @@ weight: 20
       var tag = topic.dataset.tag;
       // clicking the active topic again returns to the full list
       select(selected.size === 1 && selected.has(tag) ? '' : tag);
+      setOpen(false);
     });
+  });
+
+  // narrow screens: the toggle expands the topic list in place
+  function setOpen(open) {
+    index.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  }
+  toggle.addEventListener('click', function () {
+    setOpen(!index.classList.contains('open'));
+  });
+  index.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && index.classList.contains('open')) {
+      setOpen(false);
+      toggle.focus();
+    }
   });
 
   document.querySelectorAll('.publications .paper-tag').forEach(function (link) {

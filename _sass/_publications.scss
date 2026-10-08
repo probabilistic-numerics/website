@@ -8,6 +8,7 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
 // Bootstrap outlines every focused button, even after a mouse click;
 // keep the ring only for keyboard focus.
 .topic-index .topic,
+.topic-index .topic-toggle,
 .publications .links > button {
   &:focus:not(:focus-visible) {
     outline: none;
@@ -103,8 +104,53 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
   }
 }
 
-// Narrow screens: one column, the index becomes a row of chips and a
-// group's subtopics only appear while that group is selected.
+// On narrow screens the sidebar collapses behind a quiet toggle
+// ("All papers · 121 ⌄") that expands the same list in place.
+.topic-toggle {
+  display: none;
+  align-items: baseline;
+  gap: 0.35rem;
+  // a full-width disclosure row: the whole width is tappable, chevron at the
+  // right edge, and the same rule under it as under the year headings
+  width: 100%;
+  padding: 0 0 0.5rem;
+  border: none;
+  border-bottom: 1px solid $rule;
+  background: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--global-theme-color);
+  cursor: pointer;
+
+  // the theme colors every span directly
+  .topic-toggle-name {
+    color: inherit;
+  }
+
+  .topic-toggle-count {
+    font-weight: 400;
+    color: var(--global-text-color-light);
+
+    &::before {
+      content: "·";
+      margin-right: 0.35rem;
+    }
+  }
+
+  .topic-toggle-chevron {
+    align-self: center;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+  }
+
+  &[aria-expanded="true"] .topic-toggle-chevron {
+    transform: rotate(180deg);
+  }
+}
+
+// Narrow screens: one column, with the topic list collapsed behind the toggle.
 @media (max-width: 767.98px) {
   .research-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -115,43 +161,25 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
   .topic-index {
     position: static;
 
-    .topic-index-title {
-      display: none;
-    }
-
+    .topic-index-title,
     ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .topic,
-    .subtopic .topic {
-      width: auto;
-      margin: 0;
-      padding: 0.15rem 0.7rem;
-      border: 1px solid var(--global-theme-color);
-      border-radius: 1rem;
-      font-size: 0.85rem;
-      color: var(--global-theme-color);
-
-      &.active {
-        background: var(--global-theme-color);
-        color: var(--global-bg-color);
-      }
-    }
-
-    .subtopic {
       display: none;
-
-      &.group-open {
-        display: block;
-      }
-
-      .topic {
-        border-style: dashed;
-      }
     }
+
+    &.open ul {
+      display: block;
+      margin-top: 0.6rem;
+    }
+
+    // finger-sized rows
+    .topic {
+      padding-top: 0.45rem;
+      padding-bottom: 0.45rem;
+    }
+  }
+
+  .topic-toggle {
+    display: flex;
   }
 }
 
@@ -262,6 +290,11 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
     flex-wrap: wrap;
     column-gap: 0.6rem;
     font-size: 0.78rem;
+
+    // on narrow screens the topic toggle covers navigation
+    @media (max-width: 767.98px) {
+      display: none;
+    }
   }
 
   .paper-tag {
