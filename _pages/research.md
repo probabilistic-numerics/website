@@ -8,7 +8,7 @@ weight: 20
 ---
 
 <style>
-  .tag-filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+  .tag-filter { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; align-items: center; }
   .tag-chip {
     border: 1px solid var(--global-theme-color);
     background: transparent;
@@ -19,7 +19,7 @@ weight: 20
     cursor: pointer;
   }
   .tag-chip.active { background: var(--global-theme-color); color: var(--global-bg-color); }
-  .tag-status { font-size: 0.85rem; color: var(--global-text-color-light); margin-bottom: 1rem; }
+  .tag-status { font-size: 0.8rem; color: var(--global-text-color-light); margin-left: auto; white-space: nowrap; }
   .publications { margin-top: 1rem; }
   .publications h2.bibliography { margin-top: 1.25rem; margin-bottom: 0.75rem; }
   .publications ol.bibliography li {
@@ -50,8 +50,8 @@ weight: 20
   {% for t in site.data.research_tags %}
   <button type="button" class="tag-chip" data-tag="{{ t.id }}">{{ t.label }}</button>
   {% endfor %}
+  <span class="tag-status"></span>
 </div>
-<div class="tag-status"></div>
 <div class="publications">
 {% bibliography --file papers %}
 </div>
