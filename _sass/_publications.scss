@@ -77,10 +77,14 @@ $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
 
     a {
       color: inherit;
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, var(--global-text-color) 25%, transparent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
 
       &:hover {
         color: var(--global-theme-color);
-        text-decoration: underline;
+        text-decoration-color: currentColor;
       }
     }
   }
