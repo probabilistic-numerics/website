@@ -4,6 +4,15 @@
 
 $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
 
+// Bootstrap outlines every focused button, even after a mouse click;
+// keep the ring only for keyboard focus.
+.tag-chip,
+.publications .links > button {
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
 // Tag filter bar
 
 .tag-filter {
@@ -117,7 +126,15 @@ $hairline: color-mix(in srgb, var(--global-text-color) 10%, transparent);
     align-items: center;
     gap: 0.35rem;
 
-    > a {
+    // a paper without any links would otherwise still take a gap in the footer row
+    &:not(:has(> a, > button)) {
+      display: none;
+    }
+
+    > a,
+    > button {
+      border: none;
+      font-family: inherit;
       font-size: 0.8rem;
       font-weight: 500;
       line-height: 1.2;

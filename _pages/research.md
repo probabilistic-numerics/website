@@ -48,9 +48,13 @@ weight: 20
     });
     chips.forEach(function (chip) {
       var tag = chip.dataset.tag;
-      chip.classList.toggle('active', tag ? selected.has(tag) : selected.size === 0);
+      var active = tag ? selected.has(tag) : selected.size === 0;
+      chip.classList.toggle('active', active);
+      chip.setAttribute('aria-pressed', active);
     });
-    status.textContent = shown + ' of ' + rows.length + ' papers';
+    status.textContent = selected.size
+      ? shown + ' of ' + rows.length + ' papers'
+      : rows.length + ' papers';
 
     var url = new URL(window.location);
     if (selected.size) url.searchParams.set('tags', Array.from(selected).join(','));

@@ -47,7 +47,7 @@
     <div class="entry-footer">
       <div class="links">
       {% if entry.abstract %}
-        <a class="abstract" role="button">Abstract</a>
+        <button type="button" class="abstract" aria-expanded="false">Abstract</button>
       {% endif %}
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" target="_blank">arXiv</a>
@@ -93,7 +93,7 @@
         <a href="{{ entry.website }}" target="_blank">Website</a>
       {% endif %}
       {% if entry.bibtex_show %}
-        <a class="bibtex" role="button">BibTeX</a>
+        <button type="button" class="bibtex" aria-expanded="false">BibTeX</button>
       {% endif %}
       </div>
       {% if entry.tags %}
