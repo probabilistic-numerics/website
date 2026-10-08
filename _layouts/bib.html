@@ -53,7 +53,7 @@
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" target="_blank">arXiv</a>
       {% endif %}
       {% if entry.link %}
-        <a href="{{ entry.link }}" target="_blank">Link</a>
+        <a href="{{ entry.link }}" target="_blank">{% if entry.link contains "arxiv.org" %}arXiv{% else %}Paper{% endif %}</a>
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}
