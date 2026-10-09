@@ -1,20 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/optimization/
-title: Optimization
-description:
+redirect_to: /research/?tags=optimization
+sitemap: false
 ---
-
-### Local Optimization
-
-<div class="publications">
-{% bibliography --file local_optimization %}
-</div>
-
-
-### Global Optimization
-
-
-<div class="publications">
-{% bibliography --file global_optimization %}
-</div>

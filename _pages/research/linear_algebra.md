@@ -1,10 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/linear_algebra/
-title: Linear Algebra
-description:
+redirect_to: /research/?tags=linear-algebra
+sitemap: false
 ---
-
-<div class="publications">
-{% bibliography --file linear_algebra %}
-</div>

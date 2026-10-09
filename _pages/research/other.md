@@ -1,10 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/other/
-title: Other Related Research
-description:
+redirect_to: /research/?tags=related
+sitemap: false
 ---
-
-<div class="publications">
-{% bibliography --file related %}
-</div>

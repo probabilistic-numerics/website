@@ -20,7 +20,7 @@ Typical numerical tasks to which PN may be applied include optimization, integra
 
 <div class="card-deck">
     <div class="card hoverable">
-        <a href="./research/linear_algebra" target="_blank">
+        <a href="./research/?tags=linear-algebra">
             <img class="card-img-top" src="assets/img/linear_algebra.png">
             <div class="card-body text-center">
                 <p class="card-text">Linear Algebra</p>
@@ -28,7 +28,7 @@ Typical numerical tasks to which PN may be applied include optimization, integra
         </a>
     </div>
     <div class="card hoverable">
-        <a href="./research/quadrature" target="_blank">
+        <a href="./research/?tags=quadrature">
             <img class="card-img-top" src="assets/img/integration.png">
             <div class="card-body text-center">
                 <p class="card-text">Quadrature</p>
@@ -36,7 +36,7 @@ Typical numerical tasks to which PN may be applied include optimization, integra
         </a>
     </div>
     <div class="card hoverable">
-        <a href="./research/optimization" target="_blank">
+        <a href="./research/?tags=optimization">
             <img class="card-img-top" src="assets/img/optimization.png">
             <div class="card-body text-center">
                 <p class="card-text">Optimization</p>
@@ -44,7 +44,7 @@ Typical numerical tasks to which PN may be applied include optimization, integra
         </a>
     </div>
     <div class="card hoverable">
-        <a href="./research/ode" target="_blank">
+        <a href="./research/?tags=ode">
             <img class="card-img-top" src="assets/img/ode.png">
             <div class="card-body text-center">
                 <p class="card-text">ODEs</p>
@@ -52,7 +52,7 @@ Typical numerical tasks to which PN may be applied include optimization, integra
         </a>
     </div>
     <div class="card hoverable">
-        <a href="./research/pde" target="_blank">
+        <a href="./research/?tags=pde">
             <img class="card-img-top" src="assets/img/pde.png">
             <div class="card-body text-center">
                 <p class="card-text">PDEs</p>

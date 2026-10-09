@@ -1,10 +1,6 @@
 ---
-layout: page
+layout: redirect
 permalink: /research/pde/
-title: Partial Differential Equations
-description:
+redirect_to: /research/?tags=pde
+sitemap: false
 ---
-
-<div class="publications">
-{% bibliography --file PDEs %}
-</div>
