@@ -43,7 +43,7 @@
   doi           = {10.1007/s11222-019-09902-z},
   link          = {https://doi.org/10.1007/s11222-019-09902-z},
   arxiv         = {1901.04457},
-  pdf           = {https://arxiv.org/pdf/1901.04457.pdf},
+  pdf           = {https://link.springer.com/content/pdf/10.1007/s11222-019-09902-z.pdf},
   title         = {A Modern Retrospective on Probabilistic Numerics},
 }
 
@@ -159,7 +159,7 @@
   year          = 2021,
   link          = {https://papers.nips.cc/paper_files/paper/2021/hash/c4de8ced6214345614d33fb0b16a8acd-Abstract.html},
   arxiv         = {2106.13718},
-  pdf           = {https://arxiv.org/pdf/2106.13718.pdf},
+  pdf           = {https://papers.nips.cc/paper_files/paper/2021/file/c4de8ced6214345614d33fb0b16a8acd-Paper.pdf},
   title         = {Black Box Probabilistic Numerics},
 }
 
@@ -526,7 +526,7 @@
   link          = {https://jmlr.org/papers/v18/15-178.html},
   arxiv         = {1502.06800},
   abstract      = {We show that kernel-based quadrature rules for computing in tegrals can be seen as a special case of random feature expansions for positive definite kernels, for a particular decomposition that always exists for such kernels. We provide a theoretical analysis of the number of required samples for a given approximation error, leading to both upper and lower bounds that are based solely on the eigenvalues of the associated integral operator and match up to logarithmic terms. In particular, we show that the upper bound may be obtained from independent an d identically distributed samples from a specific non-uniform distribution, while the lower bo und if valid for any set of points. Applying our results to kernel-based quadrature, while our results are fairly general, we recover known upper and lower bounds for the special cases of Sobolev spaces. Moreover, our results extend to the more general problem of full function approxim ations (beyond simply computing an integral), with results in L2- and L∞-norm that match known results for special cases.  Applying our results to random features, we show an improvement of the number of random features needed to preserve the generalization guarantees for learning with Lipshitz-continuous losses.},
-  pdf           = {http://arxiv.org/pdf/1502.06800v2.pdf},
+  pdf           = {https://jmlr.org/papers/volume18/15-178/15-178.pdf},
 }
 
 @article{briol_probabilistic_2015,
@@ -633,7 +633,7 @@
 @article{kanagawa_convergence_2017,
   tags          = {quadrature},
   title         = {Convergence {Analysis} of {Deterministic} {Kernel}-{Based} {Quadrature} {Rules} in {Misspecified} {Settings}},
-  pdf           = {https://arxiv.org/pdf/1709.00147.pdf},
+  pdf           = {https://link.springer.com/content/pdf/10.1007/s10208-018-09407-7.pdf},
   abstract      = {This paper presents convergence analysis of kernel-based quadrature rules in misspecified settings, focusing on deterministic quadrature in Sobolev spaces. In particular, we deal with misspecified settings where a test integrand is less smooth than a Sobolev RKHS based on which a quadrature rule is constructed. We provide convergence guarantees based on two different assumptions on a quadrature rule: one on quadrature weights, and the other on design points. More precisely, we show that convergence rates can be derived (i) if the sum of absolute weights remains constant (or does not increase quickly), or (ii) if the minimum distance between distance design points does not decrease very quickly. As a consequence of the latter result, we derive a rate of convergence for Bayesian quadrature in misspecified settings. We reveal a condition on design points to make Bayesian quadrature robust to misspecification, and show that, under this condition, it may adaptively achieve the optimal rate of convergence in the Sobolev space of a lesser order (i.e., of the unknown smoothness of a test integrand), under a slightly stronger regularity condition on the integrand.},
   author        = {Kanagawa, Motonobu and Sriperumbudur, Bharath K. and Fukumizu, Kenji},
   journal       = {Foundations of Computational Mathematics},
@@ -658,7 +658,7 @@
   arxiv         = {1801.04153},
   title         = {Bayesian Quadrature for Multiple Related Integrals},
   keywords      = {Statistics - Computation, Computer Science - Numerical Analysis, Mathematics - Numerical Analysis, Statistics - Machine Learning},
-  pdf           = {https://arxiv.org/pdf/1801.04153.pdf},
+  pdf           = {https://proceedings.mlr.press/v80/xi18a/xi18a.pdf},
   abstract      = {Bayesian probabilistic numerical methods are a set of tools providing posterior distributions on the output of numerical methods. The use of these methods is usually motivated by the fact that they can represent our uncertainty due to incomplete/finite information about the continuous mathematical problem being approximated. In this paper, we demonstrate that this paradigm can provide additional advantages, such as the possibility of transferring information between several numerical methods. This allows users to represent uncertainty in a more faithfully manner and, as a by-product, provide increased numerical efficiency. We propose the first such numerical method by extending the well-known Bayesian quadrature algorithm to the case where we are interested in computing the integral of several related functions. We then demonstrate its efficiency in the context of multi-fidelity models for complex engineering systems, as well as a problem of global illumination in computer graphics.},
 }
 
@@ -674,7 +674,7 @@
   link          = {https://doi.org/10.1007/s11222-019-09894-w},
   arxiv         = {1707.04723},
   title         = {Optimal Monte Carlo integration on closed manifolds},
-  pdf           = {https://arxiv.org/pdf/1707.04723.pdf},
+  pdf           = {https://link.springer.com/content/pdf/10.1007/s11222-019-09894-w.pdf},
   abstract      = {The worst case integration error in reproducing kernel Hilbert spaces of standard Monte Carlo methods with n random points decays as 1/sqrt(n). However, re-weighting of random points can sometimes be used to improve the convergence order. This paper contributes general theoretical results for Sobolev spaces on closed Riemannian manifolds, where we verify that such re-weighting yields optimal approximation rates up to a logarithmic factor. We also provide numerical experiments matching the theoretical results for some Sobolev spaces on the unit sphere and on the Grassmannian manifold. Our theoretical findings also cover function spaces on more general sets such as the unit ball, the cube, and the simplex.},
 }
 
@@ -948,7 +948,7 @@
   arxiv         = {1610.05261},
   title         = {A probabilistic model for the numerical solution of initial value problems},
   abstract      = {Like many numerical methods, solvers for initial value problems (IVPs) on ordinary differential equations estimate an analytically intractable quantity, using the results of tractable computations as inputs. This structure is closely connected to the notion of inference on latent variables in statistics. We describe a class of algorithms that formulate the solution to an IVP as inference on a latent path that is a draw from a Gaussian process probability measure (or equivalently, the solution of a linear stochastic differential equation). We then show that certain members of this class are connected precisely to generalized linear methods for ODEs, a number of Runge--Kutta methods, and Nordsieck methods. This probabilistic formulation of classic methods is valuable in two ways: analytically, it highlights implicit prior assumptions favoring certain approximate solutions to the IVP over others, and gives a precise meaning to the old observation that these methods act like filters. Practically, it endows the classic solvers with `docking points' for notions of uncertainty and prior information about the initial value, the value of the ODE itself, and the solution of the problem.},
-  pdf           = {https://arxiv.org/pdf/1610.05261.pdf},
+  pdf           = {https://link.springer.com/content/pdf/10.1007/s11222-017-9798-7.pdf},
 }
 
 @article{2018arXiv180101340A,
@@ -1387,7 +1387,7 @@
   doi           = {10.1137/15M1013894},
   link          = {https://doi.org/10.1137/15M1013894},
   arxiv         = {1503.03467},
-  pdf           = {http://arxiv.org/pdf/1503.03467v4.pdf},
+  pdf           = {https://epubs.siam.org/doi/pdf/10.1137/15M1013894},
   title         = {Multigrid with rough coefficients and Multiresolution operator decomposition from Hierarchical Information Games},
 }
 
@@ -1433,7 +1433,7 @@
   doi           = {10.1007/s11222-016-9671-0},
   link          = {https://doi.org/10.1007/s11222-016-9671-0},
   arxiv         = {1506.04592},
-  pdf           = {http://arxiv.org/pdf/1506.04592v1.pdf},
+  pdf           = {https://link.springer.com/content/pdf/10.1007/s11222-016-9671-0.pdf},
   keywords      = {Statistics - Methodology},
 }
 
