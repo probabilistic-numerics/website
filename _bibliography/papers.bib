@@ -164,7 +164,7 @@
   year          = 2015,
 }
 
-@proceedings{BarHen16,
+@inproceedings{BarHen16,
   tags          = {linear-algebra},
   abstract      = {Least-squares and kernel-ridge / Gaussian process regression are among the foundational algorithms of statistics and machine learning. Famously, the worst-case cost of exact nonparametric regression grows cubically with the data-set size; but a growing number of approximations have been developed that estimate good solutions at lower cost. These algorithms typically return point estimators, without measures of uncertainty. Leveraging recent results casting elementary linear algebra operations as probabilistic inference, we propose a new approximate method for nonparametric least-squares that affords a probabilistic uncertainty estimate over the error between the approximate and exact least-squares solution (this is not the same as the posterior variance of the associated Gaussian process regressor). This allows estimating the error of the least-squares solution on a subset of the data relative to the full-data solution. The uncertainty can be used to control the computational effort invested in the approximation. Our algorithm has linear cost in the data-set size, and a simple formal form, so that it can be implemented with a few lines of code in programming languages with linear algebra functionality.},
   author        = {Bartels, S. and Hennig, P.},
@@ -528,7 +528,7 @@
   code          = {https://github.com/jacobnzw/icinco-code},
 }
 
-@incollection{NIPS2016-6174,
+@inproceedings{NIPS2016-6174,
   tags          = {quadrature},
   title         = {Convergence guarantees for kernel-based quadrature rules in misspecified settings},
   author        = {Kanagawa, Motonobu and Sriperumbudur, Bharath K. and Fukumizu, Kenji},
@@ -676,7 +676,7 @@
   pdf           = {https://proceedings.mlr.press/v28/hennig13.pdf},
 }
 
-@incollection{NIPS2015_5753,
+@inproceedings{NIPS2015_5753,
   tags          = {optimization, local-optimization},
   title         = {Probabilistic Line Searches for Stochastic Optimization},
   author        = {Mahsereci, Maren and Hennig, Philipp},
@@ -849,7 +849,7 @@
   supplements   = {http://www.probabilistic-numerics.org/MICCAI2014-supp.zip},
 }
 
-@incollection{schober2014nips,
+@inproceedings{schober2014nips,
   tags          = {ode, ode-solving},
   title         = {Probabilistic {ODE} Solvers with {R}unge-{K}utta Means},
   author        = {Schober, Michael and Duvenaud, David K and Hennig, Philipp},
@@ -941,7 +941,7 @@
   abstract      = {A recently-introduced class of probabilistic (uncertainty-aware) solvers for ordinary differential equations (ODEs) applies Gaussian (Kalman) filtering to initial value problems. These methods model the true solution x and its first q derivatives a priori as a Gauss--Markov process X, which is then iteratively conditioned on information about x'. We prove worst-case local convergence rates of order h^{q+1} for a wide range of versions of this Gaussian ODE filter, as well as global convergence rates of order h^q in the case of $q=1$ and an integrated Brownian motion prior, and analyze how inaccurate information on x' coming from approximate evaluations of f affects these rates. Moreover, we present explicit formulas for the steady states and show that the posterior confidence intervals are well calibrated in all considered cases that exhibit global convergence---in the sense that they globally contract at the same rate as the truncation error.},
 }
 
-@incollection{teymur16,
+@inproceedings{teymur16,
   tags          = {ode, ode-solving},
   title         = {Probabilistic Linear Multistep Methods},
   booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
@@ -955,7 +955,7 @@
   pdf           = {https://papers.nips.cc/paper/6356-probabilistic-linear-multistep-methods.pdf},
 }
 
-@incollection{teymur18,
+@inproceedings{teymur18,
   tags          = {ode, ode-solving},
   title         = {Implicit Probabilistic Integrators for ODEs},
   booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
@@ -1205,7 +1205,7 @@
   abstract      = {We propose a Bayesian framework to quantify discretization errors in numerical solutions of ODE models based on observational data. The discretization error is modeled as a random variable, and its mean—referred to as the discretization error mean—is inferred from the observations. By introducing a Markov prior on the temporal evolution of the discretization error mean, we formulate the problem as a state-space model with a linear Gaussian observation process, which enables efficient inference via the Ensemble Kalman Filter. We also propose a specific form of a Markov prior motivated by classical discretization error analysis, in which global errors accumulate from local errors. It depends on a step size of a numerical solver, and we establish its convergence rate in probability as the step size tends to zero. Numerical experiments on the pendulum system and the FitzHugh–Nagumo model demonstrate the effectiveness of the proposed approach.},
 }
 
-@incollection{NIPS2008_3497,
+@inproceedings{NIPS2008_3497,
   tags          = {ode, ode-inference},
   title         = {Accelerating Bayesian Inference over Nonlinear Differential Equations with Gaussian Processes},
   author        = {Ben Calderhead and Mark Girolami and Neil D. Lawrence},
@@ -1242,7 +1242,7 @@
   abstract      = {Bayesian parameter estimation in coupled ordinary differential equations (ODEs) is challenging due to the high computational cost of numerical integration. In gradient matching a separate data model is introduced with the property that its gradient may be calculated easily. Parameter estimation is then achieved by requiring consistency between the gradients computed from the data model and those specified by the ODE. We propose a Gaussian process model that directly links state derivative information with system observations, simplifying previous approaches and improving estimation accuracy.},
 }
 
-@incollection{NIPS2017_7066,
+@inproceedings{NIPS2017_7066,
   tags          = {ode, ode-inference},
   title         = {Scalable Variational Inference for Dynamical Systems},
   author        = {Gorbach, Nico S and Bauer, Stefan and Buhmann, Joachim M},
