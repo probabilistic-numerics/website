@@ -13,7 +13,7 @@ summary: The Probabilistic Numerics Community Meeting 2024, held at St Pancras M
 
 link: https://probnum24.github.io
 # img: https://probnum25.github.io/EURECOM-building-updated.jpg
-img_caption: 
+img_caption:
 
 url_code:
 url_pdf:

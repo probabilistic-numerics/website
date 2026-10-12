@@ -7,13 +7,13 @@ location: Barcelona, Spain
 organizers: [["Maren", "Mahsereci"], ["Alex", "Davies"], ["Philipp", "Hennig"]]
 
 date: 2016-12-10
-date_end: 
+date_end:
 
-summary: 
+summary:
 
 link: https://nips.cc/Conferences/2016
-img: 
-img_caption: 
+img:
+img_caption:
 
 url_code:
 url_pdf:
@@ -28,9 +28,9 @@ Recent work has increasingly tried to eliminate such fiddle factors, typically b
 Among the questions to be addressed by the workshop are:
 
 * Is the prominence of tuning parameters a fundamental feature of stochastic optimization problems? Why do classic optimization methods manage to do well with virtually no free parameters?
-* In which precise sense can the "optimization of optimization algorithms" be phrased as an inference / learning problem? 
+* In which precise sense can the "optimization of optimization algorithms" be phrased as an inference / learning problem?
 * Should, and can, parameters be inferred at design-time (by a human), at compile-time (by an external compiler with access to a meta-description of the problem) or run-time (by the algorithm itself)?
-* What are generic ways to learn parameters of algorithms, and inherent difficulties for doing so? Is the goal to *specialize* to a particular problem, or to *generalize* over many problems? 
+* What are generic ways to learn parameters of algorithms, and inherent difficulties for doing so? Is the goal to *specialize* to a particular problem, or to *generalize* over many problems?
 
 
 ### Schedule
@@ -56,7 +56,7 @@ The workshop will be held on Saturday, 10 December, in *Area 2*
 | **16:20-17:00** | --- |  *Panel Discussion* | |
 
 
-## Accepted Papers 
+## Accepted Papers
 (in alphabetical order, by first author's surname)
 
 * Ömer Deniz Akyildiz, Víctor Elvira, Jesus Fernandez-Bes, Joaquín Miguez. [*On the Relationship between Online Optimizers and Recursive Filters*]({{ site.baseurl }}/assets/pdf/meetings/2016_NeurIPS/Akyildiz_Elvira_Fernandez-Bes_Miguez.pdf)
@@ -79,7 +79,7 @@ The workshop will be held on Saturday, 10 December, in *Area 2*
 ### Topics of interest
 
 * Parameter adaptation for optimization algorithms
-* Stochastic optimization methods 
+* Stochastic optimization methods
 * Optimization methods adapted for specific applications
 * Batch selection methods
 * Convergence diagnostics for optimization algorithms
@@ -88,6 +88,6 @@ We welcome contributions from theoretical treatments, empirical studies, and app
 
 ### Submission instructions
 
-Submissions should be in the (new!) NIPS 2016 format, with a maximum of 4 pages (excluding references). Accepted papers will be made available online at the workshop website, and will be presented in a spotlight talk at the workshop itself, but the workshop proceedings can be considered non-archival. Explicitly: shorter versions of relevant papers submitted or published elsewhere are encouraged. Submissions need not be anonymous. 
+Submissions should be in the (new!) NIPS 2016 format, with a maximum of 4 pages (excluding references). Accepted papers will be made available online at the workshop website, and will be presented in a spotlight talk at the workshop itself, but the workshop proceedings can be considered non-archival. Explicitly: shorter versions of relevant papers submitted or published elsewhere are encouraged. Submissions need not be anonymous.
 
 Please mail pdf submissions to <mmahsereci@tue.mpg.de>. -->

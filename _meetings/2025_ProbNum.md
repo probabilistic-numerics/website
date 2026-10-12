@@ -12,8 +12,8 @@ date_end: 2025-09-03
 summary: The first annual International Conference on Probabilistic Numerics.
 
 link: https://probnum25.github.io/
-img: 
-img_caption: 
+img:
+img_caption:
 
 url_code:
 url_pdf:

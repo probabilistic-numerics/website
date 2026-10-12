@@ -10,14 +10,14 @@ date_end: 2023-03-30
 
 summary: A master class on Numerics of Machine Learning at the University of Tübingen in the Winter Term of 2022/23.
 
-link: 
+link:
 img: /assets/img/teaching/2022_numerics_of_ml.png
-img_caption: 
+img_caption:
 
 url_video: https://youtube.com/playlist?list=PL05umP7R6ij2lwDdj7IkuHoP9vHlEcH0s
 url_slides: https://github.com/philipphennig/NumericsOfML
 url_pdf:
-url_code: 
+url_code:
 ---
 
 ## Summary
@@ -34,9 +34,9 @@ This class discusses both practical and theoretically interesting aspects of the
 
 <code class="codeblock">@techreport{NoML22,
      title       = {Numerics of Machine Learning},
-     author      = {N. Bosch and J. Grosse and P. Hennig and A. Kristiadi and M. Pförtner 
-                    and J. Schmidt and F. Schneider and L. Tatzel and J. Wenger},     
-     series      = {Lecture Notes in Machine Learning},     
+     author      = {N. Bosch and J. Grosse and P. Hennig and A. Kristiadi and M. Pförtner
+                    and J. Schmidt and F. Schneider and L. Tatzel and J. Wenger},
+     series      = {Lecture Notes in Machine Learning},
      year        = {2022},
      institution = {Tübingen AI Center},
 }

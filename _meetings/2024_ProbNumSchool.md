@@ -12,8 +12,8 @@ date_end: 2024-04-10
 summary: The Probabilistic Numerics Spring School 2024, held at Southampton University's Highfield Campus.
 
 link: https://probnumschool.org/pages/home.html
-img: 
-img_caption: 
+img:
+img_caption:
 
 url_code:
 url_pdf:
