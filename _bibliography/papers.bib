@@ -158,7 +158,7 @@
   tags          = {linear-algebra},
   abstract      = {This paper proposes a probabilistic framework for algorithms that iteratively solve unconstrained linear problems Bx = b with positive definite B for x. The goal is to replace the point estimates returned by existing methods with a Gaussian posterior belief over the elements of the inverse of B, which can be used to estimate errors. Recent probabilistic interpretations of the secant family of quasi-Newton optimization algorithms are extended. Combined with properties of the conjugate gradient algorithm, this leads to uncertainty-calibrated methods with very limited cost overhead over conjugate gradients, a self-contained novel interpretation of the quasi-Newton and conjugate gradient algorithms, and a foundation for new nonlinear optimization methods.},
   author        = {P. {Hennig}},
-  file          = {http://probabilistic-numerics.org/assets/pdf/HennigLinear2015.pdf},
+  pdf           = {https://arxiv.org/pdf/1402.2058},
   issue         = 1,
   journal       = {SIAM J on Optimization},
   link          = {http://epubs.siam.org/doi/abs/10.1137/140955501?journalCode=sjope8},
@@ -208,7 +208,7 @@
   abstract      = {The log-determinant of a kernel matrix appears in a variety of machine learning problems, ranging from determinantal point processes and generalized Markov random fields, through to the training of Gaussian processes. Exact calculation of this term is often intractable when the size of the kernel matrix exceeds a few thousand. In the spirit of probabilistic numerics, we reinterpret the problem of computing the log-determinant as a Bayesian inference problem. In particular, we combine prior knowledge in the form of bounds from matrix theory and evidence derived from stochastic trace estimation to obtain probabilistic estimates for the log-determinant and its associated uncertainty within a given computational budget. Beyond its novelty and theoretic appeal, the performance of our proposal is competitive with state-of-the-art approaches to approximating the log-determinant, while also quantifying the uncertainty due to budget-constrained evidence.},
   author        = {Fitzsimons, Jack and Cutajar, Kurt and Osborne, Michael and Roberts, Stephen and Filippone, Maurizio},
   booktitle     = {Uncertainty in {Artificial} {Intelligence}},
-  file          = {http://probabilistic-numerics.org/assets/pdf/Fitzsimons et al. - 2017 - Bayesian Inference of Log Determinants.pdf},
+  pdf           = {https://auai.org/uai2017/proceedings/papers/70.pdf},
   title         = {Bayesian {Inference} of {Log} {Determinants}},
   url           = {https://arxiv.org/abs/1704.01445},
   urldate       = {2017-06-21},
@@ -414,7 +414,7 @@
   title         = {Bayesian quadrature for ratios},
   year          = 2012,
   abstract      = {We describe a novel approach to quadrature for ratios of probabilistic integrals, such as are used to compute posterior probabilities. This approach offers performance superior to Monte Carlo methods by exploiting a Bayesian quadrature framework. We improve upon previous Bayesian quadrature techniques by explicitly modelling the non-negativity of our integrands, and the correlations that exist between them. It offers most where the integrand is multi-modal and expensive to evaluate. We demonstrate the efficacy of our method on data from the Kepler space telescope.},
-  file          = {../assets/pdf/Osborne2012Bayesian.pdf},
+  pdf           = {https://proceedings.mlr.press/v22/osborne12/osborne12.pdf},
 }
 
 @inproceedings{osborne2012active,
@@ -425,7 +425,7 @@
   title         = {Active Learning of Model Evidence Using Bayesian Quadrature.},
   year          = 2012,
   abstract      = {Numerical integration is a key component of many problems in scientific computing, statistical modelling, and machine learning. Bayesian Quadrature is a model-based method for numerical integration which, relative to standard Monte Carlo methods, offers increased sample efficiency and a more robust estimate of the uncertainty in the estimated integral. We propose a novel Bayesian Quadrature approach for numerical integration when the integrand is non-negative, such as the case of computing the marginal likelihood, predictive distribution, or normalising constant of a probabilistic model. Our approach approximately marginalises the quadrature model’s hyperparameters in closed form, and introduces an ac- tive learning scheme to optimally select function evaluations, as opposed to using Monte Carlo samples. We demonstrate our method on both a number of synthetic benchmarks and a real scientific problem from astronomy.},
-  file          = {../assets/pdf/Osborne2012active.pdf},
+  pdf           = {https://papers.nips.cc/paper_files/paper/2012/file/6364d3f0f495b6ab9dcf8d3b5c6e0b01-Paper.pdf},
 }
 
 @inproceedings{sarkkagaussian,
@@ -679,7 +679,7 @@
   title         = {Fast Probabilistic Optimization from Noisy Gradients},
   year          = 2013,
   abstract      = {Stochastic gradient descent remains popular in large-scale machine learning, on account of its very low computational cost and robust- ness to noise. However, gradient descent is only linearly efficient and not transformation invariant. Scaling by a local measure can substantially improve its performance. One natural choice of such a scale is the Hessian of the objective function: Were it available, it would turn linearly efficient gradient descent into the quadratically efficient Newton-Raphson optimization. Existing covariant methods, though, are either super-linearly expensive or do not address noise. Generalising recent results, this paper constructs a nonparametric Bayesian quasi-Newton algorithm that learns gradient and Hessian from noisy evaluations of the gradient. Importantly, the resulting algorithm, like stochastic gradient descent, has cost linear in the number of input dimensions},
-  file          = {../assets/pdf/hennig13noisy.pdf},
+  pdf           = {https://proceedings.mlr.press/v28/hennig13.pdf},
 }
 
 @incollection{NIPS2015_5753,
@@ -850,7 +850,7 @@
   pages         = {265--272},
   title         = {{Probabilistic shortest path tractography in {DTI} using {G}aussian {P}rocess {ODE} solvers}},
   abstract      = {Tractography in diffusion tensor imaging estimates connectivity in the brain through observations of local diffusivity. These observations are noisy and of low resolution and, as a consequence, connections cannot be found with high precision. We use probabilistic numerics to estimate connectivity between regions of interest and contribute a Gaussian Process tractography algorithm which allows for both quantification and visualization of its posterior uncertainty. We use the uncertainty both in visualization of individual tracts as well as in heat maps of tract locations.  Finally, we provide a quantitative evaluation of different metrics and algorithms showing that the adjoint metric combined with our algorithm produces paths which agree most often with experts.},
-  file          = {../assets/pdf/Schober2014MICCAI.pdf},
+  pdf           = {https://www2.compute.dtu.dk/~sohau/papers/miccai2014/MICCAI2014.pdf},
   video         = {https://www.youtube.com/watch?v=VrhulgVaRMg},
   supplements   = {http://www.probabilistic-numerics.org/MICCAI2014-supp.zip},
 }
