@@ -212,7 +212,7 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
 
   .author {
     font-size: 0.9rem;
-    color: var(--global-text-color-light);
+    color: #666;
 
     a {
       color: inherit;
@@ -230,7 +230,7 @@ $rule: color-mix(in srgb, var(--global-text-color) 12%, transparent);
 
   .periodical {
     font-size: 0.85rem;
-    color: var(--global-text-color-light);
+    color: #666;
   }
 
   // Links and topic tags share one line below the venue.

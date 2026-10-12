@@ -36,8 +36,8 @@
 
       <div class="periodical">
         {%- capture venue -%}
-          {%- if entry.type == "article" -%}<em>{{ entry.journal }}</em>
-          {%- elsif entry.type == "inproceedings" or entry.type == "incollection" -%}<em>In {{ entry.booktitle }}</em>
+          {%- if entry.type == "article" -%}{{ entry.journal }}
+          {%- elsif entry.type == "inproceedings" or entry.type == "incollection" -%}In {{ entry.booktitle }}
           {%- elsif entry.type == "book" -%}{{ entry.publisher }}
           {%- endif -%}
         {%- endcapture -%}
