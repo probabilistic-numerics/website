@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Probabilistic Numerics
+
+
+  | Probabilistic Integration
+
+</title>
+<meta name="description" content="Quantifying Uncertainty in Computation.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Favicons -->
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+<link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#28bab4">
+<meta name="msapplication-TileColor" content="#28bab4">
+<meta name="theme-color" content="#ffffff">
+
+
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="/meetings/2015_NeurIPS/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+
+
+
+
+
+<!-- Github -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+  <!-- Nav Bar -->
+  <nav id="navbar"
+    class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <div class="navbar-logo">
+        <a href="/">
+          <img src="/assets/img/logos/pn-logo-dark-txtright.svg">
+        </a>
+      </div>
+      
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li> -->
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/research/">
+              Research
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/code/">
+              Code
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/meetings/">
+              Meetings
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/teaching/">
+              Teaching
+              
+            </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+            <a class="nav-link" href="/textbooks/">
+              Textbooks
+              
+            </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Probabilistic Integration</h1>
+
+    
+
+    <hr>
+    <table>
+      <tbody>
+        
+        <tr>
+          <td><b>When?</b></td>
+          <td>December 7, 2015
+             - December 12, 2015 
+
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Where?</b></td>
+          <td>Montréal, Canada</td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Organizers</b></td>
+          <td>
+            <!-- PhilippHennigMaikeOsborne -->
+            
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://uni-tuebingen.de/de/134782" target="_blank">Philipp Hennig</a>,
+                  
+              
+            
+          
+            
+            
+              
+                
+                  
+                  
+            
+
+            
+              
+                  
+                    <a href="https://www.robots.ox.ac.uk/~mosb/" target="_blank">Maike Osborne</a>
+                  
+              
+            
+          
+          </td>
+        </tr>
+        
+        
+        <tr>
+          <td><b>Official Site</b></td>
+          <td><a href="https://nips.cc/Conferences/2015">https://nips.cc/Conferences/2015</a></td>
+        </tr>
+        
+      </tbody>
+      </table>
+      <hr>
+  </header>
+
+  <article class="post-content">
+    <p>This workshop will be hosted by <a href="https://nips.cc/Conferences/2015">NIPS</a>, a large annual machine learning and computational neuroscience conference.</p>
+
+<p>Integration is the central numerical operation required for Bayesian machine learning (in the form of marginalization and conditioning). Sampling algorithms still abound in this area, although it has long been known that Monte Carlo methods are fundamentally sub-optimal. The challenges for the development of better performing integration methods are mostly algorithmic. Moreover, recent algorithms have begun to outperform MCMC and its siblings, in wall-clock time, on realistic problems from machine learning.</p>
+
+<p>The workshop will review the existing, by now quite strong, theoretical case against the use of random numbers for integration, discuss recent algorithmic developments, relationships between conceptual approaches, and highlight central research challenges going forward.</p>
+
+<p>Among the questions to be addressed by the workshop are</p>
+
+<ul>
+  <li>How fast can a practical integral estimate on a deterministic function converge (polynomially, super-polynomially, not just “better than \(\sqrt{N}\)”)?</li>
+  <li>How are these rates related, precisely, to prior assumptions about the integrand, and to the design rules of the integrator?</li>
+  <li>To which degree can the source code of an integration problem be parsed to choose informative priors?</li>
+  <li>Are random numbers necessary and helpful for efficient multivariate integration, or are they a conceptual crutch that cause inefficiencies?</li>
+  <li>What are the practical challenges in the design of efficient multivariate integration methods that use such prior information?</li>
+</ul>
+
+<p>The workshop builds upon the growing field of probabilistic numerics,for which probabilistic integration is a core component.</p>
+
+<h3 id="schedule">Schedule</h3>
+
+<p>The workshop will be held on Friday, 11 December in room 512a.</p>
+
+<ul>
+  <li>09:00-09:10: <a href="http://imgc-cn.artprintimages.com/images/P-473-488-90/60/6056/IC9D100Z/posters/matthew-diffee-your-honor-if-it-please-the-court-i-d-like-to-deliver-my-opening-comment-new-yorker-cartoon.jpg">Opening Remarks</a></li>
+  <li>09:10-09:40: <a href="https://www.ceremade.dauphine.fr/~xian/">Christian Robert</a> <a href="/assets/pdf/2015_NeurIPS/CPRobert.pdf">(slides)</a></li>
+  <li>09:40-10:00: <a href="http://www2.warwick.ac.uk/fac/sci/statistics/staff/research_students/briol/">François-Xavier Briol</a> <a href="/assets/pdf/2015_NeurIPS/NIPSworkshop_fxbriol.pdf">(slides)</a></li>
+  <li>10.00-10.30: <em>Coffee break</em></li>
+  <li>10:30-11:00: <a href="http://www.gatsby.ucl.ac.uk/~gretton/">Arthur Gretton</a> <a href="/assets/pdf/2015_NeurIPS/nips15_regression.pdf">(slides)</a></li>
+  <li>11:00-11:30: <a href="http://cse.wustl.edu/people/Pages/faculty-bio.aspx?faculty=109">Roman Garnett</a> <a href="/assets/pdf/2015_NeurIPS/roman_talk.pdf">(slides)</a></li>
+  <li>11:30-11:45: <a href="http://homepages.inf.ed.ac.uk/s1459647/">George Papamakarios</a> &amp; <a href="http://homepages.inf.ed.ac.uk/imurray2/">Iain Murray,</a> <a href="/assets/pdf/distilling_intractable_generative_models_camera_ready.pdf">‘Distilling Intractable Generative Models’</a> <a href="/assets/pdf/2015_NeurIPS/distilling_intractable_models_slides.pdf">(slides)</a></li>
+  <li>11:45-12:00: <a href="http://www.robots.ox.ac.uk/~jan/">Jan-Peter Calliess,</a> <a href="/assets/pdf/jcalliess_NIPS15.pdf">‘Bayesian Lipschitz Constant Estimation and Quadrature’</a> <a href="/assets/pdf/2015_NeurIPS/talkjcNIPS15.pdf">(slides)</a></li>
+  <li>12:00-14:30: <em>Lunch break</em></li>
+  <li>14:30-15:00: <a href="http://www.di.ens.fr/~fbach/">Francis Bach</a> <a href="/assets/pdf/2015_NeurIPS/fbach_nips_2015_quadrature.pdf">(slides)</a></li>
+  <li>15:00-15:30: <a href="http://people.seas.harvard.edu/~dduvenaud/">David Duvenaud</a> <a href="/assets/pdf/2015_NeurIPS/prob-int-workshop.pdf">(slides)</a></li>
+  <li>15:30-16:00: <a href="https://www.ics.uci.edu/~welling/">Max Welling</a> <a href="/assets/pdf/2015_NeurIPS/OMC_NIPS2015_WellingMeeds.pdf">(slides)</a></li>
+  <li>16:00-16:30: <em>Coffee Break</em></li>
+  <li>16:30-17.30: Panel discussion</li>
+</ul>
+
+<h2 id="accepted-papers">Accepted Papers</h2>
+
+<ul>
+  <li>Jan-Peter Calliess, <a href="/assets/pdf/jcalliess_NIPS15.pdf">‘Bayesian Lipschitz Constant Estimation and Quadrature’</a></li>
+  <li>George Papamakarios &amp; Iain Murray, <a href="/assets/pdf/distilling_intractable_generative_models_camera_ready.pdf">‘Distilling Intractable Generative Models’</a></li>
+</ul>
+
+<!-- ## Call for Papers
+
+### Important dates
+
+* Submission deadline: 18:00 GMT, 16 October 2015 (**deadline extended**)
+* Notification of acceptance: 5 November 2015
+
+### Topics of interest
+
+* Bayesian quadrature
+* Quadrature rules
+* Kernel herding
+* Quasi Monte Carlo
+* Convergence diagnostics for MCMC
+
+We welcome contributions from theoretical treatments, empirical studies, and applications, of the above. The list is not exhaustive, and we also welcome submissions that draw upon highly related topics.
+
+### Submission instructions
+
+Submissions should be in the NIPS 2015 format, with a maximum of 4 pages (excluding references). Accepted papers will be made available online at the workshop website, and will be presented in a spotlight talk at the workshop itself, but the workshop proceedings can be considered non-archival. Explicitly: shorter versions of relevant papers submitted or published elsewhere are encouraged. Submissions need not be anonymous.
+
+Please mail pdf submissions to <probnum@gmail.com>. -->
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container">
+
+    <!-- 
+    <div class="watermark">
+      <img src="www.probabilistic-numerics.org/assets/img/logos/pn-watermark.svg">
+    </div>
+     -->
+
+    <div class="social">
+      <div class="contact-icons">
+        
+
+<a href="https://scholar.google.com/scholar?q=probabilistic+numerics" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+
+
+<a href="https://github.com/probabilistic-numerics" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    Open an <a href="https://github.com/probabilistic-numerics/website/issues">issue</a> or <a href="https://github.com/probabilistic-numerics/website/pulls">pull request</a> on GitHub to get in touch or suggest changes to this site.
+
+    <br><br>
+    &copy; Copyright 2026
+    <br>
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted on <a href="https://github.com/probabilistic-numerics/website" target="_blank" rel="noopener">GitHub</a>.
+
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+
+</html>
