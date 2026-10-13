@@ -9,10 +9,10 @@ organizers: [["Maike", "Osborne"], ["Chris", "Oates"], ["François-Xavier", "Bri
 date: 2016-01-04
 date_end: 2016-01-07
 
-summary: 
+summary:
 
 link: http://www.pages.drexel.edu/~mwl25/mcmskiV/index.html
-img: 
+img:
 img_caption:
 
 url_code:

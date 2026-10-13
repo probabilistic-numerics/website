@@ -9,10 +9,10 @@ organizers: [["Ben", "Calderhead"]]
 date: 2015-09-14
 date_end: 2015-09-18
 
-summary:   
+summary:
 
 link: http://scicade2015.math.uni-potsdam.de/scicade2015/index.html
-img: 
+img:
 img_caption:
 
 url_code:

@@ -12,3 +12,12 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: bibtex-tidy
+        name: bibtex-tidy
+        language: node
+        additional_dependencies: [bibtex-tidy@1.15.1]
+        entry: bibtex-tidy --modify --curly --numeric --months --space=2 --align=14 --blank-lines --trailing-commas --remove-empty-fields --no-escape --strip-enclosing-braces --duplicates=key,doi
+        files: ^_bibliography/.*\.bib$

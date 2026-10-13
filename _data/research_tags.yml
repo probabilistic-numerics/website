@@ -29,5 +29,5 @@
   parent: ode
 - id: pde
   label: PDEs
-- id: related
-  label: Related
+- id: other
+  label: Other

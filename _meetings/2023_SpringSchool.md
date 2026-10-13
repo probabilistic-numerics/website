@@ -12,8 +12,8 @@ date_end: 2023-03-29
 summary: The first ever probabilistic numerics spring school and research workshop aimed at graduate students, researchers, and professionals interested in probabilistic numerical methods.
 
 link: https://www.probnumschool.org/
-img: 
-img_caption: 
+img:
+img_caption:
 
 url_code:
 url_pdf:
